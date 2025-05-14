@@ -1,0 +1,28 @@
+﻿using SIA_Presupuesto.Negocio.Entidades;
+using SIA_Presupuesto.WebForm.Helper;
+using SIA_Presupuesto.WebForm.Vista.Base;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Utilitario.Util;
+
+namespace SIA_Presupuesto.WebForm.Vista
+{
+    public interface IListaEvaluacionPresupuestoCuentaVista : IListaBase
+    {
+        List<EvaluacionPresupuestoPorCuentasPres> listaDatosPrincipales { set; }
+        List<Anio> listaAnios { set; }
+        List<Moneda> listaMonedas { set; }
+        List<GrupoPresupuesto> listaGrupoPresupuesto { set; }
+        List<Presupuesto> listaPresupuesto { set; }
+        List<Subpresupuesto> listaSubPresupuesto { set; }
+        int idSubPresupuesto { get; set; }
+        int anioPresentacion { get; set; }
+        int idMoneda { get; set; }
+        GrupoPresupuesto GrupoPresupuesto { get; set; }
+        Presupuesto Presupuesto { get; set; }
+        Subpresupuesto Subpresupuesto { get; set; }
+    }
+}

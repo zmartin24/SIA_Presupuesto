@@ -1,0 +1,772 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6DFBEB32-B4BC-4366-AB3F-E0B9A4C1785B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SIA_Presupuesto.WinForm.Adquisicion</RootNamespace>
+    <AssemblyName>SIA_Presupuesto.WinForm.Adquisicion</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <PublishUrl>publicar\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="CA2011.Utilitario">
+      <HintPath>..\packages\CA2011.Utilitario.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Drawing.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.Desktop.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v22.1.Wizard, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPivotGrid.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v22.1.Export, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v22.1.UI, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v22.1.Extensions, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Images.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Seguridad, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Seguridad.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Ayuda\frmAyudaCuentaContable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ayuda\frmAyudaCuentaContable.Designer.cs">
+      <DependentUpon>frmAyudaCuentaContable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ayuda\frmAyudaPrecioProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ayuda\frmAyudaPrecioProducto.Designer.cs">
+      <DependentUpon>frmAyudaPrecioProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ayuda\frmAyudaSubPresupuestoDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ayuda\frmAyudaSubPresupuestoDetalle.Designer.cs">
+      <DependentUpon>frmAyudaSubPresupuestoDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\SeleccionRequerimientoDetalle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\SeleccionRequerimientoDetalle.Designer.cs">
+      <DependentUpon>SeleccionRequerimientoDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmAgregarCtaGasto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmAgregarCtaGasto.Designer.cs">
+      <DependentUpon>frmAgregarCtaGasto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmBuscarForebi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmBuscarForebi.Designer.cs">
+      <DependentUpon>frmBuscarForebi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmCambioEstadoPaa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmCambioEstadoPaa.Designer.cs">
+      <DependentUpon>frmCambioEstadoPaa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmCatGasto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmCatGasto.Designer.cs">
+      <DependentUpon>frmCatGasto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmCertificacionMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmCertificacionMaster.Designer.cs">
+      <DependentUpon>frmCertificacionMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmCertificacionRequerimientoAmpliacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmCertificacionRequerimientoAmpliacion.Designer.cs">
+      <DependentUpon>frmCertificacionRequerimientoAmpliacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmCertificacionRequerimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmCertificacionRequerimiento.Designer.cs">
+      <DependentUpon>frmCertificacionRequerimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmEnviarCorreoCertificacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmEnviarCorreoCertificacion.Designer.cs">
+      <DependentUpon>frmEnviarCorreoCertificacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmGastoRecurrente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmGastoRecurrente.Designer.cs">
+      <DependentUpon>frmGastoRecurrente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmCertificacionRequerimientoReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmCertificacionRequerimientoReporte.Designer.cs">
+      <DependentUpon>frmCertificacionRequerimientoReporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmImprimirPac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmImprimirPac.Designer.cs">
+      <DependentUpon>frmImprimirPac.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmImprimirGastoRecurrente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmImprimirGastoRecurrente.Designer.cs">
+      <DependentUpon>frmImprimirGastoRecurrente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmPlanAnualAdquisicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmPlanAnualAdquisicion.Designer.cs">
+      <DependentUpon>frmPlanAnualAdquisicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmBuscarRequerimientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmBuscarRequerimientos.Designer.cs">
+      <DependentUpon>frmBuscarRequerimientos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmGastoRecurrenteDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmGastoRecurrenteDetalle.Designer.cs">
+      <DependentUpon>frmGastoRecurrenteDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmGastoRecurrenteCabecera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmGastoRecurrenteCabecera.Designer.cs">
+      <DependentUpon>frmGastoRecurrenteCabecera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmPlanAnualAdquisicionDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmPlanAnualAdquisicionDetalle.Designer.cs">
+      <DependentUpon>frmPlanAnualAdquisicionDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmPlanAnualAdquisicionCabecera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmPlanAnualAdquisicionCabecera.Designer.cs">
+      <DependentUpon>frmPlanAnualAdquisicionCabecera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmPuestoRequerimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmPuestoRequerimiento.Designer.cs">
+      <DependentUpon>frmPuestoRequerimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmRequerimientoRecursoHumano.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmRequerimientoRecursoHumano.Designer.cs">
+      <DependentUpon>frmRequerimientoRecursoHumano.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGeneralReporte.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmGeneralReporte.Designer.cs">
+      <DependentUpon>frmGeneralReporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListaGastoRecurrenteRequerimiento.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmListaGastoRecurrenteRequerimiento.Designer.cs">
+      <DependentUpon>frmListaGastoRecurrenteRequerimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListaPlanAnualRequerimiento.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmListaPlanAnualRequerimiento.Designer.cs">
+      <DependentUpon>frmListaPlanAnualRequerimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\EmailHelper.cs" />
+    <Compile Include="Helper\RegistroReporteHelper.cs" />
+    <Compile Include="Helper\ReporteHelper.cs" />
+    <Compile Include="ListaRequerimientoRecursoHumanoDetalle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListaRequerimientoRecursoHumanoDetalle.Designer.cs">
+      <DependentUpon>ListaRequerimientoRecursoHumanoDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaCertificacionMaster.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListaCertificacionMaster.Designer.cs">
+      <DependentUpon>ListaCertificacionMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaCertificacionMasterDetalle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListaCertificacionMasterDetalle.Designer.cs">
+      <DependentUpon>ListaCertificacionMasterDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListaPlanAnualVizualiza.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmListaPlanAnualVizualiza.Designer.cs">
+      <DependentUpon>frmListaPlanAnualVizualiza.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporteEvaluacionBienServicio.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmReporteEvaluacionBienServicio.Designer.cs">
+      <DependentUpon>frmReporteEvaluacionBienServicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\ExportarHelperAdquisicion.cs" />
+    <Compile Include="Helper\PredeterminadoHelper.cs" />
+    <Compile Include="ListaCatGastosRecurrentes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListaCatGastosRecurrentes.Designer.cs">
+      <DependentUpon>ListaCatGastosRecurrentes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaCertificacionDetalle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListaCertificacionDetalle.Designer.cs">
+      <DependentUpon>ListaCertificacionDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaCertificacionRequerimiento.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListaCertificacionRequerimiento.Designer.cs">
+      <DependentUpon>ListaCertificacionRequerimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaCuentaGastosRecurrentes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListaCuentaGastosRecurrentes.Designer.cs">
+      <DependentUpon>ListaCuentaGastosRecurrentes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaEvaluacionPresupuestoCuenta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListaEvaluacionPresupuestoCuenta.Designer.cs">
+      <DependentUpon>ListaEvaluacionPresupuestoCuenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaGastoRecurrente.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListaGastoRecurrente.Designer.cs">
+      <DependentUpon>ListaGastoRecurrente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaPlanAnualAdquisicion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListaPlanAnualAdquisicion.Designer.cs">
+      <DependentUpon>ListaPlanAnualAdquisicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaPresupuestoAproCom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListaPresupuestoAproCom.Designer.cs">
+      <DependentUpon>ListaPresupuestoAproCom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaPrecioBienServicio.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListaPrecioBienServicio.Designer.cs">
+      <DependentUpon>ListaPrecioBienServicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaPresupuestoEjecutadoFondosPorCuenta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListaPresupuestoEjecutadoFondosPorCuenta.Designer.cs">
+      <DependentUpon>ListaPresupuestoEjecutadoFondosPorCuenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaPresupuestoEjecutadoFondos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListaPresupuestoEjecutadoFondos.Designer.cs">
+      <DependentUpon>ListaPresupuestoEjecutadoFondos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaRequerimientoRecursoHumano.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListaRequerimientoRecursoHumano.Designer.cs">
+      <DependentUpon>ListaRequerimientoRecursoHumano.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentador\AyudaCuentaContablePresentador.cs" />
+    <Compile Include="Presentador\AyudaPrecioProductoPresentador.cs" />
+    <Compile Include="Presentador\AyudaSubPresupuestoDetallePresentador.cs" />
+    <Compile Include="Presentador\SeleccionRequerimientoDetallePresentador.cs" />
+    <Compile Include="Presentador\BuscarForebiPresentador.cs" />
+    <Compile Include="Presentador\CambioEstadoPaaPresentador.cs" />
+    <Compile Include="Presentador\CertificacionMasterPresentador.cs" />
+    <Compile Include="Presentador\CertificacionRequerimientoAmpliacionPresentador.cs" />
+    <Compile Include="Presentador\CertificacionRequerimientoPresentador.cs" />
+    <Compile Include="Presentador\CertificacionRequerimientoReportePresentador.cs" />
+    <Compile Include="Presentador\GeneralReportePresentador.cs" />
+    <Compile Include="Presentador\ImprimirPacPresentador.cs" />
+    <Compile Include="Presentador\ImprimirGastoRecurrentePresentador.cs" />
+    <Compile Include="Presentador\ListaCertificacionDetallePresentador.cs" />
+    <Compile Include="Presentador\ListaCertificacionMasterDetallePresentador.cs" />
+    <Compile Include="Presentador\ListaCertificacionMasterPresentador.cs" />
+    <Compile Include="Presentador\ListaCertificacionRequerimientoPresentador.cs" />
+    <Compile Include="Presentador\ListaEvaluacionPresupuestoCuentaPresentador.cs" />
+    <Compile Include="Presentador\ListaPresupuestoAproComPresentador.cs" />
+    <Compile Include="Presentador\ListaPresupuestoEjecutadoFondosPorCuentaPresentador.cs" />
+    <Compile Include="Presentador\ListaPrecioBienServicioPresentador.cs" />
+    <Compile Include="Presentador\ListaPresupuestoEjecutadoFondosPresentador.cs" />
+    <Compile Include="Presentador\ListaRequerimientoRecursoHumanoPresentador.cs" />
+    <Compile Include="Presentador\ListaRubroBienServicioCuentaPresentador.cs" />
+    <Compile Include="Presentador\ListaRubroBienServicioPresentador.cs" />
+    <Compile Include="Presentador\ListaRequerimientoRecursoHumanoDetallePresentador.cs" />
+    <Compile Include="Presentador\PlanAnualAdquisicionReqPresentador.cs" />
+    <Compile Include="Presentador\PuestoRequerimientoPresentador.cs" />
+    <Compile Include="Presentador\ReporteEvaluacionBienServicioPresentador.cs" />
+    <Compile Include="Presentador\ListaGastoRecurrentePresentador.cs" />
+    <Compile Include="Presentador\ListaPlanAnualAdquisicionPresentador.cs" />
+    <Compile Include="Presentador\GastoRecurrentePresentador.cs" />
+    <Compile Include="Presentador\GastoRecurrenteDetallePresentador.cs" />
+    <Compile Include="Presentador\PlanAnualAdquisicionPresentador.cs" />
+    <Compile Include="Presentador\BuscarRequerimientoPresentador.cs" />
+    <Compile Include="Presentador\GastoRecurrenteRequerimientoPresentador.cs" />
+    <Compile Include="Presentador\GastoRecurrenteRequerimientoCabeceraPresentador.cs" />
+    <Compile Include="Presentador\PlanAnualAdquisicionRequerimientoPresentador.cs" />
+    <Compile Include="Presentador\PlanAnualAdquisicionDetallePresentador.cs" />
+    <Compile Include="Presentador\PlanAnualAdquisicionRequerimientoCabeceraPresentador.cs" />
+    <Compile Include="Presentador\RequerimientoRecursoHumanoPresentador.cs" />
+    <Compile Include="Presentador\RubroBienServicioCuentaPresentador.cs" />
+    <Compile Include="Presentador\RubroBienServicioPresentador.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recursos\Mensajes.Designer.cs">
+      <DependentUpon>Mensajes.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reporte\rptCertificacionPresupuestal.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporte\rptCertificacionPresupuestal.Designer.cs">
+      <DependentUpon>rptCertificacionPresupuestal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\rptOrdenCSComprometida.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporte\rptOrdenCSComprometida.Designer.cs">
+      <DependentUpon>rptOrdenCSComprometida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\rptOrdenCSComprometidaPresupuesto.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporte\rptOrdenCSComprometidaPresupuesto.Designer.cs">
+      <DependentUpon>rptOrdenCSComprometidaPresupuesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\rptPACDireccionFueFin.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporte\rptPACDireccionFueFin.Designer.cs">
+      <DependentUpon>rptPACDireccionFueFin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\rptPlanAnualAdquisicionDireccion.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporte\rptPlanAnualAdquisicionDireccion.Designer.cs">
+      <DependentUpon>rptPlanAnualAdquisicionDireccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\rptPlanAnualAdquisicionDetOld.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporte\rptPlanAnualAdquisicionDetOld.Designer.cs">
+      <DependentUpon>rptPlanAnualAdquisicionDetOld.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\rptPlanAnualAdquisicionDet.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporte\rptPlanAnualAdquisicionDet.Designer.cs">
+      <DependentUpon>rptPlanAnualAdquisicionDet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\rptGastoRecurrenteDireccion.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporte\rptGastoRecurrenteDireccion.Designer.cs">
+      <DependentUpon>rptGastoRecurrenteDireccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\rptGastoRecurrenteGeneral.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporte\rptGastoRecurrenteGeneral.Designer.cs">
+      <DependentUpon>rptGastoRecurrenteGeneral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\rptReporteCertificacionOrdenProvision.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporte\rptReporteCertificacionOrdenProvision.Designer.cs">
+      <DependentUpon>rptReporteCertificacionOrdenProvision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\IAyudaCuentaContableVista.cs" />
+    <Compile Include="Vista\IAyudaPrecioProductoVista.cs" />
+    <Compile Include="Vista\IAyudaSubPresupuestoDetalleVista.cs" />
+    <Compile Include="Vista\IBuscarForebiVista.cs" />
+    <Compile Include="Vista\IBuscarRequerimientoVista.cs" />
+    <Compile Include="Vista\ICambioEstadoPaaVista.cs" />
+    <Compile Include="Vista\ICertificacionMasterVista.cs" />
+    <Compile Include="Vista\ICertificacionRequerimientoAmpliacionVista.cs" />
+    <Compile Include="Vista\IEnviarCorreoCertificacionVista.cs" />
+    <Compile Include="Vista\ICertificacionRequerimientoVista.cs" />
+    <Compile Include="Vista\ICertificacionRequerimientoReporteVista.cs" />
+    <Compile Include="Vista\IListaCertificacionDetalleVista.cs" />
+    <Compile Include="Vista\IListaCertificacionMasterDetalleVista.cs" />
+    <Compile Include="Vista\IListaCertificacionMasterVista.cs" />
+    <Compile Include="Vista\IListaCertificacionRequerimientoVista.cs" />
+    <Compile Include="Vista\IListaEvaluacionPresupuestoCuentaVista.cs" />
+    <Compile Include="Vista\IListaPresupuestoAproComVista.cs" />
+    <Compile Include="Vista\IListaPresupuestoEjecutadoFondosPorCuentaVista.cs" />
+    <Compile Include="Vista\IListaPrecioBienServicioVista.cs" />
+    <Compile Include="Vista\IListaPresupuestoEjecutadoFondosVista.cs" />
+    <Compile Include="Vista\IListaRequerimientoRecursoHumanoVista.cs" />
+    <Compile Include="Vista\IListaRubroBienServicioCuentaVista.cs" />
+    <Compile Include="Vista\IListaRubroBienServicioVista.cs" />
+    <Compile Include="Vista\IListaRequerimientoRecursoHumanoDetalleVista.cs" />
+    <Compile Include="Vista\IPlanAnualReqVista.cs" />
+    <Compile Include="Vista\IPuestoRequerimientoVista.cs" />
+    <Compile Include="Vista\IReporteEvaluacionBienServicioVista.cs" />
+    <Compile Include="Vista\IImprimirPacVista.cs" />
+    <Compile Include="Vista\IImprimirGastoRecurrenteVista.cs" />
+    <Compile Include="Vista\IGeneralReporteVista.cs" />
+    <Compile Include="Vista\IListaGastoRecurrenteVista.cs" />
+    <Compile Include="Vista\IListaPlanAnualAdquisicionVista.cs" />
+    <Compile Include="Vista\IGastoRecurrenteVista.cs" />
+    <Compile Include="Vista\IGastoRecurrenteDetalleVista.cs" />
+    <Compile Include="Vista\IGastoRecurrenteRequerimientoCabeceraVista.cs" />
+    <Compile Include="Vista\IPlanAnualAdquisicionVista.cs" />
+    <Compile Include="Vista\IListaGastoRecurrenteRequerimientoVista.cs" />
+    <Compile Include="Vista\IPlanAnualRequerimientoVista.cs" />
+    <Compile Include="Vista\IPlanAnualAdquisicionDetalleVista.cs" />
+    <Compile Include="Vista\IPlanAnualAdquisicionRequerimientoCabeceraVista.cs" />
+    <Compile Include="Vista\IRequerimientoRecursoHumanoVista.cs" />
+    <Compile Include="Vista\IRubroBienServicioCuentaVista.cs" />
+    <Compile Include="Vista\IRubroBienServicioVista.cs" />
+    <Compile Include="Vista\ISeleccionRequerimientoDetalleVista.cs" />
+    <EmbeddedResource Include="Ayuda\frmAyudaCuentaContable.resx">
+      <DependentUpon>frmAyudaCuentaContable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ayuda\frmAyudaPrecioProducto.resx">
+      <DependentUpon>frmAyudaPrecioProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ayuda\frmAyudaSubPresupuestoDetalle.resx">
+      <DependentUpon>frmAyudaSubPresupuestoDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\SeleccionRequerimientoDetalle.resx">
+      <DependentUpon>SeleccionRequerimientoDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmAgregarCtaGasto.resx">
+      <DependentUpon>frmAgregarCtaGasto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmBuscarForebi.resx">
+      <DependentUpon>frmBuscarForebi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmCambioEstadoPaa.resx">
+      <DependentUpon>frmCambioEstadoPaa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmCatGasto.resx">
+      <DependentUpon>frmCatGasto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmCertificacionMaster.resx">
+      <DependentUpon>frmCertificacionMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmCertificacionRequerimientoAmpliacion.resx">
+      <DependentUpon>frmCertificacionRequerimientoAmpliacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmCertificacionRequerimiento.resx">
+      <DependentUpon>frmCertificacionRequerimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmEnviarCorreoCertificacion.resx">
+      <DependentUpon>frmEnviarCorreoCertificacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmGastoRecurrente.resx">
+      <DependentUpon>frmGastoRecurrente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmCertificacionRequerimientoReporte.resx">
+      <DependentUpon>frmCertificacionRequerimientoReporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmImprimirPac.resx">
+      <DependentUpon>frmImprimirPac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmImprimirGastoRecurrente.resx">
+      <DependentUpon>frmImprimirGastoRecurrente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmPlanAnualAdquisicion.resx">
+      <DependentUpon>frmPlanAnualAdquisicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmBuscarRequerimientos.resx">
+      <DependentUpon>frmBuscarRequerimientos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmGastoRecurrenteDetalle.resx">
+      <DependentUpon>frmGastoRecurrenteDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmGastoRecurrenteCabecera.resx">
+      <DependentUpon>frmGastoRecurrenteCabecera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmPlanAnualAdquisicionDetalle.resx">
+      <DependentUpon>frmPlanAnualAdquisicionDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmPlanAnualAdquisicionCabecera.resx">
+      <DependentUpon>frmPlanAnualAdquisicionCabecera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmPuestoRequerimiento.resx">
+      <DependentUpon>frmPuestoRequerimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmRequerimientoRecursoHumano.resx">
+      <DependentUpon>frmRequerimientoRecursoHumano.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGeneralReporte.resx">
+      <DependentUpon>frmGeneralReporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListaGastoRecurrenteRequerimiento.resx">
+      <DependentUpon>frmListaGastoRecurrenteRequerimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListaPlanAnualRequerimiento.resx">
+      <DependentUpon>frmListaPlanAnualRequerimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaRequerimientoRecursoHumanoDetalle.resx">
+      <DependentUpon>ListaRequerimientoRecursoHumanoDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaCertificacionMaster.resx">
+      <DependentUpon>ListaCertificacionMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaCertificacionMasterDetalle.resx">
+      <DependentUpon>ListaCertificacionMasterDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListaPlanAnualVizualiza.resx">
+      <DependentUpon>frmListaPlanAnualVizualiza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteEvaluacionBienServicio.resx">
+      <DependentUpon>frmReporteEvaluacionBienServicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaCatGastosRecurrentes.resx">
+      <DependentUpon>ListaCatGastosRecurrentes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaCertificacionDetalle.resx">
+      <DependentUpon>ListaCertificacionDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaCertificacionRequerimiento.resx">
+      <DependentUpon>ListaCertificacionRequerimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaCuentaGastosRecurrentes.resx">
+      <DependentUpon>ListaCuentaGastosRecurrentes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaEvaluacionPresupuestoCuenta.resx">
+      <DependentUpon>ListaEvaluacionPresupuestoCuenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaGastoRecurrente.resx">
+      <DependentUpon>ListaGastoRecurrente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaPlanAnualAdquisicion.resx">
+      <DependentUpon>ListaPlanAnualAdquisicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaPresupuestoAproCom.resx">
+      <DependentUpon>ListaPresupuestoAproCom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaPrecioBienServicio.resx">
+      <DependentUpon>ListaPrecioBienServicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaPresupuestoEjecutadoFondosPorCuenta.resx">
+      <DependentUpon>ListaPresupuestoEjecutadoFondosPorCuenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaPresupuestoEjecutadoFondos.resx">
+      <DependentUpon>ListaPresupuestoEjecutadoFondos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaRequerimientoRecursoHumano.resx">
+      <DependentUpon>ListaRequerimientoRecursoHumano.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Recursos\Mensajes.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Mensajes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\rptCertificacionPresupuestal.resx">
+      <DependentUpon>rptCertificacionPresupuestal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\rptOrdenCSComprometida.resx">
+      <DependentUpon>rptOrdenCSComprometida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\rptOrdenCSComprometidaPresupuesto.resx">
+      <DependentUpon>rptOrdenCSComprometidaPresupuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\rptPACDireccionFueFin.resx">
+      <DependentUpon>rptPACDireccionFueFin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\rptPlanAnualAdquisicionDireccion.resx">
+      <DependentUpon>rptPlanAnualAdquisicionDireccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\rptPlanAnualAdquisicionDetOld.resx">
+      <DependentUpon>rptPlanAnualAdquisicionDetOld.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\rptPlanAnualAdquisicionDet.resx">
+      <DependentUpon>rptPlanAnualAdquisicionDet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\rptGastoRecurrenteDireccion.resx">
+      <DependentUpon>rptGastoRecurrenteDireccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\rptGastoRecurrenteGeneral.resx">
+      <DependentUpon>rptGastoRecurrenteGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\rptReporteCertificacionOrdenProvision.resx">
+      <DependentUpon>rptReporteCertificacionOrdenProvision.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SIA_Presupuesto.IoC\SIA_Presupuesto.IoC.csproj">
+      <Project>{1a104ece-88be-4a36-8765-c44581ebd49d}</Project>
+      <Name>SIA_Presupuesto.IoC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SIA_Presupuesto.Negocio.Entidades\SIA_Presupuesto.Negocio.Entidades.csproj">
+      <Project>{e827edcc-ad93-49ff-bd08-bb1bc9d589fb}</Project>
+      <Name>SIA_Presupuesto.Negocio.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SIA_Presupuesto.Negocio\SIA_Presupuesto.Negocio.csproj">
+      <Project>{3219c2e4-31c9-4255-af62-dd6c1032118f}</Project>
+      <Name>SIA_Presupuesto.Negocio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SIA_Presupuesto.WinForm.General\SIA_Presupuesto.WinForm.General.csproj">
+      <Project>{7e990900-e6ba-4d61-bde9-8ffa35e80071}</Project>
+      <Name>SIA_Presupuesto.WinForm.General</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SIA_Presupuesto.WinForm.Programacion\SIA_Presupuesto.WinForm.Programacion.csproj">
+      <Project>{F35AB609-F8EF-46E7-B617-D5037336BBC2}</Project>
+      <Name>SIA_Presupuesto.WinForm.Programacion</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

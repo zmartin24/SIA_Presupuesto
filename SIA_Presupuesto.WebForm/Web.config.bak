@@ -1,0 +1,240 @@
+<configuration>
+	<configSections>
+		<sectionGroup name="devExpress">
+			<section name="themes" type="DevExpress.Web.ThemesConfigurationSection, DevExpress.Web.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" requirePermission="false"/>
+			<section name="compression" type="DevExpress.Web.CompressionConfigurationSection, DevExpress.Web.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" requirePermission="false"/>
+			<section name="settings" type="DevExpress.Web.SettingsConfigurationSection, DevExpress.Web.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" requirePermission="false"/>
+			<section name="errors" type="DevExpress.Web.ErrorsConfigurationSection, DevExpress.Web.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" requirePermission="false"/>
+			<section name="resources" type="DevExpress.Web.ResourcesConfigurationSection, DevExpress.Web.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" requirePermission="false"/>
+			<section name="bootstrap" type="DevExpress.Web.Bootstrap.BootstrapConfigurationSection, DevExpress.Web.Bootstrap.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" requirePermission="false"/>
+		</sectionGroup>
+	</configSections>
+	<connectionStrings>
+		<!--SIACORAHEntities red lan-->
+		<!--<add name="SIACORAHEntities" connectionString="QSO9lM9GV+4pqrEWxII+4l6AKL09lii8r+Msgct3x/u/YWnHsr0Up8SiOo9I43fIs0jlxS+Q/mbNNvSUQBSLsiXiJKeAg3sguRCSyJhEtXHISmc9Xj+m716AKL09lii8r+Msgct3x/u/YWnHsr0UpzpMLRZKJZeHPx8uv5ca6nG+C443czL4HMg1zd4imecRj/3sNlhOSUU7Fx5ezDbF7Bs1kYI+zvyWPzAChvspjMvgIpuUTADSM/zrovmDVAxL2EYY4t7n06Y6U00jRpBx1wrz1V3zHmTgSbHMxilXIFaJdUGYe2J5mkuDXE8rZdqSLNz80IF4y9QWl7+vy+4DOeuLGKREZU06EcITKqj9H/UZ10kfomLB86lJ+JSQlNJ/8sNAcWiNYX8ki3oNAHUzhULzDHpii0oIDnKpXljyMJX3NwxL8QF2an1ntxdmXi0+eJXVBvotBOtJHSZ9LLBani2FK3GFe59caC3G9iCyUzw=" providerName="System.Data.EntityClient" />-->
+		<!--Dasistemas\sia,1433-->
+		<add name="SIACORAHEntities" connectionString="QSO9lM9GV+4pqrEWxII+4l6AKL09lii8r+Msgct3x/u/YWnHsr0Up8SiOo9I43fIs0jlxS+Q/mbNNvSUQBSLsiXiJKeAg3sguRCSyJhEtXHISmc9Xj+m716AKL09lii8r+Msgct3x/u/YWnHsr0UpzpMLRZKJZeHPx8uv5ca6nG+C443czL4HMg1zd4imecRj/3sNlhOSUU7Fx5ezDbF7Bs1kYI+zvyWPkHVolTktqDgIpuUTADSM6a0k8qm8OOH955miEl4Wav0cSdpJQf2RkRyjNtas28XMCGG2Sqjr3/jv40F2Jjg31ypVISy+DOnwdmJX5PGgV+0q/XGJ4KDO1JZYUQLVCJoDxT7nFhX0eQ3d6wxuu/9VuvFRWZ4xfML6xAM3gUluLBQvC+VTGuaKICKQGngPB9e5GxF4lZczfOdByaMnco3x1Ez13N9pv2wTHw3wmmYYSE=" providerName="System.Data.EntityClient"/>
+		<!--Dasistemas-->
+		<!--<add name="SIACORAHEntities" connectionString="QSO9lM9GV+4pqrEWxII+4l6AKL09lii8r+Msgct3x/u/YWnHsr0Up8SiOo9I43fIs0jlxS+Q/mbNNvSUQBSLsiXiJKeAg3sguRCSyJhEtXHISmc9Xj+m716AKL09lii8r+Msgct3x/u/YWnHsr0UpzpMLRZKJZeHPx8uv5ca6nG+C443czL4HMg1zd4imecRj/3sNlhOSUU7Fx5ezDbF7Bs1kYI+zvyWPzAChvspjMvgIpuUTADSM6a0k8qm8OOH955miEl4Wat4Yor3V0GT5MSTiye6Fj2aTITPcSa0m419SX5PI8B5tBGiT0JKuPSSuA3wA8WH66RmqbNNgKk7XV0a+NA653DAq66kRzTA8Hy1aeYVrr4TtSeq4qRIAgZ/UE5yIWbjDVcTuPwEmUAuzDZMNxHmxH0yod/ccpoIGXjsm2OW6Pb8eQMCdencxx605yFWF+GQHOc=" providerName="System.Data.EntityClient" />-->
+		<!--lx230-->
+		<!--<add name="SIACORAHEntities" connectionString="QSO9lM9GV+4pqrEWxII+4l6AKL09lii8r+Msgct3x/u/YWnHsr0Up8SiOo9I43fIs0jlxS+Q/mbNNvSUQBSLsiXiJKeAg3sguRCSyJhEtXHISmc9Xj+m716AKL09lii8r+Msgct3x/u/YWnHsr0UpzpMLRZKJZeHPx8uv5ca6nG+C443czL4HMg1zd4imecRj/3sNlhOSUU7Fx5ezDbF7Bs1kYI+zvyWPkHVolTktqDgIpuUTADSM2puIj+u0gKbTE+ldksiFJ+JdUGYe2J5mkuDXE8rZdqSLNz80IF4y9QWl7+vy+4DOeuLGKREZU06EcITKqj9H/UZ10kfomLB85S19CZM6DqLlEa8ap3MPqkG1tyCNHplGJ7Eji4PBVcEcdSlFhYDCIo6oupzTyqd7fqClFbK1l1rlZpQOufGOjB9vUhDEUJ/MqtYctK8sRZB" providerName="System.Data.EntityClient" />-->
+		<!--Admin-->
+		<!--Admin red lan-->
+		<add name="SIACORAHEntitiesAdmin" connectionString="QSO9lM9GV+4pqrEWxII+4l6AKL09lii8B7BQb043QaINUVXfQac7Ce8Oo5GqS//f8nEyPs+jntaCf1iXjIR2vLNI5cUvkP5mY2+IkZ0w4y8q43/w2M0hsDCmMGkIXZnyeNQMxWRwOBprD2voJ2uES7t2QrghBy52ZCKHh6g5qeY8zbMqnqhh+m6vQC1JPkz2qOlGLbpkF1NPq7MviI7e8EiFL7QxVWXiFgNvuSMD7UazMlNYQZ8hPYiFWH6qR972Mrz5UTLjRxowIYbZKqOvf+O/jQXYmODf56RbxpzdpSg4EOaOQ+OqeaRqMKyhNbZDccwSn9/9xsHIPcSKZHmX8PrKaGRsoo2JGPypfjqbPZhg8g093D4NfgAG5tAtE7zF" providerName="System.Data.EntityClient"/>
+	</connectionStrings>
+	<appSettings>
+		<add key="PredeterminadoContenedorIoC" value="ContextoRaiz"/>
+		<add key="ValidationSettings:UnobtrusiveValidationMode" value="None"/>
+	</appSettings>
+	<system.web>
+		<!--<authorization>
+      <deny users="?" />
+    </authorization>-->
+		<authentication mode="Forms">
+			<!--<forms loginUrl="Login.aspx" defaultUrl="Login.aspx" timeout="15" cookieless="AutoDetect"/>-->
+		</authentication>
+		<compilation debug="true" targetFramework="4.5.2">
+			<assemblies>
+				<add assembly="DevExpress.Web.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B03F5F7F11D50A3A"/>
+				<add assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089"/>
+				<add assembly="DevExpress.RichEdit.v22.2.Core, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="System.Web.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089"/>
+				<add assembly="System.Data.Linq, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089"/>
+				<add assembly="DevExpress.Web.ASPxThemes.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"/>
+				<add assembly="DevExpress.Web.Bootstrap.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Data.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Drawing.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Printing.v22.2.Core, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Office.v22.2.Core, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.RichEdit.v22.2.Core, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.XtraCharts.v22.2.Web, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.ASPxHtmlEditor.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Dashboard.v22.2.Web.WebForms, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Dashboard.v22.2.Core, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.DataAccess.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Dashboard.v22.2.Web, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.ASPxTreeList.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.ASPxDiagram.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.ASPxGantt.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.ASPxGauges.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.ASPxPivotGrid.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.PivotGrid.v22.2.Core, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.ASPxGantt.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.ASPxGauges.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.XtraGauges.v22.2.Core, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.ASPxSpreadsheet.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Spreadsheet.v22.2.Core, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.DataVisualization.v22.2.Core, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="System.Net.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B03F5F7F11D50A3A"/>
+				<add assembly="DevExpress.Charts.v22.2.Core, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.XtraTreeMap.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.XtraCharts.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.XtraReports.v22.2.Web.WebForms, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.XtraReports.v22.2.Web, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.XtraReports.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.Resources.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.ASPxRichEdit.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.ASPxSpellChecker.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.SpellChecker.v22.2.Core, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.ASPxScheduler.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.XtraScheduler.v22.2.Core.Desktop, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.XtraScheduler.v22.2.Core, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Xpo.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Data.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Printing.v22.2.Core, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Drawing.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Office.v22.2.Core, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.RichEdit.v22.2.Core, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Dashboard.v22.2.Web.WebForms, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Dashboard.v22.2.Core, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Dashboard.v22.2.Web, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.DataAccess.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.Resources.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.ASPxTreeList.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.ASPxPivotGrid.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.PivotGrid.v22.2.Core, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.ASPxGantt.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.ASPxGauges.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.XtraGauges.v22.2.Core, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.ASPxSpreadsheet.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Spreadsheet.v22.2.Core, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.DataVisualization.v22.2.Core, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Charts.v22.2.Core, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.XtraTreeMap.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.XtraCharts.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.ASPxDiagram.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.XtraReports.v22.2.Web.WebForms, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.XtraReports.v22.2.Web, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.XtraReports.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.ASPxScheduler.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.XtraScheduler.v22.2.Core.Desktop, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.XtraScheduler.v22.2.Core, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.XtraCharts.v22.2.Web, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.ASPxRichEdit.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.ASPxSpellChecker.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.SpellChecker.v22.2.Core, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.ASPxHtmlEditor.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.Bootstrap.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Xpo.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Data.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Printing.v22.2.Core, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Drawing.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Office.v22.2.Core, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.RichEdit.v22.2.Core, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Dashboard.v22.2.Web.WebForms, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Dashboard.v22.2.Core, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Dashboard.v22.2.Web, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.DataAccess.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.Resources.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.ASPxDiagram.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.ASPxGantt.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.ASPxTreeList.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.ASPxGauges.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.XtraGauges.v22.2.Core, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.ASPxPivotGrid.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.PivotGrid.v22.2.Core, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.ASPxSpreadsheet.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Spreadsheet.v22.2.Core, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.DataVisualization.v22.2.Core, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Charts.v22.2.Core, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.XtraTreeMap.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.XtraCharts.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.XtraCharts.v22.2.Web, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.XtraReports.v22.2.Web.WebForms, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.XtraReports.v22.2.Web, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.XtraReports.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.ASPxRichEdit.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.ASPxSpellChecker.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.SpellChecker.v22.2.Core, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.ASPxHtmlEditor.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.ASPxScheduler.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.XtraScheduler.v22.2.Core.Desktop, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.XtraScheduler.v22.2.Core, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.Bootstrap.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Xpo.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Data.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Printing.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Drawing.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Office.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.RichEdit.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.ASPxGantt.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.ASPxTreeList.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.ASPxSpreadsheet.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Spreadsheet.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.DataVisualization.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Charts.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.XtraTreeMap.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.XtraCharts.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.ASPxGauges.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.XtraGauges.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Dashboard.v22.1.Web.WebForms, Version=22.1.3.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Dashboard.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Dashboard.v22.1.Web, Version=22.1.3.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.DataAccess.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.Resources.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.ASPxDiagram.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.ASPxPivotGrid.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.PivotGrid.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.XtraCharts.v22.1.Web, Version=22.1.3.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.XtraReports.v22.1.Web.WebForms, Version=22.1.3.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.XtraReports.v22.1.Web, Version=22.1.3.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.XtraReports.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.ASPxRichEdit.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.ASPxSpellChecker.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.SpellChecker.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.ASPxHtmlEditor.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.Bootstrap.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Web.ASPxScheduler.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.XtraScheduler.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.XtraScheduler.v22.1.Core.Desktop, Version=22.1.3.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/>
+				<add assembly="DevExpress.Xpo.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A"/></assemblies>
+		</compilation>
+		<httpRuntime targetFramework="4.5.2"/>
+		<pages validateRequest="true" clientIDMode="AutoID">
+			<controls>
+				<add tagPrefix="dx" namespace="DevExpress.Web" assembly="DevExpress.Web.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"/>
+			</controls>
+		</pages>
+		<httpModules>
+			<add type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" name="ASPxHttpHandlerModule"/>
+		</httpModules>
+		<httpHandlers>
+			<add type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" verb="GET,POST" path="DX.ashx" validate="false"/>
+			<add verb="GET,POST" path="ASPxUploadProgressHandlerPage.ashx" type="DevExpress.Web.ASPxUploadProgressHttpHandler, DevExpress.Web.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"/>
+			<add validate="false" verb="GET,POST" path="DXXRDV.axd" type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"/>
+			<add validate="false" verb="GET,POST" path="DXXRD.axd" type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"/>
+			<add validate="false" verb="GET,POST" path="DXQB.axd" type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"/>
+		</httpHandlers>
+	</system.web>
+	<system.codedom>
+		<compilers>
+			<compiler language="c#;cs;csharp" extension=".cs" type="Microsoft.CodeDom.Providers.DotNetCompilerPlatform.CSharpCodeProvider, Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" warningLevel="4" compilerOptions="/langversion:6 /nowarn:1659;1699;1701"/>
+			<compiler language="vb;vbs;visualbasic;vbscript" extension=".vb" type="Microsoft.CodeDom.Providers.DotNetCompilerPlatform.VBCodeProvider, Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" warningLevel="4" compilerOptions="/langversion:14 /nowarn:41008 /define:_MYTYPE=\&quot;Web\&quot; /optionInfer+"/>
+		</compilers>
+	</system.codedom>
+	<system.webServer>
+		<modules>
+			<add type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" name="ASPxHttpHandlerModule"/>
+		</modules>
+		<validation validateIntegratedModeConfiguration="false"/>
+		<handlers>
+			<add type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" verb="GET,POST" path="DX.ashx" name="ASPxHttpHandlerModule" preCondition="integratedMode"/>
+			<add name="ASPxUploadProgressHandler" preCondition="integratedMode" verb="GET,POST" path="ASPxUploadProgressHandlerPage.ashx" type="DevExpress.Web.ASPxUploadProgressHttpHandler, DevExpress.Web.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"/>
+			<add name="ASPxWebDocumentViewerHandlerModule" preCondition="integratedMode" verb="GET,POST" path="DXXRDV.axd" type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"/>
+			<add name="ASPxReportDesignerHandlerModule" preCondition="integratedMode" verb="GET,POST" path="DXXRD.axd" type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"/>
+			<add name="ASPxQueryBuilderDesignerHandlerModule" preCondition="integratedMode" verb="GET,POST" path="DXQB.axd" type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"/>
+		</handlers>
+	</system.webServer>
+	<devExpress>
+		<themes enableThemesAssembly="true" styleSheetTheme="" theme="" customThemeAssemblies="" baseColor="" font=""/>
+		<compression enableHtmlCompression="false" enableCallbackCompression="true" enableResourceCompression="true" enableResourceMerging="true"/>
+		<settings accessibilityCompliant="false" doctypeMode="Html5" rightToLeft="false" checkReferencesToExternalScripts="false" protectControlState="true" ieCompatibilityVersion="edge" bootstrapMode="Bootstrap3"/>
+		<errors callbackErrorRedirectUrl=""/>
+		<bootstrap allowClientObjectDeferredInitialization="true" mode="Bootstrap3" iconSet="Embedded"/>
+	</devExpress>
+</configuration>

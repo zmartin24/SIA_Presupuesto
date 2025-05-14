@@ -1,0 +1,369 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="frmEvaluacionMensualPresupuesto.aspx.cs" Inherits="SIA_Presupuesto.WebForm.Programacion.frmEvaluacionMensualPresupuesto" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+<%@ Register Assembly="DevExpress.Web.Bootstrap.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.Bootstrap" TagPrefix="dx" %>
+    <style type="text/css">
+
+    </style>
+
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+
+                <dx:BootstrapCallbackPanel ID="cpPrincipal" runat="server" Width="100%" ClientInstanceName="cpPrincipal" OnCallback="cpPrincipal_Callback">
+
+                    <ClientSideEvents EndCallback="Presupuesto.CpPrincipal_EndCallback" />
+                    <ContentCollection>
+                     <dx:ContentControl runat="server">
+                         <div class="row">
+                             <div class="col-md-12 col-sm-12 col-xs-12">
+                                 <div class="x_panel">
+                                     <div class="row">
+                                         <div class="row x_title">
+                                            <h4> Evaluación Mensual de Presupuesto </h4>
+                                             <div class="clearfix"></div>
+                                             <dx:ASPxHiddenField ID="hdfValores" runat="server" ClientInstanceName="hdfValores">
+                                             </dx:ASPxHiddenField>
+                                        </div>
+                                     </div>
+                                     <div class="row">
+                                         <div class="x_content">
+                                             <dx:BootstrapButton ID="btnSalir" runat="server" ClientInstanceName="btnSalir" OnClick="btnSalir_Click" Text="Salir">
+                                              <CssClasses Control="btn btn-primary" Icon="fa fa-reply"/>                      
+                                             </dx:BootstrapButton>
+                                         </div>
+                                    </div>
+                                     <div class="row">
+                                         <div class="x_content">
+                                             <dx:BootstrapGridView ID="grvPresupuesto" runat="server" AutoGenerateColumns="False" ClientInstanceName="grvReqDet" KeyFieldName="idEvaMenArea" Width="100%" OnRowUpdated="grvReqDet_RowUpdated" OnRowUpdating="grvReqDet_RowUpdating" OnRowValidating="grvReqDet_RowValidating" OnStartRowEditing="grvReqDet_StartRowEditing">
+                                                        <SettingsDetail AllowOnlyOneMasterRowExpanded="True" ShowDetailRow="True" />
+                                                        <Templates>
+                                                            <DetailRow>
+                                                                <dx:BootstrapGridView ID="grvDetalle" runat="server" AutoGenerateColumns="False" KeyFieldName="idEvaMenProDet" Width="100%" OnBeforePerformDataSelect="grvDetalle_BeforePerformDataSelect">
+                                                                    
+                                                                    <Columns>
+                                                                        <%--<dx:GridViewBandColumn Caption="Principal" VisibleIndex="0">
+                                                                            <HeaderStyle HorizontalAlign="Center" />
+                                                                            <Columns>--%>
+                                                                                <dx:BootstrapGridViewTextColumn Caption="Unidad" FieldName="Abreviado" VisibleIndex="1" Width="50px">
+                                                                                </dx:BootstrapGridViewTextColumn>
+                                                                                <dx:BootstrapGridViewTextColumn Caption="Descripción" FieldName="descripcion" VisibleIndex="0" Width="200px">
+                                                                                    <PropertiesTextEdit DisplayFormatString="d">
+                                                                                    </PropertiesTextEdit>
+                                                                                </dx:BootstrapGridViewTextColumn>
+                                                                                <dx:BootstrapGridViewSpinEditColumn Caption="Cantidad" FieldName="cantidad" VisibleIndex="2" Width="50px">
+                                                                                    <PropertiesSpinEdit DisplayFormatString="n">
+                                                                                    </PropertiesSpinEdit>
+                                                                                </dx:BootstrapGridViewSpinEditColumn>
+                                                                                <dx:BootstrapGridViewSpinEditColumn Caption="Precio" FieldName="precio" VisibleIndex="3" Width="50px">
+                                                                                    <PropertiesSpinEdit DisplayFormatString="n">
+                                                                                    </PropertiesSpinEdit>
+                                                                                </dx:BootstrapGridViewSpinEditColumn>
+                                                                            <%--</Columns>
+                                                                        </dx:GridViewBandColumn>--%>
+                                                                        <%--<dx:GridViewBandColumn Caption="Enero" VisibleIndex="1">
+                                                                            <HeaderStyle HorizontalAlign="Center" />
+                                                                            <Columns>--%>
+                                                                                <%--<dx:BootstrapGridViewSpinEditColumn Caption="Días" FieldName="diasEnero" VisibleIndex="0" Width="50px">
+                                                                                    <PropertiesSpinEdit DisplayFormatString="n">
+                                                                                    </PropertiesSpinEdit>
+                                                                                </dx:BootstrapGridViewSpinEditColumn>
+                                                                                <dx:BootstrapGridViewSpinEditColumn Caption="Cantidad" FieldName="cantEnero" VisibleIndex="1" Width="50px">
+                                                                                    <PropertiesSpinEdit DisplayFormatString="n">
+                                                                                    </PropertiesSpinEdit>
+                                                                                </dx:BootstrapGridViewSpinEditColumn>--%>
+                                                                                <dx:BootstrapGridViewSpinEditColumn Caption="Enero" FieldName="enero" VisibleIndex="4" Width="60px">
+                                                                                    <PropertiesSpinEdit DisplayFormatString="n">
+                                                                                    </PropertiesSpinEdit>
+                                                                                </dx:BootstrapGridViewSpinEditColumn>
+                                                                            <%--</Columns>
+                                                                        </dx:GridViewBandColumn>--%>
+                                                                        <%--<dx:GridViewBandColumn Caption="Febrero" VisibleIndex="2">
+                                                                            <HeaderStyle HorizontalAlign="Center" />
+                                                                            <Columns>--%>
+                                                                                <%--<dx:BootstrapGridViewSpinEditColumn Caption="Días" FieldName="diasFebrero" VisibleIndex="0" Width="50px">
+                                                                                    <PropertiesSpinEdit DisplayFormatString="n">
+                                                                                    </PropertiesSpinEdit>
+                                                                                </dx:BootstrapGridViewSpinEditColumn>
+                                                                                <dx:BootstrapGridViewSpinEditColumn Caption="Cantidad" FieldName="cantFebrero" VisibleIndex="1" Width="50px">
+                                                                                    <PropertiesSpinEdit DisplayFormatString="n">
+                                                                                    </PropertiesSpinEdit>
+                                                                                </dx:BootstrapGridViewSpinEditColumn>--%>
+                                                                                <dx:BootstrapGridViewSpinEditColumn Caption="Febrero" FieldName="febrero" VisibleIndex="5" Width="60px">
+                                                                                    <PropertiesSpinEdit DisplayFormatString="n">
+                                                                                    </PropertiesSpinEdit>
+                                                                                </dx:BootstrapGridViewSpinEditColumn>
+                                                                           <%-- </Columns>
+                                                                        </dx:GridViewBandColumn>--%>
+                                                                        <%--<dx:GridViewBandColumn Caption="Marzo" VisibleIndex="3">
+                                                                            <HeaderStyle HorizontalAlign="Center" />
+                                                                            <Columns>--%>
+                                                                                <%--<dx:BootstrapGridViewSpinEditColumn Caption="Días" FieldName="diasMarzo" VisibleIndex="0" Width="50px">
+                                                                                    <PropertiesSpinEdit DisplayFormatString="n">
+                                                                                    </PropertiesSpinEdit>
+                                                                                </dx:BootstrapGridViewSpinEditColumn>
+                                                                                <dx:BootstrapGridViewSpinEditColumn Caption="Cantidad" FieldName="cantMarzo" VisibleIndex="1" Width="50px">
+                                                                                    <PropertiesSpinEdit DisplayFormatString="n">
+                                                                                    </PropertiesSpinEdit>
+                                                                                </dx:BootstrapGridViewSpinEditColumn>--%>
+                                                                                <dx:BootstrapGridViewSpinEditColumn Caption="Marzo" FieldName="marzo" VisibleIndex="6" Width="60px">
+                                                                                    <PropertiesSpinEdit DisplayFormatString="n">
+                                                                                    </PropertiesSpinEdit>
+                                                                                </dx:BootstrapGridViewSpinEditColumn>
+                                                                            <%--</Columns>
+                                                                        </dx:GridViewBandColumn>--%>
+                                                                        <%--<dx:GridViewBandColumn Caption="Abril" VisibleIndex="4">
+                                                                            <HeaderStyle HorizontalAlign="Center" />
+                                                                            <Columns>--%>
+                                                                                <%--<dx:BootstrapGridViewSpinEditColumn Caption="Días" FieldName="diasAbril" VisibleIndex="0" Width="50px">
+                                                                                    <PropertiesSpinEdit DisplayFormatString="n">
+                                                                                    </PropertiesSpinEdit>
+                                                                                </dx:BootstrapGridViewSpinEditColumn>
+                                                                                <dx:BootstrapGridViewSpinEditColumn Caption="Cantidad" FieldName="cantAbril" VisibleIndex="1" Width="50px">
+                                                                                    <PropertiesSpinEdit DisplayFormatString="n">
+                                                                                    </PropertiesSpinEdit>
+                                                                                </dx:BootstrapGridViewSpinEditColumn>--%>
+                                                                                <dx:BootstrapGridViewSpinEditColumn Caption="Abril" FieldName="abril" VisibleIndex="7" Width="60px">
+                                                                                    <PropertiesSpinEdit DisplayFormatString="n">
+                                                                                    </PropertiesSpinEdit>
+                                                                                </dx:BootstrapGridViewSpinEditColumn>
+                                                                            <%--</Columns>
+                                                                        </dx:GridViewBandColumn>--%>
+                                                                        <%--<dx:GridViewBandColumn Caption="Mayo" VisibleIndex="5">
+                                                                            <HeaderStyle HorizontalAlign="Center" />
+                                                                            <Columns>--%>
+                                                                                <%--<dx:BootstrapGridViewSpinEditColumn Caption="Días" FieldName="diasMayo" VisibleIndex="0" Width="50px">
+                                                                                    <PropertiesSpinEdit DisplayFormatString="n">
+                                                                                    </PropertiesSpinEdit>
+                                                                                </dx:BootstrapGridViewSpinEditColumn>
+                                                                                <dx:BootstrapGridViewSpinEditColumn Caption="Cantidad" FieldName="cantMayo" VisibleIndex="1" Width="50px">
+                                                                                    <PropertiesSpinEdit DisplayFormatString="n">
+                                                                                    </PropertiesSpinEdit>
+                                                                                </dx:BootstrapGridViewSpinEditColumn>--%>
+                                                                                <dx:BootstrapGridViewSpinEditColumn Caption="Mayo" FieldName="mayo" VisibleIndex="8" Width="60px">
+                                                                                    <PropertiesSpinEdit DisplayFormatString="n">
+                                                                                    </PropertiesSpinEdit>
+                                                                                </dx:BootstrapGridViewSpinEditColumn>
+                                                                           <%-- </Columns>
+                                                                        </dx:GridViewBandColumn>--%>
+                                                                        <%--<dx:GridViewBandColumn Caption="Junio" VisibleIndex="6">
+                                                                            <HeaderStyle HorizontalAlign="Center" />
+                                                                            <Columns>--%>
+                                                                                <%--<dx:BootstrapGridViewSpinEditColumn Caption="Días" FieldName="diasJunio" VisibleIndex="0" Width="50px">
+                                                                                    <PropertiesSpinEdit DisplayFormatString="n">
+                                                                                    </PropertiesSpinEdit>
+                                                                                </dx:BootstrapGridViewSpinEditColumn>
+                                                                                <dx:BootstrapGridViewSpinEditColumn Caption="Cantidad" FieldName="cantJunio" VisibleIndex="1" Width="50px">
+                                                                                    <PropertiesSpinEdit DisplayFormatString="n">
+                                                                                    </PropertiesSpinEdit>
+                                                                                </dx:BootstrapGridViewSpinEditColumn>--%>
+                                                                                <dx:BootstrapGridViewSpinEditColumn Caption="Junio" FieldName="junio" VisibleIndex="9" Width="60px">
+                                                                                    <PropertiesSpinEdit DisplayFormatString="n">
+                                                                                    </PropertiesSpinEdit>
+                                                                                </dx:BootstrapGridViewSpinEditColumn>
+                                                                            <%--</Columns>
+                                                                        </dx:GridViewBandColumn>--%>
+                                                                        <%--<dx:GridViewBandColumn Caption="Julio" VisibleIndex="7">
+                                                                            <HeaderStyle HorizontalAlign="Center" />
+                                                                            <Columns>--%>
+                                                                                <%--<dx:BootstrapGridViewSpinEditColumn Caption="Días" FieldName="diasJulio" VisibleIndex="0" Width="50px">
+                                                                                    <PropertiesSpinEdit DisplayFormatString="n">
+                                                                                    </PropertiesSpinEdit>
+                                                                                </dx:BootstrapGridViewSpinEditColumn>
+                                                                                <dx:BootstrapGridViewSpinEditColumn Caption="Cantidad" FieldName="cantJulio" VisibleIndex="1" Width="50px">
+                                                                                    <PropertiesSpinEdit DisplayFormatString="n">
+                                                                                    </PropertiesSpinEdit>
+                                                                                </dx:BootstrapGridViewSpinEditColumn>--%>
+                                                                                <dx:BootstrapGridViewSpinEditColumn Caption="Julio" FieldName="julio" VisibleIndex="10" Width="60px">
+                                                                                    <PropertiesSpinEdit DisplayFormatString="n">
+                                                                                    </PropertiesSpinEdit>
+                                                                                </dx:BootstrapGridViewSpinEditColumn>
+                                                                            <%--</Columns>
+                                                                        </dx:GridViewBandColumn>--%>
+                                                                        <%--<dx:GridViewBandColumn Caption="Agosto" VisibleIndex="8">
+                                                                            <HeaderStyle HorizontalAlign="Center" />
+                                                                            <Columns>--%>
+                                                                                <%--<dx:BootstrapGridViewSpinEditColumn Caption="Días" FieldName="diasAgosto" VisibleIndex="0" Width="50px">
+                                                                                    <PropertiesSpinEdit DisplayFormatString="n">
+                                                                                    </PropertiesSpinEdit>
+                                                                                </dx:BootstrapGridViewSpinEditColumn>
+                                                                                <dx:BootstrapGridViewSpinEditColumn Caption="Cantidad" FieldName="cantAgosto" VisibleIndex="1" Width="50px">
+                                                                                    <PropertiesSpinEdit DisplayFormatString="n">
+                                                                                    </PropertiesSpinEdit>
+                                                                                </dx:BootstrapGridViewSpinEditColumn>--%>
+                                                                                <dx:BootstrapGridViewSpinEditColumn Caption="Agosto" FieldName="agosto" VisibleIndex="11" Width="60px">
+                                                                                    <PropertiesSpinEdit DisplayFormatString="n">
+                                                                                    </PropertiesSpinEdit>
+                                                                                </dx:BootstrapGridViewSpinEditColumn>
+                                                                           <%-- </Columns>
+                                                                        </dx:GridViewBandColumn>--%>
+                                                                        <%--<dx:GridViewBandColumn Caption="Setiembre" VisibleIndex="9">
+                                                                            <HeaderStyle HorizontalAlign="Center" />
+                                                                            <Columns>--%>
+                                                                                <%--<dx:BootstrapGridViewSpinEditColumn Caption="Días" FieldName="diasSetiembre" VisibleIndex="0" Width="50px">
+                                                                                    <PropertiesSpinEdit DisplayFormatString="n">
+                                                                                    </PropertiesSpinEdit>
+                                                                                </dx:BootstrapGridViewSpinEditColumn>
+                                                                                <dx:BootstrapGridViewSpinEditColumn Caption="Cantidad" FieldName="cantSetiembre" VisibleIndex="1" Width="50px">
+                                                                                    <PropertiesSpinEdit DisplayFormatString="n">
+                                                                                    </PropertiesSpinEdit>
+                                                                                </dx:BootstrapGridViewSpinEditColumn>--%>
+                                                                                <dx:BootstrapGridViewSpinEditColumn Caption="Setiembre" FieldName="setiembre" VisibleIndex="12" Width="60px">
+                                                                                    <PropertiesSpinEdit DisplayFormatString="n">
+                                                                                    </PropertiesSpinEdit>
+                                                                                </dx:BootstrapGridViewSpinEditColumn>
+                                                                           <%-- </Columns>
+                                                                        </dx:GridViewBandColumn>--%>
+                                                                        <%--<dx:GridViewBandColumn Caption="Octubre" VisibleIndex="10">
+                                                                            <HeaderStyle HorizontalAlign="Center" />
+                                                                            <Columns>--%>
+                                                                                <%--<dx:BootstrapGridViewSpinEditColumn Caption="Días" FieldName="diasOctubre" VisibleIndex="0" Width="50px">
+                                                                                    <PropertiesSpinEdit DisplayFormatString="n">
+                                                                                    </PropertiesSpinEdit>
+                                                                                </dx:BootstrapGridViewSpinEditColumn>
+                                                                                <dx:BootstrapGridViewSpinEditColumn Caption="Cantidad" FieldName="cantOctubre" VisibleIndex="1" Width="50px">
+                                                                                    <PropertiesSpinEdit DisplayFormatString="n">
+                                                                                    </PropertiesSpinEdit>
+                                                                                </dx:BootstrapGridViewSpinEditColumn>--%>
+                                                                                <dx:BootstrapGridViewSpinEditColumn Caption="Octubre" FieldName="octubre" VisibleIndex="13" Width="60px">
+                                                                                    <PropertiesSpinEdit DisplayFormatString="n">
+                                                                                    </PropertiesSpinEdit>
+                                                                                </dx:BootstrapGridViewSpinEditColumn>
+                                                                            <%--</Columns>
+                                                                        </dx:GridViewBandColumn>--%>
+                                                                        <%--<dx:GridViewBandColumn Caption="Noviembre" VisibleIndex="11">
+                                                                            <HeaderStyle HorizontalAlign="Center" />
+                                                                            <Columns>--%>
+                                                                                <%--<dx:BootstrapGridViewSpinEditColumn Caption="Días" FieldName="diasNoviembre" VisibleIndex="0" Width="50px">
+                                                                                    <PropertiesSpinEdit DisplayFormatString="n">
+                                                                                    </PropertiesSpinEdit>
+                                                                                </dx:BootstrapGridViewSpinEditColumn>
+                                                                                <dx:BootstrapGridViewSpinEditColumn Caption="Cantidad" FieldName="cantNoviembre" VisibleIndex="1" Width="50px">
+                                                                                    <PropertiesSpinEdit DisplayFormatString="n">
+                                                                                    </PropertiesSpinEdit>
+                                                                                </dx:BootstrapGridViewSpinEditColumn>--%>
+                                                                                <dx:BootstrapGridViewSpinEditColumn Caption="Noviembre" FieldName="noviembre" VisibleIndex="14" Width="60px">
+                                                                                    <PropertiesSpinEdit DisplayFormatString="n">
+                                                                                    </PropertiesSpinEdit>
+                                                                                </dx:BootstrapGridViewSpinEditColumn>
+                                                                            <%--</Columns>
+                                                                        </dx:GridViewBandColumn>--%>
+                                                                        <%--<dx:GridViewBandColumn Caption="Diciembre" VisibleIndex="12">
+                                                                            <HeaderStyle HorizontalAlign="Center" />
+                                                                            <Columns>--%>
+                                                                                <%--<dx:BootstrapGridViewSpinEditColumn Caption="Días" FieldName="diasDiciembre" VisibleIndex="0" Width="50px">
+                                                                                    <PropertiesSpinEdit DisplayFormatString="n">
+                                                                                    </PropertiesSpinEdit>
+                                                                                </dx:BootstrapGridViewSpinEditColumn>
+                                                                                <dx:BootstrapGridViewSpinEditColumn Caption="Cantidad" FieldName="cantDiciembre" VisibleIndex="1" Width="50px">
+                                                                                    <PropertiesSpinEdit DisplayFormatString="n">
+                                                                                    </PropertiesSpinEdit>
+                                                                                </dx:BootstrapGridViewSpinEditColumn>--%>
+                                                                                <dx:BootstrapGridViewSpinEditColumn Caption="Diciembre" FieldName="diciembre" VisibleIndex="15" Width="60px">
+                                                                                    <PropertiesSpinEdit DisplayFormatString="n">
+                                                                                    </PropertiesSpinEdit>
+                                                                                </dx:BootstrapGridViewSpinEditColumn>
+                                                                           <%-- </Columns>
+                                                                        </dx:GridViewBandColumn>--%>
+                                                                    </Columns>
+                                                                </dx:BootstrapGridView>
+                                                            </DetailRow>
+                                                        </Templates>
+                                                        <SettingsPager PageSize="100" AlwaysShowPager="True">
+                                                        </SettingsPager>
+                                                        <CssClasses Table="table table-striped table-bordered table-sm" />
+                                                        <Settings ShowFilterRow="True" ShowFilterRowMenu="True" ShowFilterRowMenuLikeItem="True" ShowHeaderFilterButton="True" />
+                                                        <SettingsBehavior AllowClientEventsOnLoad="False" />
+                                                        <SettingsDataSecurity AllowDelete="False" AllowEdit="False" AllowInsert="False" />
+                                                        <Columns>
+                                                            <dx:BootstrapGridViewTextColumn Caption="Cuenta" FieldName="numCuenta" VisibleIndex="0" Width="50px" ReadOnly="True">
+                                                                <Settings AutoFilterCondition="BeginsWith" />
+                                                            </dx:BootstrapGridViewTextColumn>
+                                                            <dx:BootstrapGridViewTextColumn Caption="Descripción" FieldName="descripcion" VisibleIndex="1" Width="250px" ReadOnly="True">
+                                                                <Settings AutoFilterCondition="Contains" />
+                                                            </dx:BootstrapGridViewTextColumn>
+                                                            <dx:BootstrapGridViewSpinEditColumn Caption="Enero" FieldName="enero"  VisibleIndex="7" Width="80px">
+                                                                <PropertiesSpinEdit DisplayFormatString="n" DisplayFormatInEditMode="True" NumberFormat="Custom">
+                                                                </PropertiesSpinEdit>
+                                                                <Settings AllowAutoFilter="False" AllowDragDrop="False" AllowGroup="False" AllowHeaderFilter="False" AllowSort="False" />
+                                                            </dx:BootstrapGridViewSpinEditColumn>
+                                                            <dx:BootstrapGridViewSpinEditColumn Caption="Febrero" FieldName="febrero"  VisibleIndex="8" Width="80px">
+                                                                <PropertiesSpinEdit DisplayFormatString="n" DisplayFormatInEditMode="True" NumberFormat="Custom">
+                                                                </PropertiesSpinEdit>
+                                                                <Settings AllowAutoFilter="False" AllowDragDrop="False" AllowGroup="False" AllowHeaderFilter="False" AllowSort="False" />
+                                                            </dx:BootstrapGridViewSpinEditColumn>
+                                                            <dx:BootstrapGridViewSpinEditColumn Caption="Marzo" FieldName="marzo"  VisibleIndex="9" Width="80px">
+                                                                <PropertiesSpinEdit DisplayFormatString="n" DisplayFormatInEditMode="True" NumberFormat="Custom">
+                                                                </PropertiesSpinEdit>
+                                                                <Settings AllowAutoFilter="False" AllowDragDrop="False" AllowGroup="False" AllowHeaderFilter="False" AllowSort="False" />
+                                                            </dx:BootstrapGridViewSpinEditColumn>
+                                                            <dx:BootstrapGridViewSpinEditColumn Caption="Abril" FieldName="abril"  VisibleIndex="10" Width="80px">
+                                                                <PropertiesSpinEdit DisplayFormatString="n" DisplayFormatInEditMode="True" NumberFormat="Custom">
+                                                                </PropertiesSpinEdit>
+                                                                <Settings AllowAutoFilter="False" AllowDragDrop="False" AllowGroup="False" AllowHeaderFilter="False" AllowSort="False" />
+                                                            </dx:BootstrapGridViewSpinEditColumn>
+                                                            <dx:BootstrapGridViewSpinEditColumn Caption="Mayo" FieldName="mayo"  VisibleIndex="11" Width="80px">
+                                                                <PropertiesSpinEdit DisplayFormatString="n" DisplayFormatInEditMode="True" NumberFormat="Custom">
+                                                                </PropertiesSpinEdit>
+                                                                <Settings AllowAutoFilter="False" AllowDragDrop="False" AllowGroup="False" AllowHeaderFilter="False" AllowSort="False" />
+                                                            </dx:BootstrapGridViewSpinEditColumn>
+                                                            <dx:BootstrapGridViewSpinEditColumn Caption="Junio" FieldName="junio"  VisibleIndex="12" Width="80px">
+                                                                <PropertiesSpinEdit DisplayFormatString="n" DisplayFormatInEditMode="True" NumberFormat="Custom">
+                                                                </PropertiesSpinEdit>
+                                                                <Settings AllowAutoFilter="False" AllowDragDrop="False" AllowGroup="False" AllowHeaderFilter="False" AllowSort="False" />
+                                                            </dx:BootstrapGridViewSpinEditColumn>
+                                                            <dx:BootstrapGridViewSpinEditColumn Caption="Julio" FieldName="julio"  VisibleIndex="13" Width="80px">
+                                                                <PropertiesSpinEdit DisplayFormatString="n" DisplayFormatInEditMode="True" NumberFormat="Custom">
+                                                                </PropertiesSpinEdit>
+                                                                <Settings AllowAutoFilter="False" AllowDragDrop="False" AllowGroup="False" AllowHeaderFilter="False" AllowSort="False" />
+                                                            </dx:BootstrapGridViewSpinEditColumn>
+                                                            <dx:BootstrapGridViewSpinEditColumn Caption="Agosto" FieldName="agosto"  VisibleIndex="14" Width="80px">
+                                                                <PropertiesSpinEdit DisplayFormatString="n" DisplayFormatInEditMode="True" NumberFormat="Custom">
+                                                                </PropertiesSpinEdit>
+                                                                <Settings AllowAutoFilter="False" AllowDragDrop="False" AllowGroup="False" AllowHeaderFilter="False" AllowSort="False" />
+                                                            </dx:BootstrapGridViewSpinEditColumn>
+                                                            <dx:BootstrapGridViewSpinEditColumn Caption="Setiembre" FieldName="setiembre"  VisibleIndex="15" Width="80px">
+                                                                <PropertiesSpinEdit DisplayFormatString="n" DisplayFormatInEditMode="True" NumberFormat="Custom">
+                                                                </PropertiesSpinEdit>
+                                                                <Settings AllowAutoFilter="False" AllowDragDrop="False" AllowGroup="False" AllowHeaderFilter="False" AllowSort="False" />
+                                                            </dx:BootstrapGridViewSpinEditColumn>
+                                                            <dx:BootstrapGridViewSpinEditColumn Caption="Octubre" FieldName="octubre"  VisibleIndex="16" Width="80px">
+                                                                <PropertiesSpinEdit DisplayFormatString="n" DisplayFormatInEditMode="True" NumberFormat="Custom">
+                                                                </PropertiesSpinEdit>
+                                                                <Settings AllowAutoFilter="False" AllowDragDrop="False" AllowGroup="False" AllowHeaderFilter="False" AllowSort="False" />
+                                                            </dx:BootstrapGridViewSpinEditColumn>
+                                                            <dx:BootstrapGridViewSpinEditColumn Caption="Noviembre" FieldName="noviembre"  VisibleIndex="17" Width="80px">
+                                                                <PropertiesSpinEdit DisplayFormatString="n" DisplayFormatInEditMode="True" NumberFormat="Custom">
+                                                                </PropertiesSpinEdit>
+                                                                <Settings AllowAutoFilter="False" AllowDragDrop="False" AllowGroup="False" AllowHeaderFilter="False" AllowSort="False" />
+                                                            </dx:BootstrapGridViewSpinEditColumn>
+                                                            <dx:BootstrapGridViewSpinEditColumn Caption="Diciembre" FieldName="diciembre"  VisibleIndex="18" Width="80px">
+                                                                <PropertiesSpinEdit DisplayFormatString="n" DisplayFormatInEditMode="True" NumberFormat="Custom">
+                                                                </PropertiesSpinEdit>
+                                                                <Settings AllowAutoFilter="False" AllowDragDrop="False" AllowGroup="False" AllowHeaderFilter="False" AllowSort="False" />
+                                                            </dx:BootstrapGridViewSpinEditColumn>
+                                                            <dx:BootstrapGridViewTextColumn Caption="Area" FieldName="desArea"  VisibleIndex="4">
+                                                                <Settings AutoFilterCondition="Contains" />
+                                                            </dx:BootstrapGridViewTextColumn>
+                                                            <dx:BootstrapGridViewTextColumn Caption="Subdirección" FieldName="desSubdireccion"  VisibleIndex="3">
+                                                                <Settings AutoFilterCondition="Contains" />
+                                                            </dx:BootstrapGridViewTextColumn>
+                                                            <dx:BootstrapGridViewTextColumn Caption="Dirección" FieldName="desDireccion"  VisibleIndex="2">
+                                                                <Settings AutoFilterCondition="Contains" />
+                                                            </dx:BootstrapGridViewTextColumn>
+                                                            <dx:BootstrapGridViewTextColumn Caption="Cuenta" FieldName="numCuentaNivel1" GroupIndex="0"  SortIndex="0" SortOrder="Ascending" VisibleIndex="6">
+                                                                <Settings AutoFilterCondition="BeginsWith" />
+                                                            </dx:BootstrapGridViewTextColumn>
+                                                            <dx:BootstrapGridViewTextColumn Caption="Cuenta" FieldName="numCuentaNivel2" GroupIndex="1"  SortIndex="1" SortOrder="Ascending" VisibleIndex="5">
+                                                                <Settings AutoFilterCondition="BeginsWith" />
+                                                            </dx:BootstrapGridViewTextColumn>
+                                                        </Columns>
+                                                    </dx:BootstrapGridView>
+                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                     </dx:ContentControl>
+                    </ContentCollection>
+                </dx:BootstrapCallbackPanel>
+</asp:Content>

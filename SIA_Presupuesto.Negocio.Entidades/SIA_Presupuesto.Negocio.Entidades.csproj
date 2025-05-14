@@ -1,0 +1,853 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E827EDCC-AD93-49FF-BD08-BB1BC9D589FB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SIA_Presupuesto.Negocio.Entidades</RootNamespace>
+    <AssemblyName>SIA_Presupuesto.Negocio.Entidades</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CalcEngine">
+      <HintPath>..\packages\CalcEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Area.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CalculoPresupuestoRemuneracion.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CalculoReajustePresupuestoRemuneracion.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CalendarioEvaluacionyAjusteAnual.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CalendarioPresupuestoAnual.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cargo.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CargoPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CertificacionDetalle.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CertificacionDetallePres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CertificacionMaster.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CertificacionMasterPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CertificacionRequerimiento.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CertificacionRequerimientoExportaPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CertificacionRequerimientoPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CertificacionRequerimientoSubprespuesto.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ConceptoCuentaContable.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ConceptoPresupuestoRemuneracion.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ConfiguracionPAA.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ConsolidadoEvaluacionReajuste.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ConsolidadoPresupuesto.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CuentaContable.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatoCalculoPresupuestoRemuneracion.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatoCategoriaLaboral.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatoConceptoCuentaContable.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatoCondicionLaboral.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatoRegimenLaboral.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatosPuestoCalculo.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DenomCuenta.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Denominador.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Direccion.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EjeOperativo.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Enumeradores\Estados.cs" />
+    <Compile Include="EstructuraPresupuestoRemuneracion.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EvaluacionMensualArea.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EvaluacionMensualAreaExporta.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EvaluacionMensualAreaMes.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EvaluacionMensualAreaPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EvaluacionMensualDetalle.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EvaluacionMensualDetalleMes.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EvaluacionMensualDetallePres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EvaluacionMensualPresupuestoPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EvaluacionMensualProgramacion.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EvaluacionMensualProgramacionArea.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EvaluacionMensualProgramacionPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EvaluacionPresupuestoDetalleMovimientosPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EvaluacionPresupuestoPorCuentasPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EvaluacionReajusteMensualAreaExporta.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EvaluacionReajusteMensualDetallePorPresupuesto.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EvaluacionReajustePorSubdireccion.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FondoEjecutado.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FondoEjecutadoFecha.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FondoEjecutadosSubpresupuesto.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Forebi.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ForebiDetalle.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ForebisePres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ForeDetallePres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Forese.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ForeseDetalle.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FuenteFinanciamiento.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GastoRecurrente.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GastoRecurrenteDetalle.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GastoRecurrenteDetalleMes.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GastoRecurrenteDetallePres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GastoRecurrenteRequerimiento.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GastoRecurrenteRequerimientoPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GrupoCuentaDetalle.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GrupoCuentaPresupuesto.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GrupoFinanciamiento.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GrupoFinanciamientoDetalle.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GrupoPresupuesto.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GrupoPresupuestoPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ImporteMinCerPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modalidad.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Moneda.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OpcionMenuSistemaUsuarioPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrdenPorCertificacionPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrigenConcepto.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ParametroPresupuestoRemuneracion.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Parciales\PartidaPresupuestal.cs" />
+    <Compile Include="Parciales\CertificacionMasterPres.cs" />
+    <Compile Include="Parciales\CertificacionRequerimientoPres.cs" />
+    <Compile Include="Parciales\EvaluacionMensualAreaExporta.cs" />
+    <Compile Include="Parciales\EvaluacionMensualAreaPres.cs" />
+    <Compile Include="Parciales\EvaluacionMensualProgramacion.cs" />
+    <Compile Include="Parciales\PartidaPresupuestalPrecioPres.cs" />
+    <Compile Include="Parciales\ReporteRequerimientoMensualSeguimientoForebiseCabecera.cs" />
+    <Compile Include="Parciales\ReporteRequerimientoMensualSeguimientoDetallePres.cs" />
+    <Compile Include="Parciales\ReporteEvaluacionPresupuestoPorCuentasPres.cs" />
+    <Compile Include="Parciales\ReportePresupuestoFasesPres.cs" />
+    <Compile Include="Parciales\ReporteEjecucionPresupuestoPorCuentasPres.cs" />
+    <Compile Include="Parciales\EvaluacionPresupuestoPorCuentasPres.cs" />
+    <Compile Include="Parciales\EvaluacionReajusteMensualAreaExporta.cs" />
+    <Compile Include="Parciales\Forebi.cs" />
+    <Compile Include="Parciales\Forese.cs" />
+    <Compile Include="Parciales\GastoRecurrenteRequerimientoPres.cs" />
+    <Compile Include="Parciales\PlanAnualAdquisicionRequerimientoPres.cs" />
+    <Compile Include="Parciales\ProgramacionAnual.cs" />
+    <Compile Include="Parciales\ProgramacionAnualAreaExporta.cs" />
+    <Compile Include="Parciales\ProgramacionAnualAreaPres.cs" />
+    <Compile Include="Parciales\ReajusteMensualAreaExporta.cs" />
+    <Compile Include="Parciales\ReajusteMensualAreaPres.cs" />
+    <Compile Include="Parciales\ReporteEvaluacionMensualExportaPres.cs" />
+    <Compile Include="Parciales\ReporteEvaluacionReajusteMensualExportaPres.cs" />
+    <Compile Include="Parciales\ReporteProgramacionAnualExportaMasivoPres.cs" />
+    <Compile Include="Parciales\ReporteReajusteMensualExportaPres.cs" />
+    <Compile Include="Parciales\ReporteEvaluacionDetalladaBienSerExporta.cs" />
+    <Compile Include="Parciales\ReportePresupuestoAprobadoComprometidoEjecutadoPres.cs" />
+    <Compile Include="Parciales\RequerimientoMensualBienServicio.cs" />
+    <Compile Include="Parciales\RequerimientoBienServicioDetalleMes.cs" />
+    <Compile Include="Parciales\RequerimientoBienServicio.cs" />
+    <Compile Include="Parciales\ReporteRequerimientoBienServicioDireccionAreaExporta_Pres.cs" />
+    <Compile Include="Parciales\ReporteProgramacionAnualExportaPres.cs" />
+    <Compile Include="Parciales\ReporteSubpresupuestoExportaPres.cs" />
+    <Compile Include="Parciales\ReporteRequerimientoBienServicioExportaPres.cs" />
+    <Compile Include="Parciales\RequerimientoBienServicioDetallePresExporta.cs" />
+    <Compile Include="Parciales\SubPresupuestoAreaPres.cs" />
+    <Compile Include="PartidaPresupuestal.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PartidaPresupuestalCuenta.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PartidaPresupuestalPrecioPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PartidaPresupuestalPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Periodo.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PlanAnualAdquisicion.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PlanAnualAdquisicionDetalle.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PlanAnualAdquisicionDetalleMes.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PlanAnualAdquisicionDetallePres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PlanAnualAdquisicionReqDetallePres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PlanAnualAdquisicionReqPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PlanAnualAdquisicionRequerimiento.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PlanAnualAdquisicionRequerimientoPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PlanCuenta.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Poa.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PoaVersion.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PocosAdicionales\CuentaContablePoco.cs" />
+    <Compile Include="PocosAdicionales\DetalleRequerimientoMensualBienServcioMigraPoco.cs" />
+    <Compile Include="PocosAdicionales\EvaluacionPresupuestoPoco.cs" />
+    <Compile Include="PocosAdicionales\ForebiPoco.cs" />
+    <Compile Include="PocosAdicionales\ForeDetallePoco.cs" />
+    <Compile Include="PocosAdicionales\GrupoPresupuestoPoco.cs" />
+    <Compile Include="PocosAdicionales\GrupoPresupuestoTransferidoPoco.cs" />
+    <Compile Include="PocosAdicionales\ItemPoco.cs" />
+    <Compile Include="PocosAdicionales\ParametroPoco.cs" />
+    <Compile Include="PocosAdicionales\PlanAnualAdquisicionDetallePoco.cs" />
+    <Compile Include="PocosAdicionales\PresupuestoRecepcionadoPoco.cs" />
+    <Compile Include="PocosAdicionales\ProgramacionEjeOperativoPoco.cs" />
+    <Compile Include="PocosAdicionales\PropiedadPoco.cs" />
+    <Compile Include="PocosAdicionales\PuestoPoco.cs" />
+    <Compile Include="PocosAdicionales\Resultado.cs" />
+    <Compile Include="PocosAdicionales\ResultadoCalculoPoco.cs" />
+    <Compile Include="PocosAdicionales\RubroBienServicioCuentaPoco.cs" />
+    <Compile Include="PocosAdicionales\RequerimientoBienServicioPoco.cs" />
+    <Compile Include="PocosAdicionales\PoaVersionPoco.cs" />
+    <Compile Include="PocosAdicionales\RubroBienServicioPoco.cs" />
+    <Compile Include="PocosAdicionales\SedeLaboralPoco.cs" />
+    <Compile Include="PocosAdicionales\PartidaPresupuestalCuentaPoco.cs" />
+    <Compile Include="PocosAdicionales\SubPresupuestoPoco.cs" />
+    <Compile Include="PocosAdicionales\UbigeoPoco.cs" />
+    <Compile Include="PocosAdicionales\UsuarioOperacion.cs" />
+    <Compile Include="PrecioBienServicioPorGruPrePres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PrecioBienServicioPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Presupuesto.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PresupuestoPorErradicacion.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PresupuestoPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PresupuestoRecepcionado.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PresupuestoRemuneracion.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PresupuestoRemuneracionDet.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PresupuestoRemuneracionExporta.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Producto.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductoDenominador.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductoPartidaPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductoPrecioPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramacionAnual.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramacionAnualArea.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramacionAnualAreaExporta.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramacionAnualAreaMes.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramacionAnualAreaPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramacionAnualDetalle.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramacionAnualDetalleMes.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramacionAnualDetallePorMesPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramacionAnualDetallePres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramacionAnualEjeOperativo.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramacionAnualGastoDetalleMes.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramacionAnualPlanAdqDetalleMes.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramacionAnualPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramacionAnualSede.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropiedadPresupuestoRemuneracion.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PuestoPresupuesto.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PuestoReajustePresupuesto.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PuestoReqPre.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PuestoRequerimiento.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PuestoRequerimientoAnualPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReajusteMensualArea.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReajusteMensualAreaExporta.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReajusteMensualAreaMes.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReajusteMensualAreaPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReajusteMensualDetalle.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReajusteMensualDetalleMes.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReajusteMensualDetallePorMesPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReajusteMensualDetallePres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReajusteMensualPresupuesto.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReajusteMensualPresupuestoPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReajusteMensualProgramacion.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReajusteMensualProgramacionArea.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReajustePresupuestoRemuneracion.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReajustePresupuestoRemuneracionDet.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReajusteProgramacionMensualDetalleMes.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteCertificacionOrdenProvisionPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteCertificacionPresupuestalPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteEjecucionPresupuestoPorCuentasDetallePres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteEjecucionPresupuestoPorCuentasPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteEvaluacionDetalladaBienSerExportaPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteEvaluacionDetalladaBienSerPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteEvaluacionMensualDetalleExportaPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteEvaluacionMensualExportaGenericaPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteEvaluacionMensualExportaPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteEvaluacionPresupuestoPorCuentasDetallePres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteEvaluacionPresupuestoPorCuentasPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteEvaluacionReajusteMensualDetalleExportaPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteEvaluacionReajusteMensualExportaPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteGastoRecurrenteDetalleDireccionPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteGastoRecurrenteDetallePres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteOrdenCompraServicioComprometidasPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteOrdenCompraServicioPresupuestoPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReportePlanAnualAdquisicionDetallePres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReportePlanAnualAdquisicionDireccionPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReportePlanAnualAdquisicionExportaPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReportePresupuesto.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReportePresupuestoAprobadoComprometidoEjecutadoPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReportePresupuestoDetalle.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReportePresupuestoEjecutadoFondosPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReportePresupuestoEjecutadoPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReportePresupuestoFasesPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteProgramacionAnualDetalleExportaMasivoPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteProgramacionAnualDetalleExportaPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteProgramacionAnualExportaMasivoPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteProgramacionAnualExportaPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteProgramacionAnualGenericaGastosPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteReajusteMensualDetalleExportaPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteReajusteMensualExportaPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteRequerimientoBienServicioDetalleExportaPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteRequerimientoBienServicioDetalleMensualPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteRequerimientoBienServicioDireccionAreaDetalleExporta_Pres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteRequerimientoBienServicioDireccionAreaExporta_Pres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteRequerimientoBienServicioExportaPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteRequerimientoMensualSeguimientoDetalleForebisePres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteRequerimientoMensualSeguimientoDetallePres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteRequerimientoMensualSeguimientoForebisePres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteRequerimientoMensualSeguimientoPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteRequerimientoRRHHDireccionImportePres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteRequerimientoRRHHPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteSubpresupuestoDetalleExportaPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteSubpresupuestoExportaPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RequerimientoBienServicio.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RequerimientoBienServicioDetalle.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RequerimientoBienServicioDetalleExporta.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RequerimientoBienServicioDetalleMes.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RequerimientoBienServicioDetallePres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RequerimientoBienServicioDetallePresExporta.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RequerimientoBienServicioPendientePorCuentaPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RequerimientoBienServicioPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RequerimientoMensualBienServicio.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RequerimientoMensualBienServicioPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RequerimientoMensualDetalle.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RequerimientoMensualDetallePres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RequerimientoReajusteMensual.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RequerimientoRecursoHumano.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RequerimientoRecursoHumanoDetallePres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RequerimientoRecursoHumanoPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResumenEvaFinanCorahSaal.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResumenPresupuestoPorSubdireccion.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResumenReajustePresupuestoPorSubdirecciones.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RubroBienServicio.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RubroBienServicioCuenta.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SaldosEvaReaPorDir.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SedeLaboral.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Subdireccion.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Subpresupuesto.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SubPresupuestoAreaDetallePres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SubPresupuestoAreaPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SubPresupuestoDetallePres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SubPresupuestoImporteCertificacion_Pres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SubPresupuestoPocoPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SubPresupuestoPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TipoActividad.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TipoCambioAnual.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TipoCambioPresupuesto.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TipoConfiguracionPAA.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TipoReporte.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TipoReporteGrupoFinan.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TipoReporteGrupoPresupuesto.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrabajadorPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ubigeo.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Unidad.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UsuarioCorreoPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ValidaFechaCertificacionPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ValidarForebisePres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vCotizacionCompra.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vCotizacionDetalleCompra.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vCotizacionDetalleServicio.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vCotizacionServicio.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VerificaCertificacionDetallePres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VerificaSubpresupuestoPres.cs">
+      <DependentUpon>Entidades.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Entidades.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Entidades.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

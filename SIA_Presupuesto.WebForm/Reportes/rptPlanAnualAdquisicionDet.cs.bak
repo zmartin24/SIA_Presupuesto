@@ -1,0 +1,27 @@
+﻿using System;
+using System.Drawing;
+using System.Collections;
+using System.ComponentModel;
+using DevExpress.XtraReports.UI;
+
+namespace SIA_Presupuesto.WebForm.Reporte
+{
+    public partial class rptPlanAnualAdquisicionDet : DevExpress.XtraReports.UI.XtraReport
+    {
+        public rptPlanAnualAdquisicionDet()
+        {
+            InitializeComponent();
+        }
+        string vtotal = string.Empty;
+        private void xrlFueFin_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        {
+            vtotal = vtotal + " " + GetCurrentColumnValue("fuenteFinan") == null ? " No " : GetCurrentColumnValue("fuenteFinan").ToString() + ", ";
+        }
+
+        private void xrlTotal_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        {
+            int n = vtotal.Length;
+            xrlTotal.Text = "Total " + vtotal.ToString().Substring(1, vtotal.Length - 3) + " :";
+        }
+    }
+}

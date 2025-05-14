@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="81e71907ead2437fa56441a0ddf9db50" Name="Diagram1" ZoomLevel="93">
+        <EntityTypeShape EntityType="SIACORAHModel.Direccion" Width="1.5" PointX="3" PointY="0.625" />
+        <EntityTypeShape EntityType="SIACORAHModel.Subdireccion" Width="1.5" PointX="6.625" PointY="0.625" />
+        <EntityTypeShape EntityType="SIACORAHModel.CuentaContable" Width="1.5" PointX="0.75" PointY="11" />
+        <EntityTypeShape EntityType="SIACORAHModel.PlanCuenta" Width="1.5" PointX="0.75" PointY="18" />
+        <AssociationConnector Association="SIACORAHModel.FK_CuentaContable_CuentaContable" />
+        <AssociationConnector Association="SIACORAHModel.FK_CuentaContable_PlanCuenta" />
+        <EntityTypeShape EntityType="SIACORAHModel.Area" Width="1.5" PointX="3.75" PointY="3.875" />
+        <EntityTypeShape EntityType="SIACORAHModel.Producto" Width="1.5" PointX="5.25" PointY="10.875" />
+        <EntityTypeShape EntityType="SIACORAHModel.Unidad" Width="1.5" PointX="3" PointY="10.75" />
+        <AssociationConnector Association="SIACORAHModel.FK_Producto_Unidad" />
+        <EntityTypeShape EntityType="SIACORAHModel.Moneda" Width="1.5" PointX="4.875" PointY="0.625" />
+        <EntityTypeShape EntityType="SIACORAHModel.GrupoCuentaDetalle" Width="1.5" PointX="3" PointY="14.5" />
+        <EntityTypeShape EntityType="SIACORAHModel.GrupoCuentaPresupuesto" Width="1.5" PointX="0.75" PointY="21.125" />
+        <AssociationConnector Association="SIACORAHModel.FK_GrupoCuentaDetalle_CuentaContable" />
+        <AssociationConnector Association="SIACORAHModel.FK_GrupoCuentaDetalle_GrupoCuentaPresupuesto" />
+        <EntityTypeShape EntityType="SIACORAHModel.TipoCambioPresupuesto" Width="1.5" PointX="8.375" PointY="0.625" />
+        <EntityTypeShape EntityType="SIACORAHModel.RequerimientoBienServicio" Width="1.5" PointX="3" PointY="19.375" />
+        <EntityTypeShape EntityType="SIACORAHModel.DenomCuenta" Width="1.5" PointX="10.5" PointY="18.875" />
+        <EntityTypeShape EntityType="SIACORAHModel.Denominador" Width="1.5" PointX="8.25" PointY="12.875" />
+        <EntityTypeShape EntityType="SIACORAHModel.ProductoDenominador" Width="1.5" PointX="10.5" PointY="9.5" />
+        <AssociationConnector Association="SIACORAHModel.FK_DenomCuenta_Denominador" ManuallyRouted="true" >
+          <ConnectorPoint PointX="9.53125" PointY="15.047587890625" />
+          <ConnectorPoint PointX="9.53125" PointY="19.15625" />
+          <ConnectorPoint PointX="10.5" PointY="19.15625" />
+        </AssociationConnector>
+        <AssociationConnector Association="SIACORAHModel.FK_ProductoDenominador_Denominador" />
+        <AssociationConnector Association="SIACORAHModel.FK_ProductoDenominador_Producto" />
+        <EntityTypeShape EntityType="SIACORAHModel.ProgramacionAnualAreaMes" Width="1.5" PointX="6" PointY="25.375" />
+        <EntityTypeShape EntityType="SIACORAHModel.ProgramacionAnualArea" Width="1.625" PointX="6" PointY="6" />
+        <AssociationConnector Association="SIACORAHModel.FK_ProgramacionAnualArea_CuentaContable" />
+        <AssociationConnector Association="SIACORAHModel.FK_ProgramacionAnualAreaMes_ProgramacionAnualArea" />
+        <EntityTypeShape EntityType="SIACORAHModel.EvaluacionMensualAreaMes" Width="1.5" PointX="20.125" PointY="11" />
+        <EntityTypeShape EntityType="SIACORAHModel.EvaluacionMensualDetalle" Width="1.5" PointX="20.125" PointY="7" />
+        <EntityTypeShape EntityType="SIACORAHModel.EvaluacionMensualProgramacionArea" Width="1.5" PointX="8.25" PointY="10" />
+        <EntityTypeShape EntityType="SIACORAHModel.ReajusteMensualArea" Width="1.5" PointX="6" PointY="30.25" />
+        <EntityTypeShape EntityType="SIACORAHModel.ReajusteMensualAreaMes" Width="1.5" PointX="8.25" PointY="28.5" />
+        <EntityTypeShape EntityType="SIACORAHModel.ReajusteMensualProgramacionArea" Width="1.5" PointX="8.25" PointY="7" />
+        <AssociationConnector Association="SIACORAHModel.FK_EvaluacionMensualProgramacionArea_ProgramacionAnualArea" />
+        <AssociationConnector Association="SIACORAHModel.FK_ReajusteMensualProgramacionArea_ProgramacionAnualArea" />
+        <AssociationConnector Association="SIACORAHModel.FK_ReajusteMensualAreaMes_ReajusteMensualArea" />
+        <AssociationConnector Association="SIACORAHModel.FK_ReajusteMensualProgramacionArea_ReajusteMensualArea" />
+        <EntityTypeShape EntityType="SIACORAHModel.EvaluacionMensualDetalleMes" Width="1.5" PointX="22.375" PointY="8.75" />
+        <AssociationConnector Association="SIACORAHModel.FK_EvaluacionMensualDetalleMes_EvaluacionMensualAreaMes" />
+        <AssociationConnector Association="SIACORAHModel.FK_EvaluacionMensualDetalleMes_EvaluacionMensualDetalle" />
+        <EntityTypeShape EntityType="SIACORAHModel.ConfiguracionPAA" Width="1.5" PointX="14" PointY="1.25" />
+        <EntityTypeShape EntityType="SIACORAHModel.FuenteFinanciamiento" Width="1.5" PointX="11" PointY="13.875" />
+        <EntityTypeShape EntityType="SIACORAHModel.PlanAnualAdquisicionDetalleMes" Width="1.5" PointX="15.5" PointY="12.5" />
+        <EntityTypeShape EntityType="SIACORAHModel.TipoConfiguracionPAA" Width="1.5" PointX="16.5" PointY="1.5" />
+        <AssociationConnector Association="SIACORAHModel.FK_ConfiguracionPAA_TipoConfiguracionPAA" />
+        <EntityTypeShape EntityType="SIACORAHModel.Ubigeo" Width="1.5" PointX="7.75" PointY="15.625" />
+        <AssociationConnector Association="SIACORAHModel.FK_Ubigeo_Ubigeo" />
+        <EntityTypeShape EntityType="SIACORAHModel.PlanAnualAdquisicionRequerimiento" Width="1.5" PointX="11" PointY="25.125" />
+        <AssociationConnector Association="SIACORAHModel.FK_PlanAnualAdquisicionRequerimiento_RequerimientoBienServicio" />
+        <EntityTypeShape EntityType="SIACORAHModel.PlanAnualAdquisicion" Width="1.5" PointX="18.375" PointY="16" />
+        <AssociationConnector Association="SIACORAHModel.FK_PlanAnualAdquisicionRequerimiento_PlanAnualAdquisicion" />
+        <EntityTypeShape EntityType="SIACORAHModel.PlanAnualAdquisicionDetalle" Width="1.5" PointX="13.25" PointY="16" />
+        <AssociationConnector Association="SIACORAHModel.FK_PlanAnualAdquisicionDetalle_Unidad" />
+        <AssociationConnector Association="SIACORAHModel.FK_PlanAnualAdquisicionesDetalle_Ubigeo" />
+        <AssociationConnector Association="SIACORAHModel.FK_PlanAnualAdquisicionesDetalle_FuenteFinanciamiento" />
+        <AssociationConnector Association="SIACORAHModel.FK_PlanAnualAdquisicionDetalle_PlanAnualAdquisicionRequerimiento" />
+        <AssociationConnector Association="SIACORAHModel.FK_PlanAnualAdquisicionDetalleMes_PlanAnualAdquisicionDetalle" />
+        <EntityTypeShape EntityType="SIACORAHModel.GastoRecurrente" Width="1.5" PointX="11" PointY="34.625" />
+        <EntityTypeShape EntityType="SIACORAHModel.RubroBienServicio" Width="1.5" PointX="20.375" PointY="16" />
+        <EntityTypeShape EntityType="SIACORAHModel.RubroBienServicioCuenta" Width="1.5" PointX="22.625" PointY="16" />
+        <AssociationConnector Association="SIACORAHModel.FK_RubroBienServicioCuenta_RubroBienServicio" />
+        <EntityTypeShape EntityType="SIACORAHModel.GastoRecurrenteDetalleMes" Width="1.5" PointX="17.75" PointY="25.75" />
+        <EntityTypeShape EntityType="SIACORAHModel.GastoRecurrenteRequerimiento" Width="1.5" PointX="13.25" PointY="26.75" />
+        <AssociationConnector Association="SIACORAHModel.FK_GastoRecurrenteRequerimiento_GastoRecurrente" />
+        <AssociationConnector Association="SIACORAHModel.FK_GastoRecurrenteRequerimiento_RequerimientoBienServicio" />
+        <EntityTypeShape EntityType="SIACORAHModel.GastoRecurrenteDetalle" Width="1.5" PointX="15.5" PointY="26.625" />
+        <AssociationConnector Association="SIACORAHModel.FK_GastoRecurrenteDetalle_GastoRecurrenteRequerimiento" />
+        <AssociationConnector Association="SIACORAHModel.FK_GastoRecurrenteDetalleMes_GastoRecurrenteDetalle" />
+        <EntityTypeShape EntityType="SIACORAHModel.EvaluacionMensualProgramacionPres" Width="1.5" PointX="17.875" PointY="30.125" />
+        <EntityTypeShape EntityType="SIACORAHModel.EvaluacionMensualProgramacion" Width="1.5" PointX="3" PointY="24.125" />
+        <AssociationConnector Association="SIACORAHModel.FK_EvaluacionMensualProgramacionPres_EvaluacionMensualProgramacion" />
+        <EntityTypeShape EntityType="SIACORAHModel.EvaluacionMensualArea" Width="1.5" PointX="13.25" PointY="10.625" />
+        <AssociationConnector Association="SIACORAHModel.FK_EvaluacionMensualArea_CuentaContable" />
+        <AssociationConnector Association="SIACORAHModel.FK_EvaluacionMensualArea_EvaluacionMensualProgramacion" />
+        <AssociationConnector Association="SIACORAHModel.FK_EvaluacionMensualAreaMes_EvaluacionMensualArea" />
+        <AssociationConnector Association="SIACORAHModel.FK_EvaluacionMensualDetalle_EvaluacionMensualArea" />
+        <AssociationConnector Association="SIACORAHModel.FK_EvaluacionMensualProgramacionArea_EvaluacionMensualArea" />
+        <EntityTypeShape EntityType="SIACORAHModel.TipoReporte" Width="1.5" PointX="16.25" PointY="41.75" />
+        <EntityTypeShape EntityType="SIACORAHModel.TipoReporteGrupoFinan" Width="1.5" PointX="18.5" PointY="34.625" />
+        <AssociationConnector Association="SIACORAHModel.FK_TipoReporteGrupoFinan_TipoReporte" />
+        <EntityTypeShape EntityType="SIACORAHModel.Presupuesto" Width="1.5" PointX="0.75" PointY="2" />
+        <EntityTypeShape EntityType="SIACORAHModel.GrupoFinanciamiento" Width="1.5" PointX="13.25" PointY="32.375" />
+        <EntityTypeShape EntityType="SIACORAHModel.GrupoFinanciamientoDetalle" Width="1.5" PointX="15.5" PointY="32.5" />
+        <AssociationConnector Association="SIACORAHModel.FK_GrupoFinanciamiento_FuenteFinanciamiento" />
+        <AssociationConnector Association="SIACORAHModel.FK_GrupoFinanciamientoDetalle_GrupoFinanciamiento" />
+        <AssociationConnector Association="SIACORAHModel.FK_TipoReporteGrupoFinan_GrupoFinanciamiento" />
+        <EntityTypeShape EntityType="SIACORAHModel.ProgramacionAnualGastoDetalleMes" Width="1.5" PointX="20" PointY="22.25" />
+        <EntityTypeShape EntityType="SIACORAHModel.ProgramacionAnualPlanAdqDetalleMes" Width="1.5" PointX="17.75" PointY="12.875" />
+        <AssociationConnector Association="SIACORAHModel.FK_ProgramacionAnualGastoDetalleMes_GastoRecurrenteDetalleMes" />
+        <AssociationConnector Association="SIACORAHModel.FK_ProgramacionAnualPlanAdqDetalleMes_PlanAnualAdquisicionDetalleMes" />
+        <EntityTypeShape EntityType="SIACORAHModel.RequerimientoBienServicioDetalleMes" Width="1.5" PointX="7.5" PointY="19.5" />
+        <EntityTypeShape EntityType="SIACORAHModel.ForebiDetalle" Width="1.5" PointX="14.75" PointY="5.75" />
+        <EntityTypeShape EntityType="SIACORAHModel.ForeseDetalle" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="SIACORAHModel.EjeOperativo" Width="1.5" PointX="19.25" PointY="43.375" />
+        <EntityTypeShape EntityType="SIACORAHModel.Modalidad" Width="1.5" PointX="19.25" PointY="46.75" />
+        <EntityTypeShape EntityType="SIACORAHModel.SedeLaboral" Width="1.5" PointX="10" PointY="21.875" />
+        <AssociationConnector Association="SIACORAHModel.FK_Sede_Ubigeo" />
+        <EntityTypeShape EntityType="SIACORAHModel.ProgramacionAnualSede" Width="2.125" PointX="23.75" PointY="32.25" />
+        <AssociationConnector Association="SIACORAHModel.FK_ProgramacionAnualSede_SedeLaboral" />
+        <EntityTypeShape EntityType="SIACORAHModel.ProgramacionAnualEjeOperativo" Width="1.5" PointX="23.75" PointY="41" />
+        <AssociationConnector Association="SIACORAHModel.FK_ProgramacionAnualEjeOperativo_EjeOperativo" />
+        <EntityTypeShape EntityType="SIACORAHModel.ReajusteProgramacionMensualDetalleMes" Width="1.5" PointX="20.25" PointY="25.625" />
+        <EntityTypeShape EntityType="SIACORAHModel.ReportePresupuesto" Width="1.5" PointX="18.5" PointY="50.875" />
+        <EntityTypeShape EntityType="SIACORAHModel.ReportePresupuestoDetalle" Width="1.5" PointX="20.75" PointY="50.875" />
+        <EntityTypeShape EntityType="SIACORAHModel.TipoReporteGrupoPresupuesto" Width="1.5" PointX="18.5" PointY="38.625" />
+        <AssociationConnector Association="SIACORAHModel.FK_ReportePresupuesto_TipoReporte" />
+        <AssociationConnector Association="SIACORAHModel.FK_ReportePresupuestoDetalle_ReportePresupuesto" />
+        <AssociationConnector Association="SIACORAHModel.FK_TipoReporteGrupoPresupuesto_TipoReporte" />
+        <EntityTypeShape EntityType="SIACORAHModel.PresupuestoRecepcionado" Width="1.5" PointX="15.5" PointY="35.625" />
+        <EntityTypeShape EntityType="SIACORAHModel.GrupoPresupuesto" Width="1.5" PointX="13.25" PointY="35.625" />
+        <AssociationConnector Association="SIACORAHModel.FK_GrupoPresupuesto_FuenteFinanciamiento" />
+        <AssociationConnector Association="SIACORAHModel.FK_PresupuestoRecepcionado_GrupoPresupuesto" />
+        <AssociationConnector Association="SIACORAHModel.FK_TipoReporteGrupoPresupuesto_GrupoPresupuesto" />
+        <EntityTypeShape EntityType="SIACORAHModel.EstructuraPresupuestoRemuneracion" Width="1.5" PointX="22.375" PointY="37.25" />
+        <EntityTypeShape EntityType="SIACORAHModel.ParametroPresupuestoRemuneracion" Width="1.5" PointX="24.625" PointY="26.25" />
+        <EntityTypeShape EntityType="SIACORAHModel.PresupuestoRemuneracion" Width="1.5" PointX="24.625" PointY="54.25" />
+        <EntityTypeShape EntityType="SIACORAHModel.PropiedadPresupuestoRemuneracion" Width="1.5" PointX="26.625" PointY="32.5" />
+        <AssociationConnector Association="SIACORAHModel.FK_PropiedadPresupuestoRemuneracion_EstructuraPresupuestoRemuneracion" />
+        <EntityTypeShape EntityType="SIACORAHModel.PresupuestoRemuneracionDet" Width="1.5" PointX="28.875" PointY="43.125" />
+        <AssociationConnector Association="SIACORAHModel.FK_PresupuestoRemuneracionDet_PresupuestoRemuneracion" />
+        <AssociationConnector Association="SIACORAHModel.FK_PresupuestoRemuneracionDet_PropiedadPresupuestoRemuneracion" />
+        <EntityTypeShape EntityType="SIACORAHModel.Cargo" Width="1.5" PointX="24.375" PointY="1" />
+        <EntityTypeShape EntityType="SIACORAHModel.OrigenConcepto" Width="1.5" PointX="20.125" PointY="54" />
+        <EntityTypeShape EntityType="SIACORAHModel.ConceptoCuentaContable" Width="1.5" PointX="24.625" PointY="10.875" />
+        <EntityTypeShape EntityType="SIACORAHModel.ConceptoPresupuestoRemuneracion" Width="1.5" PointX="24.625" PointY="21.625" />
+        <AssociationConnector Association="SIACORAHModel.FK_ConceptoCuentaContable_ConceptoPresupuestoRemuneracion" />
+        <AssociationConnector Association="SIACORAHModel.FK_ConceptoPresupuestoRemuneracion_OrigenConcepto" />
+        <AssociationConnector Association="SIACORAHModel.FK_ParametroPresupuestoRemuneracion_ConceptoPresupuestoRemuneracion" />
+        <AssociationConnector Association="SIACORAHModel.FK_PropiedadPresupuestoRemuneracion_ConceptoPresupuestoRemuneracion" />
+        <EntityTypeShape EntityType="SIACORAHModel.ReajustePresupuestoRemuneracion" Width="1.5" PointX="32.125" PointY="16" />
+        <EntityTypeShape EntityType="SIACORAHModel.ReajusteMensualProgramacion" Width="1.5" PointX="24" PointY="57.75" />
+        <EntityTypeShape EntityType="SIACORAHModel.ReajustePresupuestoRemuneracionDet" Width="1.5" PointX="34.375" PointY="24.625" />
+        <AssociationConnector Association="SIACORAHModel.FK_ReajustePresupuestoRemuneracionDet_PropiedadPresupuestoRemuneracion" />
+        <AssociationConnector Association="SIACORAHModel.FK_ReajusteMensualArea_ReajusteMensualProgramacion" />
+        <AssociationConnector Association="SIACORAHModel.FK_ReajustePresupuestoRemuneracionDet_ReajustePresupuestoRemuneracion" />
+        <EntityTypeShape EntityType="SIACORAHModel.TipoCambioAnual" Width="1.5" PointX="24.375" PointY="5.75" />
+        <EntityTypeShape EntityType="SIACORAHModel.PuestoReajustePresupuesto" Width="1.5" PointX="29.625" PointY="26.25" />
+        <AssociationConnector Association="SIACORAHModel.FK_PuestoReajustePresupuesto_Cargo" />
+        <AssociationConnector Association="SIACORAHModel.FK_PuestoReajustePresupuesto_SedeLaboral" />
+        <AssociationConnector Association="SIACORAHModel.FK_PuestoReajustePresupuesto_ReajusteMensualProgramacion" />
+        <AssociationConnector Association="SIACORAHModel.FK_ReajustePresupuestoRemuneracion_PuestoReajustePresupuesto" />
+        <EntityTypeShape EntityType="SIACORAHModel.Periodo" Width="1.5" PointX="20.375" PointY="19.75" />
+        <EntityTypeShape EntityType="SIACORAHModel.Subpresupuesto" Width="1.5" PointX="23.5" PointY="45.5" />
+        <EntityTypeShape EntityType="SIACORAHModel.CertificacionMaster" Width="1.5" PointX="30.75" PointY="1.375" />
+        <EntityTypeShape EntityType="SIACORAHModel.Forebi" Width="1.5" PointX="17.375" PointY="5.75" />
+        <EntityTypeShape EntityType="SIACORAHModel.Forese" Width="1.5" PointX="19.375" PointY="0.75" />
+        <EntityTypeShape EntityType="SIACORAHModel.CertificacionDetalle" Width="1.5" PointX="35.25" PointY="7.625" />
+        <AssociationConnector Association="SIACORAHModel.FK_CertificacionDetalle_CuentaContable" />
+        <EntityTypeShape EntityType="SIACORAHModel.RequerimientoRecursoHumano" Width="1.5" PointX="25" PointY="15.125" />
+        <EntityTypeShape EntityType="SIACORAHModel.PuestoRequerimiento" Width="1.5" PointX="27.25" PointY="6.5" />
+        <AssociationConnector Association="SIACORAHModel.FK_PuestoRequerimiento_FuenteFinanciamiento" />
+        <AssociationConnector Association="SIACORAHModel.FK_PuestoRequerimiento_RequerimientoRecursoHumano" />
+        <EntityTypeShape EntityType="SIACORAHModel.ReajusteMensualDetalleMes" Width="1.5" PointX="26.75" PointY="37.625" />
+        <AssociationConnector Association="SIACORAHModel.FK_ReajusteMensualDetalleMes_ReajusteMensualAreaMes" />
+        <AssociationConnector Association="SIACORAHModel.FK_ReajusteMensualDetalleMes_Subpresupuesto" />
+        <AssociationConnector Association="SIACORAHModel.FK_ReajusteProgramacionMensualDetalleMes_ReajusteMensualDetalleMes" />
+        <EntityTypeShape EntityType="SIACORAHModel.ProgramacionAnualDetalleMes" Width="1.5" PointX="32.125" PointY="26.875" />
+        <AssociationConnector Association="SIACORAHModel.FK_ProgramacionAnualDetalleMes_ProgramacionAnualAreaMes" />
+        <AssociationConnector Association="SIACORAHModel.FK_ProgramacionAnualDetalleMes_Subpresupuesto" />
+        <AssociationConnector Association="SIACORAHModel.FK_ProgramacionAnualGastoDetalleMes_ProgramacionAnualDetalleMes" />
+        <AssociationConnector Association="SIACORAHModel.FK_ProgramacionAnualPlanAdqDetalleMes_ProgramacionAnualDetalleMes" />
+        <AssociationConnector Association="SIACORAHModel.FK_ReajusteProgramacionMensualDetalleMes_ProgramacionAnualDetalleMes" />
+        <EntityTypeShape EntityType="SIACORAHModel.PartidaPresupuestal" Width="1.5" PointX="5.25" PointY="37.5" />
+        <AssociationConnector Association="SIACORAHModel.FK_PartidaPresupuestal_Unidad" />
+        <EntityTypeShape EntityType="SIACORAHModel.RequerimientoBienServicioDetalle" Width="1.5" PointX="7.5" PointY="37.25" />
+        <AssociationConnector Association="SIACORAHModel.FK_RequerimientoBienServicioDetalle_CuentaContable" />
+        <AssociationConnector Association="SIACORAHModel.FK_RequerimientoBienServicioDetalle_Unidad" />
+        <AssociationConnector Association="SIACORAHModel.FK_RequerimientoBienServicioDetalle_PartidaPresupuestal" />
+        <AssociationConnector Association="SIACORAHModel.FK_RequerimientoBienServicioDetalle_RequerimientoBienServicio1" />
+        <AssociationConnector Association="SIACORAHModel.FK_RequerimientoBienServicioDetalleMes_RequerimientoBienServicioDetalle" />
+        <EntityTypeShape EntityType="SIACORAHModel.RequerimientoReajusteMensual" Width="1.5" PointX="21.5" PointY="42" />
+        <AssociationConnector Association="SIACORAHModel.FK_RequerimientoReajusteMensual_ReajusteMensualArea" />
+        <EntityTypeShape EntityType="SIACORAHModel.ReajusteMensualDetalle" Width="1.5" PointX="24.5" PointY="63.875" />
+        <EntityTypeShape EntityType="SIACORAHModel.RequerimientoMensualBienServicio" Width="1.5" PointX="19.25" PointY="57.625" />
+        <AssociationConnector Association="SIACORAHModel.FK_ReajusteMensualDetalle_ReajusteMensualArea" />
+        <AssociationConnector Association="SIACORAHModel.FK_ReajusteMensualDetalleMes_ReajusteMensualDetalle" />
+        <AssociationConnector Association="SIACORAHModel.FK_RequerimientoReajusteMensual_RequerimientoMensualBienServicio" />
+        <EntityTypeShape EntityType="SIACORAHModel.RequerimientoMensualDetalle" Width="1.5" PointX="21.5" PointY="30.625" />
+        <AssociationConnector Association="SIACORAHModel.FK_RequerimientoMensualDetalle_CuentaContable" />
+        <AssociationConnector Association="SIACORAHModel.FK_RequerimientoMensualDetalle_Producto" />
+        <AssociationConnector Association="SIACORAHModel.FK_RequerimientoMensualDetalle_Unidad" />
+        <AssociationConnector Association="SIACORAHModel.FK_RequerimientoMensualDetalle_PartidaPresupuestal" />
+        <AssociationConnector Association="SIACORAHModel.FK_RequerimientoMensualDetalle_RequerimientoMensualBienServicio" />
+        <EntityTypeShape EntityType="SIACORAHModel.PartidaPresupuestalCuenta" Width="1.5" PointX="10.5" PointY="30.5" />
+        <AssociationConnector Association="SIACORAHModel.FK_PartidaPresupuestalCuenta_CuentaContable" />
+        <AssociationConnector Association="SIACORAHModel.FK_PartidaPresupuestalCuenta_PartidaPresupuestal" />
+        <AssociationConnector Association="SIACORAHModel.FK_ReajusteMensualDetalle_RequerimientoMensualDetalle" />
+        <EntityTypeShape EntityType="SIACORAHModel.PuestoReqPre" Width="1.5" PointX="29.875" PointY="13" />
+        <AssociationConnector Association="SIACORAHModel.FK_PuestoReqPre_PuestoRequerimiento" />
+        <EntityTypeShape EntityType="SIACORAHModel.CertificacionRequerimientoSubprespuesto" Width="1.5" PointX="35.25" PointY="29.375" />
+        <AssociationConnector Association="SIACORAHModel.FK_CertificacionRequerimientoSubprespuesto_Subpresupuesto" />
+        <EntityTypeShape EntityType="SIACORAHModel.vCotizacionCompra" Width="1.5" PointX="0.75" PointY="29.75" />
+        <EntityTypeShape EntityType="SIACORAHModel.vCotizacionDetalleCompra" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SIACORAHModel.vCotizacionDetalleServicio" Width="1.5" PointX="21.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SIACORAHModel.vCotizacionServicio" Width="1.5" PointX="2.75" PointY="29.75" />
+        <EntityTypeShape EntityType="SIACORAHModel.CertificacionRequerimiento" Width="1.5" PointX="33" PointY="8.5" />
+        <AssociationConnector Association="SIACORAHModel.FK_CertificacionDetalle_CertificacionRequerimiento" />
+        <AssociationConnector Association="SIACORAHModel.FK_CertificacionRequerimiento_CertificacionMaster" />
+        <AssociationConnector Association="SIACORAHModel.FK_CertificacionRequerimientoSubprespuesto_CertificacionRequerimiento" />
+        <EntityTypeShape EntityType="SIACORAHModel.PuestoPresupuesto" Width="1.5" PointX="27.625" PointY="15.625" />
+        <AssociationConnector Association="SIACORAHModel.FK_PuestoPresupuesto_Cargo" />
+        <AssociationConnector Association="SIACORAHModel.FK_PuestoPresupuesto_SedeLaboral" />
+        <AssociationConnector Association="SIACORAHModel.FK_PresupuestoRemuneracion_PuestoPresupuesto" />
+        <AssociationConnector Association="SIACORAHModel.FK_PuestoReqPre_PuestoPresupuesto" />
+        <EntityTypeShape EntityType="SIACORAHModel.ProgramacionAnualDetalle" Width="1.5" PointX="10.625" PointY="4.75" />
+        <AssociationConnector Association="SIACORAHModel.FK_ProgramacionAnualDetalle_Unidad" />
+        <AssociationConnector Association="SIACORAHModel.FK_ProgramacionAnualDetalle_ProgramacionAnualArea" />
+        <AssociationConnector Association="SIACORAHModel.FK_ProgramacionAnualDetalleMes_ProgramacionAnualDetalle" />
+        <EntityTypeShape EntityType="SIACORAHModel.ProgramacionAnual" Width="1.5" PointX="15.5" PointY="16.75" />
+        <AssociationConnector Association="SIACORAHModel.FK_EvaluacionMensualProgramacion_ProgramacionAnual" />
+        <AssociationConnector Association="SIACORAHModel.FK_ProgramacionAnual_FuenteFinanciamiento" />
+        <AssociationConnector Association="SIACORAHModel.FK_ProgramacionAnual_GrupoPresupuesto" />
+        <AssociationConnector Association="SIACORAHModel.FK_ProgramacionAnualArea_ProgramacionAnual" />
+        <AssociationConnector Association="SIACORAHModel.FK_ProgramacionAnualEjeOperativo_ProgramacionAnual" />
+        <AssociationConnector Association="SIACORAHModel.FK_ProgramacionAnualSede_ProgramacionAnual" />
+        <AssociationConnector Association="SIACORAHModel.FK_PuestoPresupuesto_ProgramacionAnual" />
+        <AssociationConnector Association="SIACORAHModel.FK_ReajusteMensualProgramacion_ProgramacionAnual" />
+        <AssociationConnector Association="SIACORAHModel.FK_RequerimientoMensualBienServicio_ProgramacionAnual1" />
+        <AssociationConnector Association="SIACORAHModel.FK_Subpresupuesto_ProgramacionAnual" />
+        <EntityTypeShape EntityType="SIACORAHModel.PoaVersion" Width="1.5" PointX="32.625" PointY="20" />
+        <AssociationConnector Association="SIACORAHModel.FK_ProgramacionAnual_PoaVersion" />
+        <EntityTypeShape EntityType="SIACORAHModel.TipoActividad" Width="1.5" PointX="26.375" PointY="1" />
+        <AssociationConnector Association="SIACORAHModel.FK_ProgramacionAnual_TipoActividad" />
+        <EntityTypeShape EntityType="SIACORAHModel.Poa" Width="1.5" PointX="30.375" PointY="20" />
+        <AssociationConnector Association="SIACORAHModel.FK_PoaVersion_Poa1" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

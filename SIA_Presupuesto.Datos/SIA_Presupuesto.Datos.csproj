@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.TypeScript.MSBuild.3.0.0\build\Microsoft.TypeScript.MSBuild.props" Condition="Exists('..\packages\Microsoft.TypeScript.MSBuild.3.0.0\build\Microsoft.TypeScript.MSBuild.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7C24580E-8440-4CBC-9AC7-70315ACB6E9E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SIA_Presupuesto.Datos</RootNamespace>
+    <AssemblyName>SIA_Presupuesto.Datos</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CA2011.Utilitario">
+      <HintPath>..\packages\CA2011.Utilitario.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Seguridad">
+      <HintPath>..\packages\Seguridad.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\LogDatos.cs" />
+    <Compile Include="Base\LogInterceptorEF.cs" />
+    <Compile Include="Base\Repositorio.cs" />
+    <Compile Include="Contexto.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Contexto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IContexto.cs">
+      <DependentUpon>IContexto.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Modelo\SIA_Presupuesto.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SIA_Presupuesto.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recursos\Mensajes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Mensajes.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Repositorio\CertificacionDetalleRepositorio.cs" />
+    <Compile Include="Repositorio\CertificacionMasterRepositorio.cs" />
+    <Compile Include="Repositorio\CertificacionRequerimientoSubprespuestoRepositorio.cs" />
+    <Compile Include="Repositorio\CertificacionRequerimientoRepositorio.cs" />
+    <Compile Include="Repositorio\ConceptoCuentaContableRepositorio.cs" />
+    <Compile Include="Repositorio\ConceptoPresupuestoRemuneracionRepositorio.cs" />
+    <Compile Include="Repositorio\ConfiguracionPAARepositorio.cs" />
+    <Compile Include="Repositorio\EjeOperativoRepositorio.cs" />
+    <Compile Include="Repositorio\EstructuraPresupuestoRemuneracionRepositorio.cs" />
+    <Compile Include="Repositorio\EvaluacionMensualAreaMesRepositorio.cs" />
+    <Compile Include="Repositorio\EvaluacionMensualAreaRepositorio.cs" />
+    <Compile Include="Repositorio\EvaluacionMensualDetalleMesRepositorio.cs" />
+    <Compile Include="Repositorio\EvaluacionMensualDetalleRepositorio.cs" />
+    <Compile Include="Repositorio\EvaluacionMensualProgramacionPresRepositorio.cs" />
+    <Compile Include="Repositorio\EvaluacionMensualProgramacionRepositorio.cs" />
+    <Compile Include="Repositorio\EvaluacionPresupuestoCuentaRepositorio.cs" />
+    <Compile Include="Repositorio\FuenteFinanciamientoRepositorio.cs" />
+    <Compile Include="Repositorio\GastoRecurrenteDetalleMesRepositorio.cs" />
+    <Compile Include="Repositorio\GastoRecurrenteDetalleRepositorio.cs" />
+    <Compile Include="Repositorio\GastoRecurrenteRepositorio.cs" />
+    <Compile Include="Repositorio\GastoRecurrenteRequerimientoRepositorio.cs" />
+    <Compile Include="Repositorio\GeneralReporteRepositorio.cs" />
+    <Compile Include="Repositorio\GeneralRepositorio.cs" />
+    <Compile Include="Repositorio\GrupoPresupuestoRepositorio.cs" />
+    <Compile Include="Repositorio\ModalidadRepositorio.cs" />
+    <Compile Include="Repositorio\OrigenConceptoRepositorio.cs" />
+    <Compile Include="Repositorio\ParametroPresupuestoRemuneracionRepositorio.cs" />
+    <Compile Include="Repositorio\PartidaPresupuestalCuentaRepositorio.cs" />
+    <Compile Include="Repositorio\PeriodoRepositorio.cs" />
+    <Compile Include="Repositorio\PlanAnualAdquisicionDetalleMesRepositorio.cs" />
+    <Compile Include="Repositorio\PlanAnualAdquisicionDetalleRepositorio.cs" />
+    <Compile Include="Repositorio\PlanAnualAdquisicionRepositorio.cs" />
+    <Compile Include="Repositorio\PlanAnualAdquisicionRequerimientoRepositorio.cs" />
+    <Compile Include="Repositorio\TipoActividadRepositorio.cs" />
+    <Compile Include="Repositorio\PoaVersionRepositorio.cs" />
+    <Compile Include="Repositorio\PresupuestoRecepcionadoRepositorio.cs" />
+    <Compile Include="Repositorio\PresupuestoRemuneracionDetRepositorio.cs" />
+    <Compile Include="Repositorio\PresupuestoRemuneracionRepositorio.cs" />
+    <Compile Include="Repositorio\PresupuestoRepositorio.cs" />
+    <Compile Include="Repositorio\ProgramacionAnualAreaMesRepositorio.cs" />
+    <Compile Include="Repositorio\ProgramacionAnualAreaRepositorio.cs" />
+    <Compile Include="Repositorio\ProgramacionAnualDetalleMesRepositorio.cs" />
+    <Compile Include="Repositorio\ProgramacionAnualDetalleRepositorio.cs" />
+    <Compile Include="Repositorio\ProgramacionAnualEjeOperativoRepositorio.cs" />
+    <Compile Include="Repositorio\ProgramacionAnualRepositorio.cs" />
+    <Compile Include="Repositorio\ProgramacionAnualSedeRepositorio.cs" />
+    <Compile Include="Repositorio\PropiedadPresupuestoRemuneracionRepositorio.cs" />
+    <Compile Include="Repositorio\PuestoRequerimientoRepositorio.cs" />
+    <Compile Include="Repositorio\PuestoReajustePresupuestoRepositorio.cs" />
+    <Compile Include="Repositorio\PuestoPresupuestoRepositorio.cs" />
+    <Compile Include="Repositorio\ReajusteMensualAreaMesRepositorio.cs" />
+    <Compile Include="Repositorio\ReajusteMensualAreaRepositorio.cs" />
+    <Compile Include="Repositorio\ReajusteMensualDetalleMesRepositorio.cs" />
+    <Compile Include="Repositorio\ReajusteMensualDetalleRepositorio.cs" />
+    <Compile Include="Repositorio\ReajusteMensualProgramacionAreaRepositorio.cs" />
+    <Compile Include="Repositorio\ReajusteMensualProgramacionRepositorio.cs" />
+    <Compile Include="Repositorio\ReajustePresupuestoRemuneracionDetRepositorio.cs" />
+    <Compile Include="Repositorio\ReajustePresupuestoRemuneracionRepositorio.cs" />
+    <Compile Include="Repositorio\RequerimientoMensualDetalleRepositorio.cs" />
+    <Compile Include="Repositorio\RequerimientoBienServicioDetalleRepositorio.cs" />
+    <Compile Include="Repositorio\RequerimientoBienServicioDetalleMesRepositorio.cs" />
+    <Compile Include="Repositorio\RequerimientoMensualBienServicioRepositorio.cs" />
+    <Compile Include="Repositorio\RequerimientoRecursoHumanoRepositorio.cs" />
+    <Compile Include="Repositorio\RequerimientoBienServicioRepositorio.cs" />
+    <Compile Include="Repositorio\RubroBienServicioCuentaRepositorio.cs" />
+    <Compile Include="Repositorio\PartidaPresupuestalRepositorio.cs" />
+    <Compile Include="Repositorio\PoaRepositorio.cs" />
+    <Compile Include="Repositorio\RubroBienServicioRepositorio.cs" />
+    <Compile Include="Repositorio\SubpresupuestoRepositorio.cs" />
+    <Compile Include="Repositorio\TipoCambioAnualRepositorio.cs" />
+    <Compile Include="Repositorio\TipoCambioPresupuestoRepositorio.cs" />
+    <Compile Include="Repositorio\TipoReporteRepositorio.cs" />
+    <Compile Include="Repositorio\UbigeoRepositorio.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Contexto.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Contexto.cs</LastGenOutput>
+    </Content>
+    <Content Include="IContexto.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>IContexto.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Modelo\SIA_Presupuesto.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SIA_Presupuesto.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Modelo\SIA_Presupuesto.edmx.diagram">
+      <DependentUpon>SIA_Presupuesto.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SIA_Presupuesto.Negocio.Entidades\SIA_Presupuesto.Negocio.Entidades.csproj">
+      <Project>{e827edcc-ad93-49ff-bd08-bb1bc9d589fb}</Project>
+      <Name>SIA_Presupuesto.Negocio.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SIA_Presupuesto.Negocio\SIA_Presupuesto.Negocio.csproj">
+      <Project>{3219c2e4-31c9-4255-af62-dd6c1032118f}</Project>
+      <Name>SIA_Presupuesto.Negocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Recursos\Mensajes.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Mensajes.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.TypeScript.MSBuild.3.0.0\build\Microsoft.TypeScript.MSBuild.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.TypeScript.MSBuild.3.0.0\build\Microsoft.TypeScript.MSBuild.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.TypeScript.MSBuild.3.0.0\build\Microsoft.TypeScript.MSBuild.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.TypeScript.MSBuild.3.0.0\build\Microsoft.TypeScript.MSBuild.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.TypeScript.MSBuild.3.0.0\build\Microsoft.TypeScript.MSBuild.targets" Condition="Exists('..\packages\Microsoft.TypeScript.MSBuild.3.0.0\build\Microsoft.TypeScript.MSBuild.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

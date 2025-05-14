@@ -1,0 +1,165 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32602.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 Datos", "04 Datos", "{A2447ED1-9FD6-4FC5-BCA2-5FE1BDDA772E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 Negocio", "03 Negocio", "{15F5CA66-D923-406B-AC9F-923AF510017E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 Presentación", "01 Presentación", "{F82B7A74-C678-4371-B290-775A1228065C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WinForm", "WinForm", "{93F20AE5-8B89-4AA5-ACB3-2304987E878E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebForm", "WebForm", "{D873A1E0-136F-4AD2-B9C1-44D88F67B25F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIA_Presupuesto.Datos", "SIA_Presupuesto.Datos\SIA_Presupuesto.Datos.csproj", "{7C24580E-8440-4CBC-9AC7-70315ACB6E9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIA_Presupuesto.IoC", "SIA_Presupuesto.IoC\SIA_Presupuesto.IoC.csproj", "{1A104ECE-88BE-4A36-8765-C44581EBD49D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIA_Presupuesto.Negocio", "SIA_Presupuesto.Negocio\SIA_Presupuesto.Negocio.csproj", "{3219C2E4-31C9-4255-AF62-DD6C1032118F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIA_Presupuesto.Negocio.Entidades", "SIA_Presupuesto.Negocio.Entidades\SIA_Presupuesto.Negocio.Entidades.csproj", "{E827EDCC-AD93-49FF-BD08-BB1BC9D589FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIA_Presupuesto.WinForm", "SIA_Presupuesto.WinForm\SIA_Presupuesto.WinForm.csproj", "{41AC7DA2-73FC-4EA6-8A2C-68673A29783A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIA_Presupuesto.WinForm.General", "SIA_Presupuesto.WinForm.General\SIA_Presupuesto.WinForm.General.csproj", "{7E990900-E6BA-4D61-BDE9-8FFA35E80071}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIA_Presupuesto.WinForm.Programacion", "SIA_Presupuesto.WinForm.Programacion\SIA_Presupuesto.WinForm.Programacion.csproj", "{F35AB609-F8EF-46E7-B617-D5037336BBC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIA_Presupuesto.WebForm", "SIA_Presupuesto.WebForm\SIA_Presupuesto.WebForm.csproj", "{10A8E396-17F3-45DC-A60D-264054C1BEBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIA_Presupuesto.WinForm.Adquisicion", "SIA_Presupuestos.WinForm.Adquisicion\SIA_Presupuesto.WinForm.Adquisicion.csproj", "{6DFBEB32-B4BC-4366-AB3F-E0B9A4C1785B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIA_Presupuesto.WinForm.Mantenimiento", "SIA_Presupuesto.WinForm.Mantenimiento\SIA_Presupuesto.WinForm.Mantenimiento.csproj", "{76AD9F82-6806-43B5-BDA3-5F1B973B8D5B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Angular", "Angular", "{87D42A3B-9DCF-43AF-BE5E-3D35B40B412E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 Servicios", "02 Servicios", "{BE1F039F-ECAF-4098-9DF4-3A3652477D5F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SIA_Presupuesto.Servicio", "SIA_Presupuesto.Servicio\SIA_Presupuesto.Servicio.csproj", "{F4E0B8FF-F554-492B-A475-08B166556295}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7C24580E-8440-4CBC-9AC7-70315ACB6E9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C24580E-8440-4CBC-9AC7-70315ACB6E9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C24580E-8440-4CBC-9AC7-70315ACB6E9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C24580E-8440-4CBC-9AC7-70315ACB6E9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A104ECE-88BE-4A36-8765-C44581EBD49D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A104ECE-88BE-4A36-8765-C44581EBD49D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A104ECE-88BE-4A36-8765-C44581EBD49D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A104ECE-88BE-4A36-8765-C44581EBD49D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3219C2E4-31C9-4255-AF62-DD6C1032118F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3219C2E4-31C9-4255-AF62-DD6C1032118F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3219C2E4-31C9-4255-AF62-DD6C1032118F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3219C2E4-31C9-4255-AF62-DD6C1032118F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E827EDCC-AD93-49FF-BD08-BB1BC9D589FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E827EDCC-AD93-49FF-BD08-BB1BC9D589FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E827EDCC-AD93-49FF-BD08-BB1BC9D589FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E827EDCC-AD93-49FF-BD08-BB1BC9D589FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41AC7DA2-73FC-4EA6-8A2C-68673A29783A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41AC7DA2-73FC-4EA6-8A2C-68673A29783A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41AC7DA2-73FC-4EA6-8A2C-68673A29783A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41AC7DA2-73FC-4EA6-8A2C-68673A29783A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E990900-E6BA-4D61-BDE9-8FFA35E80071}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E990900-E6BA-4D61-BDE9-8FFA35E80071}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E990900-E6BA-4D61-BDE9-8FFA35E80071}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E990900-E6BA-4D61-BDE9-8FFA35E80071}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F35AB609-F8EF-46E7-B617-D5037336BBC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F35AB609-F8EF-46E7-B617-D5037336BBC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F35AB609-F8EF-46E7-B617-D5037336BBC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F35AB609-F8EF-46E7-B617-D5037336BBC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10A8E396-17F3-45DC-A60D-264054C1BEBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10A8E396-17F3-45DC-A60D-264054C1BEBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10A8E396-17F3-45DC-A60D-264054C1BEBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10A8E396-17F3-45DC-A60D-264054C1BEBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DFBEB32-B4BC-4366-AB3F-E0B9A4C1785B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DFBEB32-B4BC-4366-AB3F-E0B9A4C1785B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DFBEB32-B4BC-4366-AB3F-E0B9A4C1785B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DFBEB32-B4BC-4366-AB3F-E0B9A4C1785B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76AD9F82-6806-43B5-BDA3-5F1B973B8D5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76AD9F82-6806-43B5-BDA3-5F1B973B8D5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76AD9F82-6806-43B5-BDA3-5F1B973B8D5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76AD9F82-6806-43B5-BDA3-5F1B973B8D5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4E0B8FF-F554-492B-A475-08B166556295}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4E0B8FF-F554-492B-A475-08B166556295}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4E0B8FF-F554-492B-A475-08B166556295}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4E0B8FF-F554-492B-A475-08B166556295}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{93F20AE5-8B89-4AA5-ACB3-2304987E878E} = {F82B7A74-C678-4371-B290-775A1228065C}
+		{D873A1E0-136F-4AD2-B9C1-44D88F67B25F} = {F82B7A74-C678-4371-B290-775A1228065C}
+		{7C24580E-8440-4CBC-9AC7-70315ACB6E9E} = {A2447ED1-9FD6-4FC5-BCA2-5FE1BDDA772E}
+		{1A104ECE-88BE-4A36-8765-C44581EBD49D} = {A2447ED1-9FD6-4FC5-BCA2-5FE1BDDA772E}
+		{3219C2E4-31C9-4255-AF62-DD6C1032118F} = {15F5CA66-D923-406B-AC9F-923AF510017E}
+		{E827EDCC-AD93-49FF-BD08-BB1BC9D589FB} = {15F5CA66-D923-406B-AC9F-923AF510017E}
+		{41AC7DA2-73FC-4EA6-8A2C-68673A29783A} = {93F20AE5-8B89-4AA5-ACB3-2304987E878E}
+		{7E990900-E6BA-4D61-BDE9-8FFA35E80071} = {93F20AE5-8B89-4AA5-ACB3-2304987E878E}
+		{F35AB609-F8EF-46E7-B617-D5037336BBC2} = {93F20AE5-8B89-4AA5-ACB3-2304987E878E}
+		{10A8E396-17F3-45DC-A60D-264054C1BEBA} = {D873A1E0-136F-4AD2-B9C1-44D88F67B25F}
+		{6DFBEB32-B4BC-4366-AB3F-E0B9A4C1785B} = {93F20AE5-8B89-4AA5-ACB3-2304987E878E}
+		{76AD9F82-6806-43B5-BDA3-5F1B973B8D5B} = {93F20AE5-8B89-4AA5-ACB3-2304987E878E}
+		{87D42A3B-9DCF-43AF-BE5E-3D35B40B412E} = {F82B7A74-C678-4371-B290-775A1228065C}
+		{F4E0B8FF-F554-492B-A475-08B166556295} = {BE1F039F-ECAF-4098-9DF4-3A3652477D5F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {64B6C182-1834-454B-BA7F-6BF1655FF72E}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 12
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://daserver7:8080/tfs/sia_proyectos
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = SIA_Presupuesto.Datos\\SIA_Presupuesto.Datos.csproj
+		SccProjectTopLevelParentUniqueName1 = SIA_Presupuesto.sln
+		SccProjectName1 = SIA_Presupuesto.Datos
+		SccLocalPath1 = SIA_Presupuesto.Datos
+		SccProjectUniqueName2 = SIA_Presupuesto.IoC\\SIA_Presupuesto.IoC.csproj
+		SccProjectTopLevelParentUniqueName2 = SIA_Presupuesto.sln
+		SccProjectName2 = SIA_Presupuesto.IoC
+		SccLocalPath2 = SIA_Presupuesto.IoC
+		SccProjectUniqueName3 = SIA_Presupuesto.Negocio\\SIA_Presupuesto.Negocio.csproj
+		SccProjectTopLevelParentUniqueName3 = SIA_Presupuesto.sln
+		SccProjectName3 = SIA_Presupuesto.Negocio
+		SccLocalPath3 = SIA_Presupuesto.Negocio
+		SccProjectUniqueName4 = SIA_Presupuesto.Negocio.Entidades\\SIA_Presupuesto.Negocio.Entidades.csproj
+		SccProjectTopLevelParentUniqueName4 = SIA_Presupuesto.sln
+		SccProjectName4 = SIA_Presupuesto.Negocio.Entidades
+		SccLocalPath4 = SIA_Presupuesto.Negocio.Entidades
+		SccProjectUniqueName5 = SIA_Presupuesto.WinForm\\SIA_Presupuesto.WinForm.csproj
+		SccProjectTopLevelParentUniqueName5 = SIA_Presupuesto.sln
+		SccProjectName5 = SIA_Presupuesto.WinForm
+		SccLocalPath5 = SIA_Presupuesto.WinForm
+		SccProjectUniqueName6 = SIA_Presupuesto.WinForm.General\\SIA_Presupuesto.WinForm.General.csproj
+		SccProjectTopLevelParentUniqueName6 = SIA_Presupuesto.sln
+		SccProjectName6 = SIA_Presupuesto.WinForm.General
+		SccLocalPath6 = SIA_Presupuesto.WinForm.General
+		SccProjectUniqueName7 = SIA_Presupuesto.WinForm.Programacion\\SIA_Presupuesto.WinForm.Programacion.csproj
+		SccProjectTopLevelParentUniqueName7 = SIA_Presupuesto.sln
+		SccProjectName7 = SIA_Presupuesto.WinForm.Programacion
+		SccLocalPath7 = SIA_Presupuesto.WinForm.Programacion
+		SccProjectUniqueName8 = SIA_Presupuesto.WebForm\\SIA_Presupuesto.WebForm.csproj
+		SccProjectTopLevelParentUniqueName8 = SIA_Presupuesto.sln
+		SccProjectName8 = SIA_Presupuesto.WebForm
+		SccLocalPath8 = SIA_Presupuesto.WebForm
+		SccProjectUniqueName9 = SIA_Presupuestos.WinForm.Adquisicion\\SIA_Presupuesto.WinForm.Adquisicion.csproj
+		SccProjectTopLevelParentUniqueName9 = SIA_Presupuesto.sln
+		SccProjectName9 = SIA_Presupuestos.WinForm.Adquisicion
+		SccLocalPath9 = SIA_Presupuestos.WinForm.Adquisicion
+		SccProjectUniqueName10 = SIA_Presupuesto.WinForm.Mantenimiento\\SIA_Presupuesto.WinForm.Mantenimiento.csproj
+		SccProjectTopLevelParentUniqueName10 = SIA_Presupuesto.sln
+		SccProjectName10 = SIA_Presupuesto.WinForm.Mantenimiento
+		SccLocalPath10 = SIA_Presupuesto.WinForm.Mantenimiento
+		SccProjectUniqueName11 = SIA_Presupuesto.Servicio\\SIA_Presupuesto.Servicio.csproj
+		SccProjectTopLevelParentUniqueName11 = SIA_Presupuesto.sln
+		SccProjectName11 = SIA_Presupuesto.Servicio
+		SccLocalPath11 = SIA_Presupuesto.Servicio
+	EndGlobalSection
+EndGlobal

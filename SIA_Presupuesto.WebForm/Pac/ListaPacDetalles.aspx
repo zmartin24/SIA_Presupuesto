@@ -1,0 +1,356 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="ListaPacDetalles.aspx.cs" Inherits="SIA_Presupuesto.WebForm.Pac.ListaPacDetalles" %>
+<%@ Register Assembly="DevExpress.Web.Bootstrap.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.Bootstrap" TagPrefix="dx" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <dx:BootstrapCallbackPanel ID="cpPrincipal" runat="server" Width="100%" ClientInstanceName="cpPrincipal" OnCallback="cpPrincipal_Callback">
+        <ClientSideEvents EndCallback="Presupuesto.CpPrincipal_EndCallback" />
+        <ContentCollection>
+            <dx:ContentControl runat="server">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="x_panel">
+                            <div class="row x_title">
+                                <h4>Detalles de Plan Anual de Contrataciones</h4>
+                                <dx:ASPxHiddenField ID="hdfValores" runat="server" ClientInstanceName="hdfValores">
+                                </dx:ASPxHiddenField>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <div class="row">
+                                    <div class="btn-toggle">
+                                        <dx:BootstrapButton ID="btnSalir" runat="server" AutoPostBack="False" ClientInstanceName="btnSalir" Text="Volver" OnClick="btnSalir_Click">
+                                            <CssClasses Control="btn btn-sm btn-primary" Icon="fa fa-reply" />
+                                        </dx:BootstrapButton>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="x_content">
+                                <div class="row">
+                                    <div class="table-responsive">
+                                        <dx:BootstrapGridView ID="grvPacDet" runat="server" AutoGenerateColumns="False" ClientInstanceName="grvReqDet" KeyFieldName="item" Width="100%" OnStartRowEditing="grvReqDet_StartRowEditing" OnDataBinding="grid_DataBinding">
+                                            <SettingsDetail ShowDetailRow="True" AllowOnlyOneMasterRowExpanded="True" />
+                                            <Settings ShowFilterRow="True" ShowFilterRowMenu="True" ShowFilterRowMenuLikeItem="True" ShowFooter="True" ShowGroupPanel="true"/>
+                                            <SettingsPager PageSize="20" AlwaysShowPager="True"></SettingsPager>
+                                            <SettingsBehavior AutoExpandAllGroups="true" />
+
+                                            <Columns>
+                                                <dx:BootstrapGridViewTextColumn Caption="Cuenta" FieldName="numCuenta" VisibleIndex="0" Width="50px" ReadOnly="True" >
+                                                </dx:BootstrapGridViewTextColumn>
+                                                <dx:BootstrapGridViewTextColumn Caption="Descripción" FieldName="descripcion" VisibleIndex="1" Width="200px" ReadOnly="True">
+                                                </dx:BootstrapGridViewTextColumn>
+
+                                                 <dx:BootstrapGridViewTextColumn Caption="Dirección" FieldName="desDireccion" VisibleIndex="2" Width="100px">
+                                                     <Settings AutoFilterCondition="Contains" />
+                                                </dx:BootstrapGridViewTextColumn>
+                                                <dx:BootstrapGridViewTextColumn Caption="Area" FieldName="desArea" VisibleIndex="3" Width="100px">
+                                                    <Settings AutoFilterCondition="Contains" />
+                                                </dx:BootstrapGridViewTextColumn>
+                                                <dx:BootstrapGridViewTextColumn Caption="Cuenta" FieldName="numCuentaNivel2" VisibleIndex="4" GroupIndex="1" SortIndex="1" SortOrder="Ascending">
+                                                </dx:BootstrapGridViewTextColumn>
+                                                <dx:BootstrapGridViewTextColumn Caption="Cuenta" FieldName="numCuentaNivel1"  VisibleIndex="5" GroupIndex="0" SortIndex="0" SortOrder="Ascending">
+                                                </dx:BootstrapGridViewTextColumn>
+
+                                                <dx:BootstrapGridViewSpinEditColumn Caption="Enero" FieldName="enero" VisibleIndex="6" Width="60px">
+                                                    <PropertiesSpinEdit DisplayFormatString="n" DisplayFormatInEditMode="True" NumberFormat="Custom">
+                                                    </PropertiesSpinEdit>
+                                                    <Settings AllowAutoFilter="False" AllowDragDrop="False" AllowGroup="False" AllowHeaderFilter="False" AllowSort="False" />
+                                                </dx:BootstrapGridViewSpinEditColumn>
+                                                <dx:BootstrapGridViewSpinEditColumn Caption="Febrero" FieldName="febrero" VisibleIndex="7" Width="60px">
+                                                    <PropertiesSpinEdit DisplayFormatString="n" DisplayFormatInEditMode="True" NumberFormat="Custom">
+                                                    </PropertiesSpinEdit>
+                                                    <Settings AllowAutoFilter="False" AllowDragDrop="False" AllowGroup="False" AllowHeaderFilter="False" AllowSort="False" />
+                                                </dx:BootstrapGridViewSpinEditColumn>
+                                                <dx:BootstrapGridViewSpinEditColumn Caption="Marzo" FieldName="marzo" VisibleIndex="8" Width="60px">
+                                                    <PropertiesSpinEdit DisplayFormatString="n" DisplayFormatInEditMode="True" NumberFormat="Custom">
+                                                    </PropertiesSpinEdit>
+                                                    <Settings AllowAutoFilter="False" AllowDragDrop="False" AllowGroup="False" AllowHeaderFilter="False" AllowSort="False" />
+                                                </dx:BootstrapGridViewSpinEditColumn>
+                                                <dx:BootstrapGridViewSpinEditColumn Caption="Abril" FieldName="abril" VisibleIndex="9" Width="60px">
+                                                    <PropertiesSpinEdit DisplayFormatString="n" DisplayFormatInEditMode="True" NumberFormat="Custom">
+                                                    </PropertiesSpinEdit>
+                                                    <Settings AllowAutoFilter="False" AllowDragDrop="False" AllowGroup="False" AllowHeaderFilter="False" AllowSort="False" />
+                                                </dx:BootstrapGridViewSpinEditColumn>
+                                                <dx:BootstrapGridViewSpinEditColumn Caption="Mayo" FieldName="mayo" VisibleIndex="10" Width="60px">
+                                                    <PropertiesSpinEdit DisplayFormatString="n" DisplayFormatInEditMode="True" NumberFormat="Custom">
+                                                    </PropertiesSpinEdit>
+                                                    <Settings AllowAutoFilter="False" AllowDragDrop="False" AllowGroup="False" AllowHeaderFilter="False" AllowSort="False" />
+                                                </dx:BootstrapGridViewSpinEditColumn>
+                                                <dx:BootstrapGridViewSpinEditColumn Caption="Junio" FieldName="junio" VisibleIndex="11" Width="60px">
+                                                    <PropertiesSpinEdit DisplayFormatString="n" DisplayFormatInEditMode="True" NumberFormat="Custom">
+                                                    </PropertiesSpinEdit>
+                                                    <Settings AllowAutoFilter="False" AllowDragDrop="False" AllowGroup="False" AllowHeaderFilter="False" AllowSort="False" />
+                                                </dx:BootstrapGridViewSpinEditColumn>
+                                                <dx:BootstrapGridViewSpinEditColumn Caption="Julio" FieldName="julio" VisibleIndex="12" Width="60px">
+                                                    <PropertiesSpinEdit DisplayFormatString="n" DisplayFormatInEditMode="True" NumberFormat="Custom">
+                                                    </PropertiesSpinEdit>
+                                                    <Settings AllowAutoFilter="False" AllowDragDrop="False" AllowGroup="False" AllowHeaderFilter="False" AllowSort="False" />
+                                                </dx:BootstrapGridViewSpinEditColumn>
+                                                <dx:BootstrapGridViewSpinEditColumn Caption="Agosto" FieldName="agosto" VisibleIndex="13" Width="60px">
+                                                    <PropertiesSpinEdit DisplayFormatString="n" DisplayFormatInEditMode="True" NumberFormat="Custom">
+                                                    </PropertiesSpinEdit>
+                                                    <Settings AllowAutoFilter="False" AllowDragDrop="False" AllowGroup="False" AllowHeaderFilter="False" AllowSort="False" />
+                                                </dx:BootstrapGridViewSpinEditColumn>
+                                                <dx:BootstrapGridViewSpinEditColumn Caption="Setiembre" FieldName="setiembre" VisibleIndex="14" Width="60px">
+                                                    <PropertiesSpinEdit DisplayFormatString="n" DisplayFormatInEditMode="True" NumberFormat="Custom">
+                                                    </PropertiesSpinEdit>
+                                                    <Settings AllowAutoFilter="False" AllowDragDrop="False" AllowGroup="False" AllowHeaderFilter="False" AllowSort="False" />
+                                                </dx:BootstrapGridViewSpinEditColumn>
+                                                <dx:BootstrapGridViewSpinEditColumn Caption="Octubre" FieldName="octubre" VisibleIndex="15" Width="60px">
+                                                    <PropertiesSpinEdit DisplayFormatString="n" DisplayFormatInEditMode="True" NumberFormat="Custom">
+                                                    </PropertiesSpinEdit>
+                                                    <Settings AllowAutoFilter="False" AllowDragDrop="False" AllowGroup="False" AllowHeaderFilter="False" AllowSort="False" />
+                                                </dx:BootstrapGridViewSpinEditColumn>
+                                                <dx:BootstrapGridViewSpinEditColumn Caption="Noviembre" FieldName="novimebre" VisibleIndex="16" Width="60px">
+                                                    <PropertiesSpinEdit DisplayFormatString="n" DisplayFormatInEditMode="True" NumberFormat="Custom">
+                                                    </PropertiesSpinEdit>
+                                                    <Settings AllowAutoFilter="False" AllowDragDrop="False" AllowGroup="False" AllowHeaderFilter="False" AllowSort="False" />
+                                                </dx:BootstrapGridViewSpinEditColumn>
+                                                <dx:BootstrapGridViewSpinEditColumn Caption="Diciembre" FieldName="diciembre" VisibleIndex="17" Width="60px">
+                                                    <PropertiesSpinEdit DisplayFormatString="n" DisplayFormatInEditMode="True" NumberFormat="Custom">
+                                                    </PropertiesSpinEdit>
+                                                    <Settings AllowAutoFilter="False" AllowDragDrop="False" AllowGroup="False" AllowHeaderFilter="False" AllowSort="False" />
+                                                </dx:BootstrapGridViewSpinEditColumn>
+                                                <dx:BootstrapGridViewSpinEditColumn Caption="Total" FieldName="importe" VisibleIndex="17" Width="60px">
+                                                    <PropertiesSpinEdit DisplayFormatString="n" DisplayFormatInEditMode="True" NumberFormat="Custom">
+                                                    </PropertiesSpinEdit>
+                                                    <Settings AllowAutoFilter="False" AllowDragDrop="False" AllowGroup="False" AllowHeaderFilter="False" AllowSort="False" />
+                                                </dx:BootstrapGridViewSpinEditColumn>
+
+                                                <%--EndCollapse--%>
+                                            </Columns>
+                                            <Templates>
+                                                <DetailRow>
+                                                    
+                                                    <div class="table-responsive">
+                                                    <dx:BootstrapGridView ID="detailGrid" runat="server" KeyFieldName="idPaaDet" Width="100%" AutoGenerateColumns="False" OnBeforePerformDataSelect="detailGrid_BeforePerformDataSelect">
+                                                        <Columns>
+                                                            <dx:BootstrapGridViewTextColumn Caption="Descripción Detalle" FieldName="descripcion" VisibleIndex="0" Width="200px">
+                                                            </dx:BootstrapGridViewTextColumn>
+                                                            <dx:BootstrapGridViewDataColumn Caption="Und" FieldName="Abreviado" VisibleIndex="1" Width="35px">
+                                                            </dx:BootstrapGridViewDataColumn>
+                                                            <dx:BootstrapGridViewTextColumn Caption="Precio" FieldName="precio" UnboundExpression="{0:n}" UnboundType="Decimal" VisibleIndex="2" Width="55px">
+                                                                <PropertiesTextEdit DisplayFormatString="{0:n}">
+                                                                </PropertiesTextEdit>
+                                                            </dx:BootstrapGridViewTextColumn>
+                                                            <%--<dx:BootstrapGridViewDataColumn FieldName="Enero">
+                                                                <DataItemTemplate>
+                                                                    <div class="col-md-12">
+                                                                      <span class="label label-primary"><%# Eval("cantMarzo") %></span>
+                                                                      <span class="label label-success"><%# Eval("marzo") %></span>
+                                                                      
+                                                                    </div>--%>
+                                                                   <%-- <div class="btn-group">
+                    <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle btn-sm" type="button" aria-expanded="false">Primary <span class="caret"></span>
+                    </button>
+                    <ul role="menu" class="dropdown-menu">
+                      <li><a href="#"></a>
+                      </li>
+                      <li><a href="#"></a>
+                      </li>
+                      
+                    </ul>
+                    </div>--%>
+                                                                    <%--<div class="col-xs-7">
+                          <div class="table-responsive">
+                            <table class="table" style="width:100%">
+                              <tbody>
+                                <tr>
+                                  <th style="width:40%">Cant:</th>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <th>Importe</th>
+                                  <td></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>--%>
+                                                                    <%--<div class="flex">
+                              <ul class="list-inline count2">
+                                <li>
+                                  <h6></h6>
+                                  <span>Cantidad</span>
+                                </li>
+                                <li>
+                                  <h6></h6>
+                                  <span>Importe</span>
+                                </li>
+                              </ul>
+                            </div>--%>
+                                                                    <%--<div>
+                              <ul class="list-inline widget_tally">
+                                <li>
+                                  <p>
+                                    <span class="month">12 December 2014 </span>
+                                    <span class="count">+12%</span>
+                                  </p>
+                                </li>
+                                <li>
+                                  <p>
+                                    <span class="month">29 December 2014 </span>
+                                    <span class="count">+12%</span>
+                                  </p>
+                                </li>
+                                <li>
+                                  <p>
+                                    <span class="month">16 January 2015 </span>
+                                    <span class="count">+12%</span>
+                                  </p>
+                                </li>
+                              </ul>
+                            </div>--%>
+                                                                    <%--<div class="row">
+                                                                        <div class="col-md-1 col-sm-12 col-xs-12 form-group">
+                                                                            <label class="form-control"><%# Eval("cantMarzo") %></label>
+                                                                        </div>
+
+                                                                        <div class="col-md-1 col-sm-12 col-xs-12 form-group">
+                                                                            <label class="form-control"><%# Eval("marzo") %></label>
+                                                                        </div>
+                                                                    </div>--%>
+
+                                                                    <%--<div class="row tile_count">
+                                                                        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+                                                                            <span class="count_top"><i class="fa fa-user"></i>Cant.</span>
+                                                                            <div class="count">2500</div>
+                                                                            <span class="count_bottom"><i class="green">4% </i> </span>
+                                                                        </div>
+                                                                        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+                                                                            <span class="count_top"><i class="fa fa-clock-o"></i> Importe</span>
+                                                                            <div class="count">123.50</div>
+                                                                            <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> 
+                                                                        </div>
+                                                                    </div>--%>
+                                                                    <%--<button type="button" class="btn btn-link" data-toggle="gridview-datarow-edit">
+                                                                        <span class="fa fa-pencil"></span>
+                                                                    </button>
+                                                                    <button type="button" class="btn btn-link" data-toggle="gridview-datarow-delete">
+                                                                        <span class="fa fa-trash"></span>
+                                                                    </button>--%>
+                                                             <%--   </DataItemTemplate>
+                                                            </dx:BootstrapGridViewDataColumn>--%>
+                                                            <dx:BootstrapGridViewTextColumn Caption="Enero" FieldName="enero" UnboundExpression="{0:n}" UnboundType="Decimal" VisibleIndex="3" Width="60px">
+                                                                <PropertiesTextEdit DisplayFormatString="{0:n}">
+                                                                </PropertiesTextEdit>
+                                                            </dx:BootstrapGridViewTextColumn>
+                                                            <%--<dx:BootstrapGridViewDataColumn Caption="Enero" FieldName="enero" UnboundExpression="{0:n}" UnboundType="Decimal" VisibleIndex="3" Width="60px">
+                                                                <DataItemTemplate>
+                                                                    <div class="col-md-12">
+                                                                      <span class="label label-primary"><%# Eval("cantEnero") %></span>
+                                                                      <span class="label label-success"><%# Eval("enero") %></span>
+                                                                    </div>
+                                                                </DataItemTemplate>
+                                                            </dx:BootstrapGridViewDataColumn>
+                                                            <dx:BootstrapGridViewDataColumn Caption="Febrero" FieldName="febrero" UnboundExpression="{0:n}" UnboundType="Decimal" VisibleIndex="4" Width="60px">
+                                                                <DataItemTemplate>
+                                                                    <div class="col-md-12">
+                                                                      <span class="label label-primary"><%# Eval("cantFebrero") %></span>
+                                                                      <span class="label label-success"><%# Eval("febrero") %></span>
+                                                                    </div>
+                                                                </DataItemTemplate>
+                                                            </dx:BootstrapGridViewDataColumn>
+                                                            <dx:BootstrapGridViewDataColumn Caption="Marzo" FieldName="marzo" UnboundExpression="{0:n}" UnboundType="Decimal" VisibleIndex="5" Width="60px">
+                                                                <DataItemTemplate>
+                                                                    <div class="col-md-12">
+                                                                      <span class="label label-primary"><%# Eval("cantMarzo") %></span>
+                                                                      <span class="label label-success"><%# Eval("marzo") %></span>
+                                                                    </div>
+                                                                </DataItemTemplate>
+                                                            </dx:BootstrapGridViewDataColumn>
+                                                            <dx:BootstrapGridViewDataColumn Caption="Abril" FieldName="abril" UnboundExpression="{0:n}" UnboundType="Decimal" VisibleIndex="6" Width="60px">
+                                                                <DataItemTemplate>
+                                                                    <div class="col-md-12">
+                                                                      <span class="label label-primary"><%# Eval("cantAbril") %></span>
+                                                                      <span class="label label-success"><%# Eval("abril") %></span>
+                                                                    </div>
+                                                                </DataItemTemplate>
+                                                            </dx:BootstrapGridViewDataColumn>--%>
+                                                            <%--<dx:BootstrapGridViewTextColumn Caption="Febrero" FieldName="febrero" UnboundExpression="{0:n}" UnboundType="Decimal" VisibleIndex="4" Width="60px">
+                                                                <PropertiesTextEdit DisplayFormatString="{0:n}">
+                                                                </PropertiesTextEdit>
+                                                            </dx:BootstrapGridViewTextColumn>--%>
+                                                            <%--<dx:BootstrapGridViewTextColumn Caption="Marzo" FieldName="marzo" UnboundExpression="{0:n}" UnboundType="Decimal" VisibleIndex="5" Width="60px">
+                                                                <PropertiesTextEdit DisplayFormatString="{0:n}">
+                                                                </PropertiesTextEdit>
+                                                            </dx:BootstrapGridViewTextColumn>--%>
+                                                            <%--<dx:BootstrapGridViewTextColumn Caption="Abril" FieldName="abril" UnboundExpression="{0:n}" UnboundType="Decimal" VisibleIndex="6" Width="60px">
+                                                                <PropertiesTextEdit DisplayFormatString="{0:n}">
+                                                                </PropertiesTextEdit>
+                                                            </dx:BootstrapGridViewTextColumn>--%>
+                                                            <dx:BootstrapGridViewTextColumn Caption="Mayo" FieldName="mayo" UnboundExpression="{0:n}" UnboundType="Decimal" VisibleIndex="7" Width="60px">
+                                                                <PropertiesTextEdit DisplayFormatString="{0:n}">
+                                                                </PropertiesTextEdit>
+                                                            </dx:BootstrapGridViewTextColumn>
+                                                            <dx:BootstrapGridViewTextColumn Caption="Junio" FieldName="junio" UnboundExpression="{0:n}" UnboundType="Decimal" VisibleIndex="8" Width="60px">
+                                                                <PropertiesTextEdit DisplayFormatString="{0:n}">
+                                                                </PropertiesTextEdit>
+                                                            </dx:BootstrapGridViewTextColumn>
+                                                            <dx:BootstrapGridViewTextColumn Caption="Julio" FieldName="julio" UnboundExpression="{0:n}" UnboundType="Decimal" VisibleIndex="9" Width="60px">
+                                                                <PropertiesTextEdit DisplayFormatString="{0:n}">
+                                                                </PropertiesTextEdit>
+                                                            </dx:BootstrapGridViewTextColumn>
+                                                            <dx:BootstrapGridViewTextColumn Caption="Agosto" FieldName="agosto" UnboundExpression="{0:n}" UnboundType="Decimal" VisibleIndex="10" Width="60px">
+                                                                <PropertiesTextEdit DisplayFormatString="{0:n}">
+                                                                </PropertiesTextEdit>
+                                                            </dx:BootstrapGridViewTextColumn>
+                                                            <dx:BootstrapGridViewTextColumn Caption="Setiembre" FieldName="setiembre" UnboundExpression="{0:n}" UnboundType="Decimal" VisibleIndex="11" Width="60px">
+                                                                <PropertiesTextEdit DisplayFormatString="{0:n}">
+                                                                </PropertiesTextEdit>
+                                                            </dx:BootstrapGridViewTextColumn>
+                                                            <dx:BootstrapGridViewTextColumn Caption="Octubre" FieldName="octubre" UnboundExpression="{0:n}" UnboundType="Decimal" VisibleIndex="12" Width="60px">
+                                                                <PropertiesTextEdit DisplayFormatString="{0:n}">
+                                                                </PropertiesTextEdit>
+                                                            </dx:BootstrapGridViewTextColumn>
+                                                            <dx:BootstrapGridViewTextColumn Caption="Noviembre" FieldName="noviembre" UnboundExpression="{0:n}" UnboundType="Decimal" VisibleIndex="13" Width="60px">
+                                                                <PropertiesTextEdit DisplayFormatString="{0:n}">
+                                                                </PropertiesTextEdit>
+                                                            </dx:BootstrapGridViewTextColumn>
+                                                            <dx:BootstrapGridViewTextColumn Caption="Diciembre" FieldName="diciembre" UnboundExpression="{0:n}" UnboundType="Decimal" VisibleIndex="14" Width="60px">
+                                                                <PropertiesTextEdit DisplayFormatString="{0:n}">
+                                                                </PropertiesTextEdit>
+                                                            </dx:BootstrapGridViewTextColumn>
+                                                            
+                                                        </Columns>
+                                                        <Settings ShowFooter="True" />
+                                                        <SettingsPager EnableAdaptivity="true" />
+                                                        <TotalSummary>
+                                                            <dx:ASPxSummaryItem FieldName="descripcion" SummaryType="Count" />
+                                                            <dx:ASPxSummaryItem FieldName="total" SummaryType="Sum" />
+                                                        </TotalSummary> 
+                                                    </dx:BootstrapGridView>
+                                                    </div>
+                                                </DetailRow>
+                                            </Templates>
+                                            <%--BeginHide--%>
+                                            <CssClassesPager PageNumber="hidden-xs" Ellipsis="hidden-xs" Summary="hidden-md hidden-sm hidden-xs" />
+                                            <%--EndHide--%>
+                                            <TotalSummary>
+                                                <dx:ASPxSummaryItem FieldName="enero" DisplayFormat="{0:n2}" SummaryType="Sum" />
+                                                <dx:ASPxSummaryItem FieldName="febrero" DisplayFormat="{0:n2}" SummaryType="Sum" />
+                                                <dx:ASPxSummaryItem FieldName="marzo" DisplayFormat="{0:n2}" SummaryType="Sum" />
+                                                <dx:ASPxSummaryItem FieldName="abril" DisplayFormat="{0:n2}" SummaryType="Sum" />
+                                                <dx:ASPxSummaryItem FieldName="mayo" DisplayFormat="{0:n2}" SummaryType="Sum" />
+                                                <dx:ASPxSummaryItem FieldName="junio" DisplayFormat="{0:n2}" SummaryType="Sum" />
+                                                <dx:ASPxSummaryItem FieldName="julio" DisplayFormat="{0:n2}" SummaryType="Sum" />
+                                                <dx:ASPxSummaryItem FieldName="agosto" DisplayFormat="{0:n2}" SummaryType="Sum" />
+                                                <dx:ASPxSummaryItem FieldName="setiembre" DisplayFormat="{0:n2}" SummaryType="Sum" />
+                                                <dx:ASPxSummaryItem FieldName="octubre" DisplayFormat="{0:n2}" SummaryType="Sum" />
+                                                <dx:ASPxSummaryItem FieldName="novimebre" DisplayFormat="{0:n2}" SummaryType="Sum" />
+                                                <dx:ASPxSummaryItem FieldName="diciembre" DisplayFormat="{0:n2}" SummaryType="Sum" />
+                                                <dx:ASPxSummaryItem FieldName="importe" DisplayFormat="{0:n2}" SummaryType="Sum" />
+                                            </TotalSummary>
+                                        </dx:BootstrapGridView>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </dx:ContentControl>
+        </ContentCollection>
+    </dx:BootstrapCallbackPanel>
+</asp:Content>

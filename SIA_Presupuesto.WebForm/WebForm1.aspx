@@ -1,0 +1,54 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="SIA_Presupuesto.WebForm.WebForm1" %>
+<%@ Register assembly="DevExpress.Web.Bootstrap.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.Bootstrap" tagprefix="dx" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <dx:BootstrapCallbackPanel ID="BootstrapCallbackPanel1" runat="server">
+        <ContentCollection>
+<dx:ContentControl runat="server">
+    <dx:BootstrapPopupControl ID="BootstrapPopupControl1" runat="server">
+        <ContentCollection>
+            <dx:ContentControl runat="server">
+                <dx:BootstrapFormLayout ID="BootstrapFormLayout1" runat="server">
+                    <Items>
+                        <dx:BootstrapLayoutItem ColSpanMd="6">
+                            <ContentCollection>
+                                <dx:ContentControl runat="server">
+                                    <dx:BootstrapTextBox ID="BootstrapFormLayout1_E2" runat="server">
+                                    </dx:BootstrapTextBox>
+                                </dx:ContentControl>
+                            </ContentCollection>
+                        </dx:BootstrapLayoutItem>
+                        <dx:BootstrapLayoutItem ColSpanMd="6">
+                            <ContentCollection>
+                                <dx:ContentControl runat="server">
+                                    <dx:BootstrapComboBox ID="BootstrapFormLayout1_E1" runat="server">
+                                    </dx:BootstrapComboBox>
+                                </dx:ContentControl>
+                            </ContentCollection>
+                        </dx:BootstrapLayoutItem>
+                        <dx:BootstrapLayoutItem ColSpanMd="6">
+                            <ContentCollection>
+                                <dx:ContentControl runat="server">
+                                    <dx:BootstrapDateEdit ID="BootstrapFormLayout1_E3" runat="server">
+                                    </dx:BootstrapDateEdit>
+                                </dx:ContentControl>
+                            </ContentCollection>
+                        </dx:BootstrapLayoutItem>
+                        <dx:BootstrapLayoutItem ColSpanMd="6">
+                            <ContentCollection>
+                                <dx:ContentControl runat="server">
+                                    <dx:BootstrapTextBox ID="BootstrapFormLayout1_E4" runat="server">
+                                    </dx:BootstrapTextBox>
+                                </dx:ContentControl>
+                            </ContentCollection>
+                        </dx:BootstrapLayoutItem>
+                    </Items>
+                </dx:BootstrapFormLayout>
+            </dx:ContentControl>
+        </ContentCollection>
+    </dx:BootstrapPopupControl>
+            </dx:ContentControl>
+</ContentCollection>
+    </dx:BootstrapCallbackPanel>
+</asp:Content>

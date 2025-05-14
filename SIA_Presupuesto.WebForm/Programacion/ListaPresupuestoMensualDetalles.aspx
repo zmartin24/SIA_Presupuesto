@@ -1,0 +1,189 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="ListaPresupuestoMensualDetalles.aspx.cs" Inherits="SIA_Presupuesto.WebForm.Programacion.ListaPresupuestoMensualDetalles" %>
+<%@ Register Assembly="DevExpress.Web.Bootstrap.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.Bootstrap" TagPrefix="dx" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <dx:BootstrapCallbackPanel ID="cpPrincipal" runat="server" Width="100%" ClientInstanceName="cpPrincipal" OnCallback="cpPrincipal_Callback">
+        <ClientSideEvents EndCallback="Presupuesto.CpPrincipal_EndCallback" />
+        <ContentCollection>
+            <dx:ContentControl runat="server">
+                <dx:ASPxHiddenField ID="hdfValores" runat="server" ClientInstanceName="hdfValores">
+                </dx:ASPxHiddenField>
+                <%--<div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="x_panel">
+                            <div class="row x_title">
+                                <h4>DETALLES DE DE CUENTAS DE PRESUPUESTO MENSUAL</h4>
+                                
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <div class="row">
+                                    <div class="btn-toggle">
+                                        <dx:BootstrapButton ID="btnSalir" runat="server" AutoPostBack="False" ClientInstanceName="btnSalir" Text="Volver" OnClick="btnSalir_Click">
+                                            <CssClasses Control="btn btn-sm btn-primary" Icon="fa fa-reply" />
+                                        </dx:BootstrapButton>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="x_content">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>--%>
+                <!-- page content -->
+                <div class="row" role="main">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="page-title">
+                            <div class="title_left">
+                                <h3>DETALLES DE CUENTAS <small>Presupuesto Mensual</small></h3>
+                            </div>
+                            <%--<div class="title_right">
+                                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Buscar por..."/>
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="button">Go!</button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>--%>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="x_panel">
+                                    <div class="x_title">
+                                        <h2 class="green"><dx:ASPxLabel ID="lblDesPresupuesto" runat="server" Text="ASPxLabel" CssClass="title"></dx:ASPxLabel></h2>
+                                        <ul class="nav navbar-right panel_toolbox">
+                                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+                                            <%--<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                                <ul class="dropdown-menu" role="menu">
+                                                    <li><a href="#">Settings 1</a></li>
+                                                    <li><a href="#">Settings 2</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a class="close-link"><i class="fa fa-close"></i></a></li>--%>
+                                        </ul>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="x_content">
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <div class="row">
+                                                <div class="table-responsive">
+                                                    <dx:BootstrapGridView ID="grvSubPreDet" runat="server" AutoGenerateColumns="False" ClientInstanceName="grvSubPreDet" KeyFieldName="item" Width="100%" OnDataBinding="grid_DataBinding">
+                                                        <SettingsDetail ShowDetailRow="True" AllowOnlyOneMasterRowExpanded="True" />
+                                                        <SettingsPager PageSize="20" AlwaysShowPager="True"></SettingsPager>
+                                                        <Settings ShowFooter="True" />
+                                                        <SettingsBehavior AutoExpandAllGroups="true" />
+                                            
+                                                        <Columns>
+                                                            <dx:BootstrapGridViewTextColumn Caption="Cuenta" FieldName="numCuenta" VisibleIndex="0" Width="50px" ReadOnly="True" >
+                                                            </dx:BootstrapGridViewTextColumn>
+                                                            <dx:BootstrapGridViewTextColumn Caption="Descripción" FieldName="descripcion" VisibleIndex="1" Width="200px" ReadOnly="True">
+                                                            </dx:BootstrapGridViewTextColumn>
+
+                                                             <dx:BootstrapGridViewTextColumn Caption="Dirección" FieldName="desDireccion" VisibleIndex="2" Width="100px">
+                                                            </dx:BootstrapGridViewTextColumn>
+                                                            <dx:BootstrapGridViewTextColumn Caption="Area" FieldName="desArea" VisibleIndex="3" Width="100px">
+                                                            </dx:BootstrapGridViewTextColumn>
+                                                            <dx:BootstrapGridViewTextColumn Caption="Cuenta" FieldName="numCuentaNivel2" VisibleIndex="4" GroupIndex="1" SortIndex="1" SortOrder="Ascending">
+                                                            </dx:BootstrapGridViewTextColumn>
+                                                            <dx:BootstrapGridViewTextColumn Caption="Cuenta" FieldName="numCuentaNivel1"  VisibleIndex="5" GroupIndex="0" SortIndex="0" SortOrder="Ascending">
+                                                            </dx:BootstrapGridViewTextColumn>
+
+                                                            <dx:BootstrapGridViewSpinEditColumn Caption="Monto" FieldName="importe" VisibleIndex="6" Width="100px">
+                                                                <PropertiesSpinEdit DisplayFormatString="n" DisplayFormatInEditMode="True" NumberFormat="Custom">
+                                                                </PropertiesSpinEdit>
+                                                                <Settings AllowAutoFilter="False" AllowDragDrop="False" AllowGroup="False" AllowHeaderFilter="False" AllowSort="False" />
+                                                            </dx:BootstrapGridViewSpinEditColumn>
+                                                
+                                                            <%--EndCollapse--%>
+                                                        </Columns>
+                                                        <Templates>
+                                                            <DetailRow>
+                                                    
+                                                                <div class="table-responsive">
+                                                                <dx:BootstrapGridView ID="detailGrid" runat="server" KeyFieldName="item" Width="100%" AutoGenerateColumns="False" OnBeforePerformDataSelect="detailGrid_BeforePerformDataSelect">
+                                                                    <Columns>
+                                                                        <dx:BootstrapGridViewTextColumn Caption="Descripción Detalle" FieldName="descripcion" VisibleIndex="0" Width="200px">
+                                                                        </dx:BootstrapGridViewTextColumn>
+                                                                        <dx:BootstrapGridViewDataColumn Caption="Und" FieldName="Abreviado" VisibleIndex="1" Width="35px">
+                                                                        </dx:BootstrapGridViewDataColumn>
+                                                                        <dx:BootstrapGridViewTextColumn Caption="Precio" FieldName="precio" UnboundExpression="{0:n}" UnboundType="Decimal" VisibleIndex="2" Width="55px">
+                                                                            <PropertiesTextEdit DisplayFormatString="{0:n}">
+                                                                            </PropertiesTextEdit>
+                                                                        </dx:BootstrapGridViewTextColumn>
+                                                           
+                                                                        <dx:BootstrapGridViewTextColumn Caption="Monto" FieldName="importe" UnboundExpression="{0:n}" UnboundType="Decimal" VisibleIndex="3" Width="60px">
+                                                                            <PropertiesTextEdit DisplayFormatString="{0:n}">
+                                                                            </PropertiesTextEdit>
+                                                                        </dx:BootstrapGridViewTextColumn>
+                                                                    </Columns>
+                                                                    <Settings ShowFooter="True" />
+                                                                    <SettingsPager EnableAdaptivity="true" />
+                                                                    <TotalSummary>
+                                                                        <dx:ASPxSummaryItem FieldName="descripcion" SummaryType="Count" />
+                                                                        <dx:ASPxSummaryItem FieldName="total" SummaryType="Sum" />
+                                                                    </TotalSummary> 
+                                                                </dx:BootstrapGridView>
+                                                                </div>
+                                                            </DetailRow>
+                                                        </Templates>
+                                                        <%--BeginHide--%>
+                                                        <CssClassesPager PageNumber="hidden-xs" Ellipsis="hidden-xs" Summary="hidden-md hidden-sm hidden-xs" />
+                                                        <%--EndHide--%>
+                                                        <TotalSummary>
+                                                            <dx:ASPxSummaryItem DisplayFormat="Total: {0:n}" FieldName="importe" ShowInColumn="Monto" ShowInGroupFooterColumn="Monto" SummaryType="Sum"/>
+                                                        </TotalSummary>
+                                                    </dx:BootstrapGridView>
+                                                </div>
+                                            </div>
+                                            <%--<div id="mainb" style="height:350px;"></div>--%>
+                                        </div>
+
+                                        <!-- start project-detail sidebar -->
+                                        <div class="col-md-3 col-sm-3 col-xs-12">
+                                            <section class="panel">
+                                                <div class="x_title">
+                                                    <h2>Descripción</h2>
+                                                    <div class="clearfix"></div>
+                                                 </div>
+                                                <div class="panel-body">
+                                                    <h3 class="green"><i class="fa fa-bar-chart-o"></i> <dx:ASPxLabel ID="lblDesSubPresupuesto" runat="server" Text="ASPxLabel" CssClass="tile"></dx:ASPxLabel></h3>
+                                                    <%--<p>Detalles de presupuesto mensual.</p>
+                                                    <br />--%>
+
+                                                    <div class="project_detail">
+                                                        <p class="title">Tipo Cambio</p>
+                                                        <p><i class="fa fa-money"></i> <dx:ASPxLabel ID="lblTipoCambio" runat="server" Text="[TipoCambio]"></dx:ASPxLabel></p>
+                                                        <p class="title">Proyecto</p>
+                                                        <p><i class="fa fa-book"></i> <dx:ASPxLabel ID="lblProyecto" runat="server" Text="[Proyecto]"></dx:ASPxLabel></p>
+                                                        <p class="title">Es Obra</p>
+                                                        <p><i class="fa fa-building"></i> <dx:ASPxLabel ID="lblObra" runat="server" Text="[Es Obra]"></dx:ASPxLabel></p>
+                                                    </div>
+                                                   
+                      
+                                                    <div class="text-center mtop20">
+                                                        <dx:BootstrapButton ID="btnSalir2" runat="server" AutoPostBack="False" ClientInstanceName="btnSalir2" Text="Volver" OnClick="btnSalir_Click">
+                                                            <CssClasses Control="btn btn-sm btn-primary" Icon="fa fa-reply" />
+                                                        </dx:BootstrapButton>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                        </div>
+                                        <!-- end project-detail sidebar -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /page content -->
+                
+            </dx:ContentControl>
+        </ContentCollection>
+    </dx:BootstrapCallbackPanel>
+</asp:Content>

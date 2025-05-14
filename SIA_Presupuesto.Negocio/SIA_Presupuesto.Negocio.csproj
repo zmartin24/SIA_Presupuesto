@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3219C2E4-31C9-4255-AF62-DD6C1032118F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SIA_Presupuesto.Negocio</RootNamespace>
+    <AssemblyName>SIA_Presupuesto.Negocio</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CA2011.Utilitario, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\CA2011.Utilitario.dll</HintPath>
+    </Reference>
+    <Reference Include="CalcEngine">
+      <HintPath>..\packages\CalcEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="Seguridad">
+      <HintPath>..\packages\Seguridad.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\ServicioBase.cs" />
+    <Compile Include="Base\TipoMensaje.cs" />
+    <Compile Include="Contratos\Base\IRepositorio.cs" />
+    <Compile Include="Contratos\Base\IServicio.cs" />
+    <Compile Include="Contratos\Base\IUnidadTrabajo.cs" />
+    <Compile Include="Contratos\Repositorio\ICertificacionRequerimientoSubprespuestoRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\ICertificacionDetalleRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\ICertificacionMasterRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\ICertificacionRequerimientoRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IConceptoCuentaContableRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IConceptoPresupuestoRemuneracionRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IConfiguracionPAARepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IEjeOperativoRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IEstructuraPresupuestoRemuneracionRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IEvaluacionMensualAreaMesRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IEvaluacionMensualAreaRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IEvaluacionMensualDetalleMesRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IEvaluacionMensualDetalleRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IEvaluacionMensualProgramacionPresRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IEvaluacionMensualProgramacionRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IEvaluacionPresupuestoCuentaRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IFuentefinanciamientoRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IGastoRecurrenteDetalleMesRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IGastoRecurrenteDetalleRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IGastoRecurrenteRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IGastoRecurrenteRequerimientoRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IGeneralReporteRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IGeneralRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IGrupoPresupuestoRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IModalidadRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IOrigenConceptoRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IParametroPresupuestoRemuneracionRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IPartidaPresupuestalCuentaRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IPeriodoRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IPlanAnualAdquisicionDetalleMesRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IPlanAnualAdquisicionDetalleRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IPlanAnualAdquisicionRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IPlanAnualAdquisicionRequerimientoRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\ITipoActividadRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IPoaVersionRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IPresupuestoRecepcionadoRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IPresupuestoRemuneracionDetRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IPresupuestoRemuneracionRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IPresupuestoRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IProgramacionAnualAreaMesRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IProgramacionAnualAreaRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IProgramacionAnualDetalleMesRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IProgramacionAnualDetalleRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IProgramacionAnualEjeOperativoRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IProgramacionAnualRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IProgramacionAnualSedeRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IPropiedadPresupuestoRemuneracionRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IPuestoRequerimientoRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IPuestoPresupuestoRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IPuestoReajustePresupuestoRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IReajusteMensualAreaMesRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IReajusteMensualAreaRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IReajusteMensualDetalleMesRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IReajusteMensualDetalleRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IReajusteMensualProgramacionAreaRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IReajusteMensualProgramacionRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IReajustePresupuestoRemuneracionDetRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IReajustePresupuestoRemuneracionRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IRequerimientoBienServicioDetalleMesRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IRequerimientoMensualDetalleRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IRequerimientoBienServicioDetalleRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IRequerimientoMensualBienServicioRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IRequerimientoRecursoHumanoRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IRequerimientoBienServicioRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IRubroBienServicioCuentaRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IPartidaPresupuestalRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IPoaRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IRubroBienServicioRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\ISubpresupuestoRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\ITipoCambioAnualRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\ITipoCambioPresupuestoRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\ITipoReporteRepositorio.cs" />
+    <Compile Include="Contratos\Repositorio\IUbigeoRepositorio.cs" />
+    <Compile Include="Contratos\Servicios\ICalculadoraPresupuestoRemeracion.cs" />
+    <Compile Include="Contratos\Servicios\ICertificacionMasterServicio.cs" />
+    <Compile Include="Contratos\Servicios\ICertificacionRequerimientoServicio.cs" />
+    <Compile Include="Contratos\Servicios\IConceptoCuentaContableServicio.cs" />
+    <Compile Include="Contratos\Servicios\IConceptoPresupuestoRemuneracionServicio.cs" />
+    <Compile Include="Contratos\Servicios\IConfiguracionPAAServicio.cs" />
+    <Compile Include="Contratos\Servicios\IEjeOperativoServicio.cs" />
+    <Compile Include="Contratos\Servicios\IEstructuraPresupuestoRemuneracionServicio.cs" />
+    <Compile Include="Contratos\Servicios\IEvaluacionMensualProgramacionServicio.cs" />
+    <Compile Include="Contratos\Servicios\IEvaluacionPresupuestoCuentaServicio.cs" />
+    <Compile Include="Contratos\Servicios\IFuentefinanciamientoServicio.cs" />
+    <Compile Include="Contratos\Servicios\IGastoRecurrenteServicio.cs" />
+    <Compile Include="Contratos\Servicios\IGeneralReporteServicio.cs" />
+    <Compile Include="Contratos\Servicios\IGeneralServicio.cs" />
+    <Compile Include="Contratos\Servicios\IGrupoPresupuestoServicio.cs" />
+    <Compile Include="Contratos\Servicios\IModalidadServicio.cs" />
+    <Compile Include="Contratos\Servicios\IOrigenConceptoServicio.cs" />
+    <Compile Include="Contratos\Servicios\IParametroPresupuestoRemuneracionServicio.cs" />
+    <Compile Include="Contratos\Servicios\IPeriodoServicio.cs" />
+    <Compile Include="Contratos\Servicios\IPlanAnualAdquisicionServicio.cs" />
+    <Compile Include="Contratos\Servicios\ITipoActividadServicio.cs" />
+    <Compile Include="Contratos\Servicios\IPresupuestoRecepcionadoServicio.cs" />
+    <Compile Include="Contratos\Servicios\IPresupuestoRemuneracionServicio.cs" />
+    <Compile Include="Contratos\Servicios\IPresupuestoServicio.cs" />
+    <Compile Include="Contratos\Servicios\IProgramacionAnualServicio.cs" />
+    <Compile Include="Contratos\Servicios\IPuestoPresupuestoServicio.cs" />
+    <Compile Include="Contratos\Servicios\IPuestoReajustePresupuestoServicio.cs" />
+    <Compile Include="Contratos\Servicios\IReajusteMensualProgramacionServicio.cs" />
+    <Compile Include="Contratos\Servicios\IReajustePresupuestoRemuneracionServicio.cs" />
+    <Compile Include="Contratos\Servicios\IPuestoRequerimientoServicio.cs" />
+    <Compile Include="Contratos\Servicios\IPoaServicio.cs" />
+    <Compile Include="Contratos\Servicios\IRequerimientoMensualBienServicioServicio.cs" />
+    <Compile Include="Contratos\Servicios\IRequerimientoRecursoHumanoServicio.cs" />
+    <Compile Include="Contratos\Servicios\IRequerimientoBienServicioServicio.cs" />
+    <Compile Include="Contratos\Servicios\IPartidaPresupuestalServicio.cs" />
+    <Compile Include="Contratos\Servicios\IRubroBienServicio.cs" />
+    <Compile Include="Contratos\Servicios\IRubroBienServicioCuentaServicio.cs" />
+    <Compile Include="Contratos\Servicios\ISubpresupuestoServicio.cs" />
+    <Compile Include="Contratos\Servicios\ITipoCambioAnualServicio.cs" />
+    <Compile Include="Contratos\Servicios\ITipoCambioPresupuestoServicio.cs" />
+    <Compile Include="Contratos\Servicios\ITipoReporteServicio.cs" />
+    <Compile Include="Contratos\Servicios\IUbigeoServicio.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recursos\Mensajes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Mensajes.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Servicios\CalculadoraPresupuestoRemeracion.cs" />
+    <Compile Include="Servicios\CertificacionMasterServicio.cs" />
+    <Compile Include="Servicios\CertificacionRequerimientoServicio.cs" />
+    <Compile Include="Servicios\ConceptoCuentaContableServicio.cs" />
+    <Compile Include="Servicios\ConceptoPresupuestoRemuneracionServicio.cs" />
+    <Compile Include="Servicios\ConfiguracionPAAServicio.cs" />
+    <Compile Include="Servicios\EjeOperativoServicio.cs" />
+    <Compile Include="Servicios\EstructuraPresupuestoRemuneracionServicio.cs" />
+    <Compile Include="Servicios\EvaluacionPresupuestoCuentaServicio.cs" />
+    <Compile Include="Servicios\ModalidadServicio.cs" />
+    <Compile Include="Servicios\OrigenConceptoServicio.cs" />
+    <Compile Include="Servicios\ParametroPresupuestoRemuneracionServicio.cs" />
+    <Compile Include="Servicios\PeriodoServicio.cs" />
+    <Compile Include="Servicios\TipoActividadServicio.cs" />
+    <Compile Include="Servicios\PresupuestoRecepcionadoServicio.cs" />
+    <Compile Include="Servicios\PresupuestoRemuneracionServicio.cs" />
+    <Compile Include="Servicios\PuestoReajustePresupuestoServicio.cs" />
+    <Compile Include="Servicios\PuestoPresupuestoServicio.cs" />
+    <Compile Include="Servicios\ReajusteMensualProgramacionServicio.cs" />
+    <Compile Include="Servicios\EvaluacionMensualProgramacionServicio.cs" />
+    <Compile Include="Servicios\FuentefinanciamientoServicio.cs" />
+    <Compile Include="Servicios\GastoRecurrenteServicio.cs" />
+    <Compile Include="Servicios\GeneralReporteServicio.cs" />
+    <Compile Include="Servicios\GeneralServicio.cs" />
+    <Compile Include="Servicios\GrupoPresupuestoServicio.cs" />
+    <Compile Include="Servicios\PlanAnualAdquisicionRequerimientoServicio.cs" />
+    <Compile Include="Servicios\PlanAnualAdquisicionServicio.cs" />
+    <Compile Include="Servicios\PresupuestoServicio.cs" />
+    <Compile Include="Servicios\ReajustePresupuestoRemuneracionServicio.cs" />
+    <Compile Include="Servicios\PuestoRequerimientoServicio.cs" />
+    <Compile Include="Servicios\RequerimientoMensualBienServicioServicio.cs" />
+    <Compile Include="Servicios\RequerimientoRecursoHumanoServicio.cs" />
+    <Compile Include="Servicios\RequerimientoBienServicioServicio.cs" />
+    <Compile Include="Servicios\ProgramacionAnualServicio.cs" />
+    <Compile Include="Servicios\PartidaPresupuestalServicio.cs" />
+    <Compile Include="Servicios\PoaServicio.cs" />
+    <Compile Include="Servicios\RubroBienServicio.cs" />
+    <Compile Include="Servicios\RubroBienServicioCuentaServicio.cs" />
+    <Compile Include="Servicios\SubpresupuestoServicio.cs" />
+    <Compile Include="Servicios\TipoCambioAnualServicio.cs" />
+    <Compile Include="Servicios\TipoCambioPresupuestoServicio.cs" />
+    <Compile Include="Servicios\TipoReporteServicio.cs" />
+    <Compile Include="Servicios\UbigeoServicio.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\SIA_Presupuesto.Negocio.Entidades\SIA_Presupuesto.Negocio.Entidades.csproj">
+      <Project>{e827edcc-ad93-49ff-bd08-bb1bc9d589fb}</Project>
+      <Name>SIA_Presupuesto.Negocio.Entidades</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Recursos\Mensajes.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Mensajes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

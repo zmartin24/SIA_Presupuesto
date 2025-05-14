@@ -1,0 +1,62 @@
+﻿//------------------------------------------------------------------------------
+// <generado automáticamente>
+//     Este código fue generado por una herramienta.
+//
+//     Los cambios en este archivo podrían causar un comportamiento incorrecto y se perderán si
+//     se vuelve a generar el código. 
+// </generado automáticamente>
+//------------------------------------------------------------------------------
+
+namespace SIA_Presupuesto.WebForm.ControlPresupuestal
+{
+
+
+    public partial class ListaCertificacionDetalles
+    {
+
+        /// <summary>
+        /// Control cpPrincipal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::DevExpress.Web.Bootstrap.BootstrapCallbackPanel cpPrincipal;
+
+        /// <summary>
+        /// Control lblDescripcion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxLabel lblDescripcion;
+
+        /// <summary>
+        /// Control hdfValores.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxHiddenField hdfValores;
+
+        /// <summary>
+        /// Control btnSalir.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::DevExpress.Web.Bootstrap.BootstrapButton btnSalir;
+
+        /// <summary>
+        /// Control grvCertificacionDetalle.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::DevExpress.Web.Bootstrap.BootstrapGridView grvCertificacionDetalle;
+    }
+}

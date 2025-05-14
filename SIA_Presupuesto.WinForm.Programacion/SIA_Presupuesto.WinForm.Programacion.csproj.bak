@@ -1,0 +1,903 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F35AB609-F8EF-46E7-B617-D5037336BBC2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SIA_Presupuesto.WinForm.Programacion</RootNamespace>
+    <AssemblyName>SIA_Presupuesto.WinForm.Programacion</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CA2011.Utilitario">
+      <HintPath>..\packages\CA2011.Utilitario.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Drawing.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.Desktop.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v22.1.Wizard, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPivotGrid.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v22.1.Export, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v22.1.UI, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v22.1.Extensions, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dialogo\frmActualizacionReajustePorRRHH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmActualizacionReajustePorRRHH.Designer.cs">
+      <DependentUpon>frmActualizacionReajustePorRRHH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmActualizacionPorRRHH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmActualizacionPorRRHH.Designer.cs">
+      <DependentUpon>frmActualizacionPorRRHH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmActualizacionPorPAC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmActualizacionPorPAC.Designer.cs">
+      <DependentUpon>frmActualizacionPorPAC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmAgregarTransferencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmAgregarTransferencia.Designer.cs">
+      <DependentUpon>frmAgregarTransferencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmAsignarPresupuestoMensualReajuste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmAsignarPresupuestoMensualReajuste.Designer.cs">
+      <DependentUpon>frmAsignarPresupuestoMensualReajuste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmAsignarPresupuestoMensualProAnu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmAsignarPresupuestoMensualProAnu.Designer.cs">
+      <DependentUpon>frmAsignarPresupuestoMensualProAnu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmCambioEstadoProgramacionAnual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmCambioEstadoProgramacionAnual.Designer.cs">
+      <DependentUpon>frmCambioEstadoProgramacionAnual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmDetallePresupuestoRecepcionado.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmDetallePresupuestoRecepcionado.Designer.cs">
+      <DependentUpon>frmDetallePresupuestoRecepcionado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmDetalleProgramacionMensual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmDetalleProgramacionMensual.Designer.cs">
+      <DependentUpon>frmDetalleProgramacionMensual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmExportarPresupuestoRemuneracionMasivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmExportarPresupuestoRemuneracionMasivo.Designer.cs">
+      <DependentUpon>frmExportarPresupuestoRemuneracionMasivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmExportarProgramacionAnualGenericaMasivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmExportarProgramacionAnualGenericaMasivo.Designer.cs">
+      <DependentUpon>frmExportarProgramacionAnualGenericaMasivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmExportarReajustePresupuestoRemuneracionMasivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmExportarReajustePresupuestoRemuneracionMasivo.Designer.cs">
+      <DependentUpon>frmExportarReajustePresupuestoRemuneracionMasivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmExportarReajusteEvaluacionMasivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmExportarReajusteEvaluacionMasivo.Designer.cs">
+      <DependentUpon>frmExportarReajusteEvaluacionMasivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmGrupoPresupuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmGrupoPresupuesto.Designer.cs">
+      <DependentUpon>frmGrupoPresupuesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmExportarReajusteEvaluacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmExportarReajusteEvaluacion.Designer.cs">
+      <DependentUpon>frmExportarReajusteEvaluacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmImprimirSaldoEvaluacionReajusteAnual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmImprimirSaldoEvaluacionReajusteAnual.Designer.cs">
+      <DependentUpon>frmImprimirSaldoEvaluacionReajusteAnual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmImprimirConsolidadoEvaluacionReajusteAnual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmImprimirConsolidadoEvaluacionReajusteAnual.Designer.cs">
+      <DependentUpon>frmImprimirConsolidadoEvaluacionReajusteAnual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmImprimirCalendarioReajusteEvaluacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmImprimirCalendarioReajusteEvaluacion.Designer.cs">
+      <DependentUpon>frmImprimirCalendarioReajusteEvaluacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmImprimirEjecucionFechasSubpresupuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmImprimirEjecucionFechasSubpresupuesto.Designer.cs">
+      <DependentUpon>frmImprimirEjecucionFechasSubpresupuesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmImprimirEjecucionFechas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmImprimirEjecucionFechas.Designer.cs">
+      <DependentUpon>frmImprimirEjecucionFechas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmImprimirCalendarioPresAnual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmImprimirCalendarioPresAnual.Designer.cs">
+      <DependentUpon>frmImprimirCalendarioPresAnual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmImprimirPorDireccionReajusteMensual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmImprimirPorDireccionReajusteMensual.Designer.cs">
+      <DependentUpon>frmImprimirPorDireccionReajusteMensual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmImprimirPorDireccionPresupuestoAnual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmImprimirPorDireccionPresupuestoAnual.Designer.cs">
+      <DependentUpon>frmImprimirPorDireccionPresupuestoAnual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmModificarDetPreRecepcionado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmModificarDetPreRecepcionado.Designer.cs">
+      <DependentUpon>frmModificarDetPreRecepcionado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmPresupuestoMensual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmPresupuestoMensual.Designer.cs">
+      <DependentUpon>frmPresupuestoMensual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmPresupuestoRecepcionado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmPresupuestoRecepcionado.Designer.cs">
+      <DependentUpon>frmPresupuestoRecepcionado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmProgramacionAnualEjeOperativo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmProgramacionAnualEjeOperativo.Designer.cs">
+      <DependentUpon>frmProgramacionAnualEjeOperativo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmProgramacionAnualSede.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmProgramacionAnualSede.Designer.cs">
+      <DependentUpon>frmProgramacionAnualSede.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmPuestoReajuste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmPuestoReajuste.Designer.cs">
+      <DependentUpon>frmPuestoReajuste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmPuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmPuesto.Designer.cs">
+      <DependentUpon>frmPuesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmPuestoReajusteMasivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmPuestoReajusteMasivo.Designer.cs">
+      <DependentUpon>frmPuestoReajusteMasivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmPuestoMasivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmPuestoMasivo.Designer.cs">
+      <DependentUpon>frmPuestoMasivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmReajusteMensualDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmReajusteMensualDetalle.Designer.cs">
+      <DependentUpon>frmReajusteMensualDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmReajusteMensualArea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmReajusteMensualArea.Designer.cs">
+      <DependentUpon>frmReajusteMensualArea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmEvaluacionMensualArea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmEvaluacionMensualArea.Designer.cs">
+      <DependentUpon>frmEvaluacionMensualArea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmReajusteMensualGeneral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmReajusteMensualGeneral.Designer.cs">
+      <DependentUpon>frmReajusteMensualGeneral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmEvaluacionMensualGeneral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmEvaluacionMensualGeneral.Designer.cs">
+      <DependentUpon>frmEvaluacionMensualGeneral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmEvaluacionMensualDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmEvaluacionMensualDetalle.Designer.cs">
+      <DependentUpon>frmEvaluacionMensualDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmReporteEvaluacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmReporteEvaluacion.Designer.cs">
+      <DependentUpon>frmReporteEvaluacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmImprimirPorDireccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmImprimirPorDireccion.Designer.cs">
+      <DependentUpon>frmImprimirPorDireccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmRequerimientoBienServicioDet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmRequerimientoBienServicioDet.Designer.cs">
+      <DependentUpon>frmRequerimientoBienServicioDet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmRequerimientoBienServicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmRequerimientoBienServicio.Designer.cs">
+      <DependentUpon>frmRequerimientoBienServicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmProgramacionAnualGeneral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmProgramacionAnualGeneral.Designer.cs">
+      <DependentUpon>frmProgramacionAnualGeneral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmProgramacionAnualArea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmProgramacionAnualArea.Designer.cs">
+      <DependentUpon>frmProgramacionAnualArea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmProgramacionAnualDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmProgramacionAnualDetalle.Designer.cs">
+      <DependentUpon>frmProgramacionAnualDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogo\frmTransferencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogo\frmTransferencia.Designer.cs">
+      <DependentUpon>frmTransferencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReajustePresupuestoRemuneracion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmReajustePresupuestoRemuneracion.Designer.cs">
+      <DependentUpon>frmReajustePresupuestoRemuneracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPresupuestoRemuneracion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmPresupuestoRemuneracion.Designer.cs">
+      <DependentUpon>frmPresupuestoRemuneracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReajusteMensualPresupuesto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmReajusteMensualPresupuesto.Designer.cs">
+      <DependentUpon>frmReajusteMensualPresupuesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEvaluacionMensualPresupuesto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmEvaluacionMensualPresupuesto.Designer.cs">
+      <DependentUpon>frmEvaluacionMensualPresupuesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRequerimientoBienServicioDetalle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmRequerimientoBienServicioDetalle.Designer.cs">
+      <DependentUpon>frmRequerimientoBienServicioDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProgramacionAnual.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmProgramacionAnual.Designer.cs">
+      <DependentUpon>frmProgramacionAnual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\ExportarProHelper.cs" />
+    <Compile Include="ListaGrupoPresupuesto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListaGrupoPresupuesto.Designer.cs">
+      <DependentUpon>ListaGrupoPresupuesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaPresupuestoMensual.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListaPresupuestoMensual.Designer.cs">
+      <DependentUpon>ListaPresupuestoMensual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaPresupuestoRecepcionado.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListaPresupuestoRecepcionado.Designer.cs">
+      <DependentUpon>ListaPresupuestoRecepcionado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaReajusteMensualPresupuesto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListaReajusteMensualPresupuesto.Designer.cs">
+      <DependentUpon>ListaReajusteMensualPresupuesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaEvaluacionMensualPresupuesto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListaEvaluacionMensualPresupuesto.Designer.cs">
+      <DependentUpon>ListaEvaluacionMensualPresupuesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaProgramacionAnual.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ConsultaProgramacionAnual.Designer.cs">
+      <DependentUpon>ConsultaProgramacionAnual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaRequerimientoBienServicio.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListaRequerimientoBienServicio.Designer.cs">
+      <DependentUpon>ListaRequerimientoBienServicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaProgramacionAnual.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListaProgramacionAnual.Designer.cs">
+      <DependentUpon>ListaProgramacionAnual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentador\ActualizacionReajustePorRRHHPresentador.cs" />
+    <Compile Include="Presentador\ActualizacionPorRRHHPresentador.cs" />
+    <Compile Include="Presentador\ActualizacionPorPACPresentador.cs" />
+    <Compile Include="Presentador\AsignarPresupuestoMensualReajustePresentador.cs" />
+    <Compile Include="Presentador\CambioEstadoProgramacionAnualPresentador.cs" />
+    <Compile Include="Presentador\DetalleProgramacionMensualPresentador.cs" />
+    <Compile Include="Presentador\ExportarPresupuestoRemuneracionMasivoPresentador.cs" />
+    <Compile Include="Presentador\ExportarProgramacionAnualGenericaMasivoVistaPresentador.cs" />
+    <Compile Include="Presentador\ExportarReajustePresupuestoRemuneracionMasivoPresentador.cs" />
+    <Compile Include="Presentador\ExportarReajusteEvaluacionMasivoPresentador.cs" />
+    <Compile Include="Presentador\GrupoPresupuestoPresentador.cs" />
+    <Compile Include="Presentador\ExportarReajusteEvaluacionPresentador.cs" />
+    <Compile Include="Presentador\ImprimirSaldoEvaluacionReajustePresentador.cs" />
+    <Compile Include="Presentador\ImprimirConsolidadoEvaluacionReajustePresentador.cs" />
+    <Compile Include="Presentador\ImprimirCalendarioReajusteEvaluacionPresentador.cs" />
+    <Compile Include="Presentador\ImprimirEjecucionSubpresupuestoPresentador.cs" />
+    <Compile Include="Presentador\ImprimirEjecucionFechasPresentador.cs" />
+    <Compile Include="Presentador\ImprimirCalendarioPresAnualPresentador.cs" />
+    <Compile Include="Presentador\ImprimirPorDireccionReajusteMensualPresentador.cs" />
+    <Compile Include="Presentador\ImprimirPorDireccionPresupuestoAnualPresentador.cs" />
+    <Compile Include="Presentador\ListaGrupoPresupuestoPresentador.cs" />
+    <Compile Include="Presentador\ListaPresupuestoRecepcionadoPresentador.cs" />
+    <Compile Include="Presentador\ListaSubPresupuestoPresentador.cs" />
+    <Compile Include="Presentador\AsignarPresupuestoMensualProAnuPresentador.cs" />
+    <Compile Include="Presentador\PresupuestoMensualPresentador.cs" />
+    <Compile Include="Presentador\PresupuestoRecepcionadoPresentador.cs" />
+    <Compile Include="Presentador\PuestoReajustePresentador.cs" />
+    <Compile Include="Presentador\PuestoReajusteMasivoPresentador.cs" />
+    <Compile Include="Presentador\ReajustePresupuestoRemuneracionPresentador.cs" />
+    <Compile Include="Presentador\PresupuestoRemuneracionPresentador.cs" />
+    <Compile Include="Presentador\ProgramacionAnualEjeOperativoPresentador.cs" />
+    <Compile Include="Presentador\ProgramacionAnualSedePresentador.cs" />
+    <Compile Include="Presentador\PuestoMasivoPresentador.cs" />
+    <Compile Include="Presentador\PuestoPresentador.cs" />
+    <Compile Include="Presentador\ReajusteMensualPresupuestoPresentador.cs" />
+    <Compile Include="Presentador\ReajusteMensualDetallePresentador.cs" />
+    <Compile Include="Presentador\ReajusteMensualAreaPresentador.cs" />
+    <Compile Include="Presentador\ReajusteMensualGeneralPresentador.cs" />
+    <Compile Include="Presentador\ListaReajusteAnualPresupuestoPresentador.cs" />
+    <Compile Include="Presentador\ReporteEvaluacionPresentador.cs" />
+    <Compile Include="Presentador\ImprimirPorDireccionPresentador.cs" />
+    <Compile Include="Presentador\ListaEvaluacionAnualPresupuestoPresentador.cs" />
+    <Compile Include="Presentador\ConsultaProgramacionAnualPresentador.cs" />
+    <Compile Include="Presentador\ListaRequerimientoBienServicio.cs" />
+    <Compile Include="Presentador\ListaProgramacionAnualPresentador.cs" />
+    <Compile Include="Presentador\EvaluacionMensualAreaPresentador.cs" />
+    <Compile Include="Presentador\ProgramacionAnualAreaPresentador.cs" />
+    <Compile Include="Presentador\EvaluacionMensualDetallePresentador.cs" />
+    <Compile Include="Presentador\RequerimientoBienServicioDetPresentador.cs" />
+    <Compile Include="Presentador\ProgramacionAnualDetallePresentador.cs" />
+    <Compile Include="Presentador\EvaluacionMensualGeneralPresentador.cs" />
+    <Compile Include="Presentador\RequerimientoBienServicioDetallePresentador.cs" />
+    <Compile Include="Presentador\RequerimientoBienServicioPresentador.cs" />
+    <Compile Include="Presentador\ProgramacionAnualGeneralPresentador.cs" />
+    <Compile Include="Presentador\EvaluacionMensualPresupuestoPresentador.cs" />
+    <Compile Include="Presentador\ProgramacionAnualPresentador.cs" />
+    <Compile Include="Presentador\TransferenciaPresentador.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recursos\Mensajes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Mensajes.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\rptCalendarioPresupuestoAnual.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporte\rptCalendarioPresupuestoAnual.Designer.cs">
+      <DependentUpon>rptCalendarioPresupuestoAnual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\rptCalendarioReajusteEvaluacionAnual.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporte\rptCalendarioReajusteEvaluacionAnual.Designer.cs">
+      <DependentUpon>rptCalendarioReajusteEvaluacionAnual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\rptEvaReaConsolidadoPorDireccion.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporte\rptEvaReaConsolidadoPorDireccion.Designer.cs">
+      <DependentUpon>rptEvaReaConsolidadoPorDireccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\rptFondoEjecutadoPorFechaPresu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporte\rptFondoEjecutadoPorFechaPresu.Designer.cs">
+      <DependentUpon>rptFondoEjecutadoPorFechaPresu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\rptFondoEjecutadosSubpresupuesto.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporte\rptFondoEjecutadosSubpresupuesto.Designer.cs">
+      <DependentUpon>rptFondoEjecutadosSubpresupuesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\rptPresConsolidadoPorDireccion.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporte\rptPresConsolidadoPorDireccion.Designer.cs">
+      <DependentUpon>rptPresConsolidadoPorDireccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\rptRequerimientoBienServicio.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporte\rptRequerimientoBienServicio.Designer.cs">
+      <DependentUpon>rptRequerimientoBienServicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\rptRequerimientoBienServicioDireccion.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporte\rptRequerimientoBienServicioDireccion.Designer.cs">
+      <DependentUpon>rptRequerimientoBienServicioDireccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\rptResumenEvaReaPorSubdireccion.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporte\rptResumenEvaReaPorSubdireccion.Designer.cs">
+      <DependentUpon>rptResumenEvaReaPorSubdireccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\rptResumenFinanciamiento.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporte\rptResumenFinanciamiento.Designer.cs">
+      <DependentUpon>rptResumenFinanciamiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\rptResumenPresPorErradicacion.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporte\rptResumenPresPorErradicacion.Designer.cs">
+      <DependentUpon>rptResumenPresPorErradicacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\rptResumenPresPorSubdireccion.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporte\rptResumenPresPorSubdireccion.Designer.cs">
+      <DependentUpon>rptResumenPresPorSubdireccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\rptResumenReaPorSubdireccion.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporte\rptResumenReaPorSubdireccion.Designer.cs">
+      <DependentUpon>rptResumenReaPorSubdireccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\rptSaldoEvaluacionReajustePorDireccion.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporte\rptSaldoEvaluacionReajustePorDireccion.Designer.cs">
+      <DependentUpon>rptSaldoEvaluacionReajustePorDireccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\IActualizacionReajustePorRRHHVista.cs" />
+    <Compile Include="Vista\IActualizacionPorRRHHVista.cs" />
+    <Compile Include="Vista\IActualizacionPorPACVista.cs" />
+    <Compile Include="Vista\IAsignarPresupuestoMensualReajusteVista.cs" />
+    <Compile Include="Vista\IAsignarPresupuestoMensualProAnuVista.cs" />
+    <Compile Include="Vista\ICambioEstadoProgramacionAnualVista.cs" />
+    <Compile Include="Vista\IDetalleProgramacionMensualVista.cs" />
+    <Compile Include="Vista\IExportarPresupuestoRemuneracionMasivoVista.cs" />
+    <Compile Include="Vista\IExportarProgramacionAnualGenericaMasivoVista.cs" />
+    <Compile Include="Vista\IExportarReajustePresupuestoRemuneracionMasivoVista.cs" />
+    <Compile Include="Vista\IExportarReajusteEvaluacionMasivoVista.cs" />
+    <Compile Include="Vista\IGrupoPresupuestoVista.cs" />
+    <Compile Include="Vista\IExportarReajusteEvaluacionVista.cs" />
+    <Compile Include="Vista\IImprimirSaldoEvaluacionReajusteAnualVista.cs" />
+    <Compile Include="Vista\IImprimirConsolidadoEvaluacionReajusteAnualVista.cs" />
+    <Compile Include="Vista\IImprimirCalendarioReajusteEvaluacionVista.cs" />
+    <Compile Include="Vista\IImprimirEjecucionSubpresupuestoVista.cs" />
+    <Compile Include="Vista\IImprimirEjecucionFechasVista.cs" />
+    <Compile Include="Vista\IImprimirPorDireccionReajusteMensualVista.cs" />
+    <Compile Include="Vista\IImprimirPorDireccionPresupuestoAnualVista.cs" />
+    <Compile Include="Vista\IImprimirCalendarioPresAnualVista.cs" />
+    <Compile Include="Vista\IListaGrupoPresupuestoVista.cs" />
+    <Compile Include="Vista\IListaPresupuestoRecepcionadoVista.cs" />
+    <Compile Include="Vista\IListaSubPresupuestoVista.cs" />
+    <Compile Include="Vista\IListaTransferenciaVista.cs" />
+    <Compile Include="Vista\IPresupuestoMensualVista.cs" />
+    <Compile Include="Vista\IPresupuestoRecepcionadoVista.cs" />
+    <Compile Include="Vista\IPuestoReajusteMasivoVista.cs" />
+    <Compile Include="Vista\IPuestoReajusteVista.cs" />
+    <Compile Include="Vista\IReajustePresupuestoRemuneracionVista.cs" />
+    <Compile Include="Vista\IPresupuestoRemuneracionVista.cs" />
+    <Compile Include="Vista\IProgramacionAnualEjeOperativoVista.cs" />
+    <Compile Include="Vista\IProgramacionAnualSedeVista.cs" />
+    <Compile Include="Vista\IPropiedadVista.cs" />
+    <Compile Include="Vista\IPuestoMasivoVista.cs" />
+    <Compile Include="Vista\IPuestoVista.cs" />
+    <Compile Include="Vista\IReajusteMensualPresupuestoVista.cs" />
+    <Compile Include="Vista\IReajusteMensualDetalleVista.cs" />
+    <Compile Include="Vista\IReajusteMensualAreaVista.cs" />
+    <Compile Include="Vista\IReajusteMensualGeneralVista.cs" />
+    <Compile Include="Vista\IImprimirPorDireccionVista.cs" />
+    <Compile Include="Vista\IListaReajusteMensualPresupuestoVista.cs" />
+    <Compile Include="Vista\IListaEvaluacionMensualPresupuestoVista.cs" />
+    <Compile Include="Vista\IConsultaProgramacionAnualVista.cs" />
+    <Compile Include="Vista\IListaRequerimientoBienServicio.cs" />
+    <Compile Include="Vista\IListaProgramacionAnualVista.cs" />
+    <Compile Include="Vista\IEvaluacionMensualAreaVista.cs" />
+    <Compile Include="Vista\IProgramacionAnualAreaVista.cs" />
+    <Compile Include="Vista\IEvaluacionMensualDetalleVista.cs" />
+    <Compile Include="Vista\IReporteEvaluacionVista.cs" />
+    <Compile Include="Vista\IRequerimientoBienServicioDetVista.cs" />
+    <Compile Include="Vista\IProgramacionAnualDetalleVista.cs" />
+    <Compile Include="Vista\IEvaluacionMensualPresupuestoVista.cs" />
+    <Compile Include="Vista\IEvaluacionMensualGeneralVista.cs" />
+    <Compile Include="Vista\IRequerimientoBienServicioDetalleVista.cs" />
+    <Compile Include="Vista\IRequerimientoBienServicioGeneralVista.cs" />
+    <Compile Include="Vista\IProgramacionAnualVista.cs" />
+    <Compile Include="Vista\IProgramacionAnualGeneralVista.cs" />
+    <Compile Include="Vista\ITransferenciaVista.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Dialogo\frmActualizacionReajustePorRRHH.resx">
+      <DependentUpon>frmActualizacionReajustePorRRHH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmActualizacionPorRRHH.resx">
+      <DependentUpon>frmActualizacionPorRRHH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmActualizacionPorPAC.resx">
+      <DependentUpon>frmActualizacionPorPAC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmAgregarTransferencia.resx">
+      <DependentUpon>frmAgregarTransferencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmAsignarPresupuestoMensualReajuste.resx">
+      <DependentUpon>frmAsignarPresupuestoMensualReajuste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmAsignarPresupuestoMensualProAnu.resx">
+      <DependentUpon>frmAsignarPresupuestoMensualProAnu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmCambioEstadoProgramacionAnual.resx">
+      <DependentUpon>frmCambioEstadoProgramacionAnual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmDetallePresupuestoRecepcionado.resx">
+      <DependentUpon>frmDetallePresupuestoRecepcionado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmDetalleProgramacionMensual.resx">
+      <DependentUpon>frmDetalleProgramacionMensual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmExportarPresupuestoRemuneracionMasivo.resx">
+      <DependentUpon>frmExportarPresupuestoRemuneracionMasivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmExportarProgramacionAnualGenericaMasivo.resx">
+      <DependentUpon>frmExportarProgramacionAnualGenericaMasivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmExportarReajustePresupuestoRemuneracionMasivo.resx">
+      <DependentUpon>frmExportarReajustePresupuestoRemuneracionMasivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmExportarReajusteEvaluacionMasivo.resx">
+      <DependentUpon>frmExportarReajusteEvaluacionMasivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmGrupoPresupuesto.resx">
+      <DependentUpon>frmGrupoPresupuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmExportarReajusteEvaluacion.resx">
+      <DependentUpon>frmExportarReajusteEvaluacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmImprimirSaldoEvaluacionReajusteAnual.resx">
+      <DependentUpon>frmImprimirSaldoEvaluacionReajusteAnual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmImprimirConsolidadoEvaluacionReajusteAnual.resx">
+      <DependentUpon>frmImprimirConsolidadoEvaluacionReajusteAnual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmImprimirCalendarioReajusteEvaluacion.resx">
+      <DependentUpon>frmImprimirCalendarioReajusteEvaluacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmImprimirEjecucionFechasSubpresupuesto.resx">
+      <DependentUpon>frmImprimirEjecucionFechasSubpresupuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmImprimirEjecucionFechas.resx">
+      <DependentUpon>frmImprimirEjecucionFechas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmImprimirCalendarioPresAnual.resx">
+      <DependentUpon>frmImprimirCalendarioPresAnual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmImprimirPorDireccionReajusteMensual.resx">
+      <DependentUpon>frmImprimirPorDireccionReajusteMensual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmImprimirPorDireccionPresupuestoAnual.resx">
+      <DependentUpon>frmImprimirPorDireccionPresupuestoAnual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmModificarDetPreRecepcionado.resx">
+      <DependentUpon>frmModificarDetPreRecepcionado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmPresupuestoMensual.resx">
+      <DependentUpon>frmPresupuestoMensual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmPresupuestoRecepcionado.resx">
+      <DependentUpon>frmPresupuestoRecepcionado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmProgramacionAnualEjeOperativo.resx">
+      <DependentUpon>frmProgramacionAnualEjeOperativo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmProgramacionAnualSede.resx">
+      <DependentUpon>frmProgramacionAnualSede.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmPuestoReajuste.resx">
+      <DependentUpon>frmPuestoReajuste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmPuesto.resx">
+      <DependentUpon>frmPuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmPuestoReajusteMasivo.resx">
+      <DependentUpon>frmPuestoReajusteMasivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmPuestoMasivo.resx">
+      <DependentUpon>frmPuestoMasivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmReajusteMensualDetalle.resx">
+      <DependentUpon>frmReajusteMensualDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmReajusteMensualArea.resx">
+      <DependentUpon>frmReajusteMensualArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmEvaluacionMensualArea.resx">
+      <DependentUpon>frmEvaluacionMensualArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmReajusteMensualGeneral.resx">
+      <DependentUpon>frmReajusteMensualGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmReporteEvaluacion.resx">
+      <DependentUpon>frmReporteEvaluacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmImprimirPorDireccion.resx">
+      <DependentUpon>frmImprimirPorDireccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmProgramacionAnualArea.resx">
+      <DependentUpon>frmProgramacionAnualArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmEvaluacionMensualDetalle.resx">
+      <DependentUpon>frmEvaluacionMensualDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmRequerimientoBienServicioDet.resx">
+      <DependentUpon>frmRequerimientoBienServicioDet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmProgramacionAnualDetalle.resx">
+      <DependentUpon>frmProgramacionAnualDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmEvaluacionMensualGeneral.resx">
+      <DependentUpon>frmEvaluacionMensualGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmRequerimientoBienServicio.resx">
+      <DependentUpon>frmRequerimientoBienServicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmProgramacionAnualGeneral.resx">
+      <DependentUpon>frmProgramacionAnualGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogo\frmTransferencia.resx">
+      <DependentUpon>frmTransferencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReajustePresupuestoRemuneracion.resx">
+      <DependentUpon>frmReajustePresupuestoRemuneracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPresupuestoRemuneracion.resx">
+      <DependentUpon>frmPresupuestoRemuneracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReajusteMensualPresupuesto.resx">
+      <DependentUpon>frmReajusteMensualPresupuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEvaluacionMensualPresupuesto.resx">
+      <DependentUpon>frmEvaluacionMensualPresupuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRequerimientoBienServicioDetalle.resx">
+      <DependentUpon>frmRequerimientoBienServicioDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProgramacionAnual.resx">
+      <DependentUpon>frmProgramacionAnual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaGrupoPresupuesto.resx">
+      <DependentUpon>ListaGrupoPresupuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaPresupuestoMensual.resx">
+      <DependentUpon>ListaPresupuestoMensual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaPresupuestoRecepcionado.resx">
+      <DependentUpon>ListaPresupuestoRecepcionado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaReajusteMensualPresupuesto.resx">
+      <DependentUpon>ListaReajusteMensualPresupuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaEvaluacionMensualPresupuesto.resx">
+      <DependentUpon>ListaEvaluacionMensualPresupuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaProgramacionAnual.resx">
+      <DependentUpon>ConsultaProgramacionAnual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaRequerimientoBienServicio.resx">
+      <DependentUpon>ListaRequerimientoBienServicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaProgramacionAnual.resx">
+      <DependentUpon>ListaProgramacionAnual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Recursos\Mensajes.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Mensajes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\rptCalendarioPresupuestoAnual.resx">
+      <DependentUpon>rptCalendarioPresupuestoAnual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\rptCalendarioReajusteEvaluacionAnual.resx">
+      <DependentUpon>rptCalendarioReajusteEvaluacionAnual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\rptEvaReaConsolidadoPorDireccion.resx">
+      <DependentUpon>rptEvaReaConsolidadoPorDireccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\rptFondoEjecutadoPorFechaPresu.resx">
+      <DependentUpon>rptFondoEjecutadoPorFechaPresu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\rptFondoEjecutadosSubpresupuesto.resx">
+      <DependentUpon>rptFondoEjecutadosSubpresupuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\rptPresConsolidadoPorDireccion.resx">
+      <DependentUpon>rptPresConsolidadoPorDireccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\rptRequerimientoBienServicio.resx">
+      <DependentUpon>rptRequerimientoBienServicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\rptRequerimientoBienServicioDireccion.resx">
+      <DependentUpon>rptRequerimientoBienServicioDireccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\rptResumenEvaReaPorSubdireccion.resx">
+      <DependentUpon>rptResumenEvaReaPorSubdireccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\rptResumenFinanciamiento.resx">
+      <DependentUpon>rptResumenFinanciamiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\rptResumenPresPorErradicacion.resx">
+      <DependentUpon>rptResumenPresPorErradicacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\rptResumenPresPorSubdireccion.resx">
+      <DependentUpon>rptResumenPresPorSubdireccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\rptResumenReaPorSubdireccion.resx">
+      <DependentUpon>rptResumenReaPorSubdireccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\rptSaldoEvaluacionReajustePorDireccion.resx">
+      <DependentUpon>rptSaldoEvaluacionReajustePorDireccion.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SIA_Presupuesto.IoC\SIA_Presupuesto.IoC.csproj">
+      <Project>{1A104ECE-88BE-4A36-8765-C44581EBD49D}</Project>
+      <Name>SIA_Presupuesto.IoC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SIA_Presupuesto.Negocio.Entidades\SIA_Presupuesto.Negocio.Entidades.csproj">
+      <Project>{e827edcc-ad93-49ff-bd08-bb1bc9d589fb}</Project>
+      <Name>SIA_Presupuesto.Negocio.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SIA_Presupuesto.Negocio\SIA_Presupuesto.Negocio.csproj">
+      <Project>{3219c2e4-31c9-4255-af62-dd6c1032118f}</Project>
+      <Name>SIA_Presupuesto.Negocio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SIA_Presupuesto.WinForm.General\SIA_Presupuesto.WinForm.General.csproj">
+      <Project>{7e990900-e6ba-4d61-bde9-8ffa35e80071}</Project>
+      <Name>SIA_Presupuesto.WinForm.General</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

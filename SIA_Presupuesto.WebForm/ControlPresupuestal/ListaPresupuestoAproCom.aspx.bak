@@ -1,0 +1,226 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="ListaPresupuestoAproCom.aspx.cs" Inherits="SIA_Presupuesto.WebForm.ControlPresupuestal.ListaPresupuestoAproCom" %>
+<%@ Register Assembly="DevExpress.Web.Bootstrap.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.Bootstrap" TagPrefix="dx" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <dx:BootstrapCallbackPanel ID="cpPrincipal" runat="server" Width="100%" ClientInstanceName="cpPrincipal" OnCallback="cpPrincipal_Callback">
+        <ClientSideEvents EndCallback="Presupuesto.CpPrincipal_EndCallback" />
+        <ContentCollection>
+            <dx:ContentControl runat="server">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="x_panel">
+                            <div class="row x_title">
+                                <h4>PRESUPUESTO APROBADO, COMPROMETIDO, EJECUTADO Y SALDO</h4>
+                                <div class="clearfix"></div>
+                            </div>
+                            
+                            <div class="x_content">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <dx:BootstrapFormLayout ID="BootstrapFormLayout1" runat="server">
+                                            <Items>
+                                                <dx:BootstrapLayoutItem Caption="Moneda" ColSpanSm="6">
+                                                    <ContentCollection>
+                                                        <dx:ContentControl runat="server">
+                                                            <dx:BootstrapComboBox ID="cbMoneda" runat="server" ClientInstanceName="cbMoneda" TextField="descripcion" ValueField="idMoneda">
+                                                            </dx:BootstrapComboBox>
+                                                        </dx:ContentControl>
+                                                    </ContentCollection>
+                                                </dx:BootstrapLayoutItem>
+                                                <dx:BootstrapLayoutItem Caption="Grupo Presupuesto" ColSpanSm="12">
+                                                    <ContentCollection>
+                                                        <dx:ContentControl runat="server">
+                                                            <dx:BootstrapComboBox ID="cbGruPre" runat="server" ClientInstanceName="cbGruPre" ValueField="idGruPre" TextFormatString="{1}" >
+                                                                <ClientSideEvents SelectedIndexChanged="Presupuesto.CbGruPre_SelectedIndexChanged" />
+                                                                <ValidationSettings RequiredField-IsRequired="true">
+                                                                    <RequiredField IsRequired="True"></RequiredField>
+                                                                </ValidationSettings>
+                                                                <Fields>
+                                                                    <dx:BootstrapListBoxField FieldName="idGruPre" />
+                                                                    <dx:BootstrapListBoxField FieldName="descripcion" />
+                                                                </Fields>
+                                                                <ButtonTemplate>
+                                                                    <span class="input-group-btn">
+                                                                        <button type="button" class="btn btn-primary" data-toggle="dropdown-show">...</button>
+                                                                    </span>
+                                                                    
+                                                                </ButtonTemplate>
+                                                                <ItemTemplate>
+                                                                    <div class="row fontawesome-icon-list">
+                                                                        <div class="fa-hover col-sm-12"><a href="#"><%# Eval("idGruPre") %> - <%# Eval("descripcion") %></a></div>
+                                                                    </div>
+                                                                </ItemTemplate>
+                                                            </dx:BootstrapComboBox>
+                                                        </dx:ContentControl>
+                                                    </ContentCollection>
+                                                </dx:BootstrapLayoutItem>
+                                                <dx:BootstrapLayoutItem Caption="Presupuesto" ColSpanSm="12">
+                                                    <ContentCollection>
+                                                        <dx:ContentControl runat="server">
+                                                            <dx:BootstrapComboBox ID="cbPresupuesto" runat="server" ClientInstanceName="cbPresupuesto" ValueField="idPresupuesto" TextFormatString="{1}" OnCallback="cbPresupuesto_Callback" >
+                                                                <ClientSideEvents SelectedIndexChanged="Presupuesto.CbPresupuesto_SelectedIndexChanged" EndCallback="Presupuesto.CbPresupuesto_EndCallback"/>
+                                                                <ValidationSettings RequiredField-IsRequired="true">
+                                                                    <RequiredField IsRequired="True"></RequiredField>
+                                                                </ValidationSettings>
+                                                                <Fields>
+                                                                    <dx:BootstrapListBoxField FieldName="idPresupuesto" />
+                                                                    <dx:BootstrapListBoxField FieldName="descripcion" />
+                                                                </Fields>
+                                                                <ButtonTemplate>
+                                                                    <span class="input-group-btn">
+                                                                        <button type="button" class="btn btn-primary" data-toggle="dropdown-show">...</button>
+                                                                    </span>
+                                                                </ButtonTemplate>
+                                                                <ItemTemplate>
+                                                                    <div class="row fontawesome-icon-list">
+                                                                        <div class="fa-hover col-sm-12"><a href="#"><%# Eval("idPresupuesto") %> - <%# Eval("descripcion") %></a></div>
+                                                                    </div>
+                                                                </ItemTemplate>
+                                                            </dx:BootstrapComboBox>
+                                                        </dx:ContentControl>
+                                                    </ContentCollection>
+                                                </dx:BootstrapLayoutItem>
+                                                <dx:BootstrapLayoutItem Caption="Sub Presupuesto" ColSpanSm="12">
+                                                    <ContentCollection>
+                                                        <dx:ContentControl runat="server">
+                                                            <dx:BootstrapComboBox ID="cbSubPresupuesto" runat="server" ClientInstanceName="cbSubPresupuesto" ValueField="idSubpresupuesto" TextFormatString="{1}" OnCallback="cbSubPresupuesto_Callback">
+                                                                <ClientSideEvents SelectedIndexChanged="Presupuesto.CbSubPresupuesto_SelectedIndexChanged" EndCallback="Presupuesto.CbSubPresupuesto_EndCallback"/>
+                                                                <ValidationSettings>
+                                                                    <RequiredField IsRequired="True"></RequiredField>
+                                                                </ValidationSettings>
+                                                                <Fields>
+                                                                    <dx:BootstrapListBoxField FieldName="idSubpresupuesto" />
+                                                                    <dx:BootstrapListBoxField FieldName="descripcion" />
+                                                                </Fields>
+                                                                <ButtonTemplate>
+                                                                    <span class="input-group-btn">
+                                                                        <button type="button" class="btn btn-primary" data-toggle="dropdown-show">...</button>
+                                                                    </span>
+                                                                </ButtonTemplate>
+                                                                <ItemTemplate>
+                                                                    <div class="row fontawesome-icon-list">
+                                                                        <div class="fa-hover col-sm-12"><a href="#"><%# Eval("idSubpresupuesto") %> - <%# Eval("descripcion") %></a></div>
+                                                                    </div>
+                                                                </ItemTemplate>
+                                                            </dx:BootstrapComboBox>
+                                                        </dx:ContentControl>
+                                                    </ContentCollection>
+                                                </dx:BootstrapLayoutItem>
+                                            </Items>
+                                        </dx:BootstrapFormLayout>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="x_content">
+                                <div class="row">
+                                    <div class="btn-toggle">
+                                        <dx:BootstrapButton ID="btnExportarExcel" runat="server" AutoPostBack="false" ClientInstanceName="btnExportarExcel" Text="Exportar Excel"  OnClick="btnExportarExcel_Click">
+                                            <CssClasses Control="btn btn-sm btn-info" Icon="glyphicon glyphicon-floppy-save" />
+                                            <ClientSideEvents Click="Presupuesto.BotonExportarExcelEvaluacion_Click" />
+                                        </dx:BootstrapButton>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="x_content">
+                                <div class="row">
+                                    <div class="table-responsive">
+                                        <dx:BootstrapGridView ID="grvPresupuestoClase" runat="server" AutoGenerateColumns="False" ClientInstanceName="grvPresupuestoClase" Width="100%" OnCustomCallback="grvPresupuestoClase_CustomCallback" OnDataBinding="grvPresupuestoClase_DataBinding" KeyFieldName="clase">
+                                            <SettingsDetail ShowDetailRow="True" AllowOnlyOneMasterRowExpanded="True" />
+                                            <SettingsPager PageSize="20" AlwaysShowPager="True"></SettingsPager>
+                                            <SettingsBehavior AutoExpandAllGroups="true" />
+                                            <CssClasses Control="table table-striped table-bordered dt-responsive nowrap" />
+                                            <SettingsBootstrap Sizing="Small" Striped="true" />
+                                            <Columns>
+                                                <dx:BootstrapGridViewTextColumn Caption="Clase" FieldName="clase" VisibleIndex="0" Width="50px">
+                                                </dx:BootstrapGridViewTextColumn>
+                                                <dx:BootstrapGridViewTextColumn Caption="Descripción" FieldName="desClase" VisibleIndex="1" Width="300px">
+                                                </dx:BootstrapGridViewTextColumn>
+                                                <dx:BootstrapGridViewTextColumn Caption="Importe Pre." FieldName="monPre" UnboundExpression="{0:n}" UnboundType="Decimal" VisibleIndex="2" Width="100px">
+                                                    <PropertiesTextEdit DisplayFormatString="{0:n}">
+                                                    </PropertiesTextEdit>
+                                                </dx:BootstrapGridViewTextColumn>
+                                                <dx:BootstrapGridViewTextColumn Caption="Importe Com." FieldName="monCom" UnboundExpression="{0:n}" UnboundType="Decimal" VisibleIndex="2" Width="100px">
+                                                    <PropertiesTextEdit DisplayFormatString="{0:n}">
+                                                    </PropertiesTextEdit>
+                                                </dx:BootstrapGridViewTextColumn>
+                                                <dx:BootstrapGridViewTextColumn Caption="Importe Eje." FieldName="monEjeAct" UnboundExpression="{0:n}" UnboundType="Decimal" VisibleIndex="3" Width="100px">
+                                                    <PropertiesTextEdit DisplayFormatString="{0:n}">
+                                                    </PropertiesTextEdit>
+                                                </dx:BootstrapGridViewTextColumn>
+                                                <dx:BootstrapGridViewTextColumn Caption="Saldo" FieldName="saldo" UnboundExpression="{0:n}" UnboundType="Decimal" VisibleIndex="4" Width="100px">
+                                                    <PropertiesTextEdit DisplayFormatString="{0:n}">
+                                                    </PropertiesTextEdit>
+                                                </dx:BootstrapGridViewTextColumn>
+                                            </Columns>
+                                            <Templates>
+                                                <DetailRow>
+                                                    <dx:BootstrapGridView ID="grvPresupuestoDivisionaria" runat="server" KeyFieldName="divisionaria" ClientInstanceName="grvPresupuestoDivisionaria" Width="100%" AutoGenerateColumns="False" OnBeforePerformDataSelect="grvPresupuestoDivisionaria_BeforePerformDataSelect" OnDataBinding="grvPresupuestoDivisionaria_DataBinding">
+                                                        <SettingsDetail AllowOnlyOneMasterRowExpanded="True" ShowDetailRow="True" />
+                                                        <SettingsBootstrap Sizing="Small" Striped="true" />
+                                                        <Columns>
+                                                            <dx:BootstrapGridViewTextColumn Caption="Divisionaria" FieldName="divisionaria" VisibleIndex="0" Width="50px">
+                                                            </dx:BootstrapGridViewTextColumn>
+                                                            <dx:BootstrapGridViewTextColumn Caption="Descripción" FieldName="desDivisionaria" VisibleIndex="1" Width="300px">
+                                                            </dx:BootstrapGridViewTextColumn>
+                                                            <dx:BootstrapGridViewTextColumn Caption="Importe Pre." FieldName="monPre" UnboundExpression="{0:n}" UnboundType="Decimal" VisibleIndex="2" Width="100px">
+                                                                <PropertiesTextEdit DisplayFormatString="{0:n}">
+                                                                </PropertiesTextEdit>
+                                                            </dx:BootstrapGridViewTextColumn>
+                                                            <dx:BootstrapGridViewTextColumn Caption="Importe Com." FieldName="monCom" UnboundExpression="{0:n}" UnboundType="Decimal" VisibleIndex="2" Width="100px">
+                                                                <PropertiesTextEdit DisplayFormatString="{0:n}">
+                                                                </PropertiesTextEdit>
+                                                            </dx:BootstrapGridViewTextColumn>
+                                                            <dx:BootstrapGridViewTextColumn Caption="Importe Eje." FieldName="monEjeAct" UnboundExpression="{0:n}" UnboundType="Decimal" VisibleIndex="3" Width="100px">
+                                                                <PropertiesTextEdit DisplayFormatString="{0:n}">
+                                                                </PropertiesTextEdit>
+                                                            </dx:BootstrapGridViewTextColumn>
+                                                            <dx:BootstrapGridViewTextColumn Caption="Saldo" FieldName="saldo" UnboundExpression="{0:n}" UnboundType="Decimal" VisibleIndex="4" Width="100px">
+                                                                <PropertiesTextEdit DisplayFormatString="{0:n}">
+                                                                </PropertiesTextEdit>
+                                                            </dx:BootstrapGridViewTextColumn>
+                                                        </Columns>
+                                                        <Templates>
+                                                            <DetailRow>
+                                                                <dx:BootstrapGridView ID="grvPresupuestoCuenta" runat="server" ClientInstanceName="grvPresupuestoCuenta" Width="100%" AutoGenerateColumns="False" KeyFieldName="numCuenta" OnBeforePerformDataSelect="grvPresupuestoCuenta_BeforePerformDataSelect">
+                                                                    <SettingsDetail AllowOnlyOneMasterRowExpanded="True" ShowDetailRow="True" />
+                                                                    <SettingsBootstrap Sizing="Small" Striped="true" />
+                                                                    <Columns>
+                                                                        <dx:BootstrapGridViewTextColumn Caption="Cuenta" FieldName="numCuenta" VisibleIndex="0" Width="50px">
+                                                                        </dx:BootstrapGridViewTextColumn>
+                                                                        <dx:BootstrapGridViewTextColumn Caption="Descripción" FieldName="desCuenta" VisibleIndex="1" Width="300px">
+                                                                        </dx:BootstrapGridViewTextColumn>
+                                                                        <dx:BootstrapGridViewTextColumn Caption="Importe Pre." FieldName="monPre" UnboundExpression="{0:n}" UnboundType="Decimal" VisibleIndex="2" Width="100px">
+                                                                            <PropertiesTextEdit DisplayFormatString="{0:n}">
+                                                                            </PropertiesTextEdit>
+                                                                        </dx:BootstrapGridViewTextColumn>
+                                                                        <dx:BootstrapGridViewTextColumn Caption="Importe Com." FieldName="monCom" UnboundExpression="{0:n}" UnboundType="Decimal" VisibleIndex="2" Width="100px">
+                                                                            <PropertiesTextEdit DisplayFormatString="{0:n}">
+                                                                            </PropertiesTextEdit>
+                                                                        </dx:BootstrapGridViewTextColumn>
+                                                                        <dx:BootstrapGridViewTextColumn Caption="Importe Eje." FieldName="monEjeAct" UnboundExpression="{0:n}" UnboundType="Decimal" VisibleIndex="3" Width="100px">
+                                                                            <PropertiesTextEdit DisplayFormatString="{0:n}">
+                                                                            </PropertiesTextEdit>
+                                                                        </dx:BootstrapGridViewTextColumn>
+                                                                        <dx:BootstrapGridViewTextColumn Caption="Saldo" FieldName="saldo" UnboundExpression="{0:n}" UnboundType="Decimal" VisibleIndex="4" Width="100px">
+                                                                            <PropertiesTextEdit DisplayFormatString="{0:n}">
+                                                                            </PropertiesTextEdit>
+                                                                        </dx:BootstrapGridViewTextColumn>
+                                                                    </Columns>
+                                                                </dx:BootstrapGridView>
+                                                            </DetailRow>
+                                                        </Templates>
+                                                    </dx:BootstrapGridView>
+                                                </DetailRow>
+                                            </Templates>
+                                        </dx:BootstrapGridView>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </dx:ContentControl>
+        </ContentCollection>
+    </dx:BootstrapCallbackPanel>
+</asp:Content>

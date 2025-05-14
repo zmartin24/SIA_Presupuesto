@@ -1,0 +1,107 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="ListaPresupuestoEjecutadoFondos.aspx.cs" Inherits="SIA_Presupuesto.WebForm.ControlPresupuestal.ListaPresupuestoEjecutadoFondos" %>
+
+<%@ Register Assembly="DevExpress.Web.ASPxPivotGrid.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxPivotGrid" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.Web.Bootstrap.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.Bootstrap" TagPrefix="dx" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <dx:BootstrapCallbackPanel ID="cpPrincipal" runat="server" Width="100%" ClientInstanceName="cpPrincipal" OnCallback="cpPrincipal_Callback">
+        <ClientSideEvents EndCallback="Presupuesto.CpPrincipal_EndCallback" />
+        <ContentCollection>
+            <dx:ContentControl runat="server">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2 title="Presupuesto Ejecutado (Fondos)">Presupuesto Ejecutado <span>(Fondos)</span></h2>
+                                <div class="clearfix"></div>
+                            </div>                            
+                            <div class="x_content">
+                                <div class="row">
+                                    <div class="col col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                        <div class="form-group">
+                                            <dx:BootstrapFormLayout ID="BootstrapFormLayout1" runat="server">
+                                                <Items>
+                                                    <dx:BootstrapLayoutItem Caption="Año" ColSpanLg="4" ColSpanMd="6" ColSpanSm="12" ColSpanXs="12">
+                                                        <ContentCollection>
+                                                            <dx:ContentControl runat="server">
+                                                                <dx:BootstrapComboBox ID="cbAnio" runat="server" ClientInstanceName="cbAnio" TextField="nombre" ValueField="indice" AutoPostBack="True" OnSelectedIndexChanged="cbAnio_SelectedIndexChanged">
+                                                                </dx:BootstrapComboBox>
+                                                            </dx:ContentControl>
+                                                        </ContentCollection>
+                                                    </dx:BootstrapLayoutItem>
+                                                    <dx:BootstrapLayoutItem Caption="Mes" ColSpanLg="4" ColSpanMd="6" ColSpanSm="12" ColSpanXs="12">
+                                                        <ContentCollection>
+                                                            <dx:ContentControl runat="server">
+                                                                <dx:BootstrapComboBox ID="cbMes" runat="server" ClientInstanceName="cbMes" TextField="nombre" ValueField="indice" AutoPostBack="True" OnSelectedIndexChanged="cbMes_SelectedIndexChanged">
+                                                                </dx:BootstrapComboBox>
+                                                            </dx:ContentControl>
+                                                        </ContentCollection>
+                                                    </dx:BootstrapLayoutItem>
+                                                    <dx:BootstrapLayoutItem Caption="Moneda" ColSpanLg="4" ColSpanMd="6" ColSpanSm="12" ColSpanXs="12">
+                                                        <ContentCollection>
+                                                            <dx:ContentControl runat="server">
+                                                                <dx:BootstrapComboBox ID="cbMoneda" runat="server" ClientInstanceName="cbMoneda" TextField="descripcion" ValueField="idMoneda" AutoPostBack="True" OnSelectedIndexChanged="cbMoneda_SelectedIndexChanged">
+                                                                </dx:BootstrapComboBox>
+                                                            </dx:ContentControl>
+                                                        </ContentCollection>
+                                                    </dx:BootstrapLayoutItem>
+                                                </Items>
+                                            </dx:BootstrapFormLayout>
+                                        </div>
+                                        <hr />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="btn-toggle">
+                                        <dx:BootstrapButton ID="btnExportarExcel" runat="server" AutoPostBack="false" ClientInstanceName="btnExportarExcel" Text="Exportar Excel"  OnClick="DataAwareExportButton_Click">
+                                            <CssClasses Control="btn btn-sm btn-info" Icon="glyphicon glyphicon-floppy-save" />
+                                            <ClientSideEvents Click="Presupuesto.BotonExportarExcelEvaluacion_Click" />
+                                        </dx:BootstrapButton>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <dx:ASPxPivotGrid ID="grvPivot" runat="server" Width="100%">
+                                            <Fields>
+                                                <dx:PivotGridField ID="fieldNomTipoBienRem" Area="RowArea" AreaIndex="0" Caption="Grupo Gasto" FieldName="NomTipoBienRem" Name="fieldNomTipoBienRem">
+                                                </dx:PivotGridField>
+                                                <dx:PivotGridField ID="fieldnomTipoFondo" Area="RowArea" AreaIndex="1" Caption="Fondo" FieldName="nomTipoFondo" Name="fieldnomTipoFondo">
+                                                </dx:PivotGridField>
+                                                <dx:PivotGridField ID="fielddesClase" AreaIndex="1" Caption="Cuenta" FieldName="desClase" Name="fielddesClase">
+                                                </dx:PivotGridField>
+                                                <dx:PivotGridField ID="fielddesDivisionaria" AreaIndex="2" Caption="Sub Cuenta" FieldName="desDivisionaria" Name="fielddesDivisionaria">
+                                                </dx:PivotGridField>
+                                                <dx:PivotGridField ID="fielddesCuenta" AreaIndex="3" Caption="Divisionaria" FieldName="desCuenta" Name="fielddesCuenta">
+                                                </dx:PivotGridField>
+                                                <dx:PivotGridField ID="fieldnomGrupoPresupuesto" AreaIndex="4" Caption="Grupo P." FieldName="nomGrupoPresupuesto" Name="fieldnomGrupoPresupuesto">
+                                                </dx:PivotGridField>
+                                                <dx:PivotGridField ID="fieldnomPresupuesto" AreaIndex="5" Caption="Presupuesto" FieldName="nomPresupuesto" Name="fieldnomPresupuesto">
+                                                </dx:PivotGridField>
+                                                <dx:PivotGridField ID="fieldnomSubPresupuesto" AreaIndex="6" Caption="SubPresupuesto" FieldName="nomSubPresupuesto" Name="fieldnomSubPresupuesto">
+                                                </dx:PivotGridField>
+                                                <dx:PivotGridField ID="fieldmonEjeAct" Area="DataArea" AreaIndex="0" Caption="Monto Eje." CellFormat-FormatString="{0:n2}" CellFormat-FormatType="Numeric" FieldName="monEjeAct" Name="fieldmonEjeAct">
+                                                    <CellStyle HorizontalAlign="Right">
+                                                    </CellStyle>
+                                                </dx:PivotGridField>
+                                                <dx:PivotGridField ID="fieldtipoegreso" AreaIndex="6" Caption="TipoEgreso" FieldName="tipoegreso" Name="fieldtipoegreso">
+                                                </dx:PivotGridField>
+                                                <dx:PivotGridField ID="fieldmes" Area="ColumnArea" AreaIndex="0" Caption="MesPresupuesto" FieldName="mes" Name="fieldmes">
+                                                </dx:PivotGridField>
+                                                <dx:PivotGridField ID="fieldmesEmision" AreaIndex="7" Caption="Mes Emisión" FieldName="mesEmision" Name="fieldmesEmision">
+                                                </dx:PivotGridField>
+                                            </Fields>
+                                            <OptionsData DataProcessingEngine="LegacyOptimized" />
+                                            <OptionsCustomization CustomizationFormStyle="Excel2007" />
+                                            <OptionsView HorizontalScrollBarMode="Auto" />
+                                            <OptionsFilter NativeCheckBoxes="False" />
+                                        </dx:ASPxPivotGrid>
+                                    <dx:ASPxPivotGridExporter ID="ASPxPivotGridExporter1" runat="server" ASPxPivotGridID="grvPivot" Visible="False" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </dx:ContentControl>
+        </ContentCollection>
+    </dx:BootstrapCallbackPanel>
+</asp:Content>

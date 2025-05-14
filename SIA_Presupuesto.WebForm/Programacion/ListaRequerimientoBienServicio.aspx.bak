@@ -1,0 +1,350 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="ListaRequerimientoBienServicio.aspx.cs" Inherits="SIA_Presupuesto.WebForm.Programacion.ListaRequerimientoBienServicio" %>
+
+<%@ Register Assembly="DevExpress.Web.Bootstrap.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.Bootstrap" TagPrefix="dx" %>
+
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
+<%--    <script type="text/javascript">
+            ASPxClientControl.GetControlCollection().ControlsInitialized.AddHandler(function(s,e){
+                Presupuesto.ActualizarGridAltura(grvRequerimiento);
+            });
+            ASPxClientControl.GetControlCollection().BrowserWindowResized.AddHandler(function(s,e){
+                Presupuesto.ActualizarGridAltura(grvRequerimiento);
+            });
+        </script>--%>
+
+    </asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <dx:BootstrapCallbackPanel ID="cpPrincipal" runat="server" Width="100%" ClientInstanceName="cpPrincipal" OnCallback="cpPrincipal_Callback">
+        <ClientSideEvents EndCallback="Presupuesto.CpPrincipal_EndCallback" />
+        <ContentCollection>
+            <dx:ContentControl runat="server">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="x_panel">
+                            <div class="row x_title">
+                                <h4> LISTA DE REQUERIMIENTOS DE BIENES Y SERVICIOS </h4>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <div class="row">
+                                    <div class="well" style="overflow: auto">
+                                    <div class="btn-toggle">
+                                        <dx:BootstrapButton ID="btnNuevo" runat="server" AutoPostBack="False" ClientInstanceName="btnNuevo" Text="Nuevo">
+                                            <CssClasses Control="btn btn-primary" Icon="fa fa-plus-circle"/>
+                                            <ClientSideEvents Click="Presupuesto.BotonNuevoRequerimientoGeneral_Click" />
+                                        </dx:BootstrapButton>
+                                            <dx:BootstrapButton ID="btnEditar" runat="server" AutoPostBack="False" ClientInstanceName="btnEditar" Text="Editar">
+                                            <CssClasses Control="btn btn-success" Icon="fa fa-edit" />
+                                            <ClientSideEvents Click="Presupuesto.BotonEditarRequerimientoGeneral_Click" />
+                                        </dx:BootstrapButton>
+                                            <dx:BootstrapButton ID="btnAnular" runat="server" AutoPostBack="False" ClientInstanceName="btnAnular" Text="Anular">
+                                            <CssClasses Control="btn btn-danger" Icon="fa fa-remove"/>
+                                            <ClientSideEvents Click="Presupuesto.BotonAnularRequerimientoGeneral_Click" />
+                                        </dx:BootstrapButton>
+                                            <dx:BootstrapButton ID="btnDetalle" runat="server" AutoPostBack="False" ClientInstanceName="btnDetalle" Text="Detalle">
+                                            <ClientSideEvents Click="Presupuesto.BotonDetalleRequerimientoGeneral_Click" />
+                                            <CssClasses Control="btn btn-info" Icon="fa fa-tasks" />
+                                        </dx:BootstrapButton>
+                                            <dx:BootstrapButton ID="btnImprimir" runat="server" ClientInstanceName="btnImprimir" Text="Imprimir" AutoPostBack="False">
+                                            <CssClasses Control="btn btn-info" Icon="fa fa-print"  />
+                                            <ClientSideEvents Click="Presupuesto.BotonImprimirRequerimientoGeneral_Click" />
+                                        </dx:BootstrapButton>
+                                        <dx:BootstrapButton ID="btnImprimirDireccion" runat="server" AutoPostBack="False" ClientInstanceName="btnImprimirDireccion" Text="Imprimir por Dirección">
+                                            <CssClasses Control="btn btn-info" Icon="fa fa-print" />
+                                            <ClientSideEvents Click="Presupuesto.BotonImprimirDireccion_Click" />
+                                        </dx:BootstrapButton>
+                                        
+                                    </div>
+                                    </div>
+                                    </div>
+                                <div class="row">
+                                    <div class="btn-toggle">
+                                        <dx:BootstrapFormLayout ID="ASPxFormLayout3" runat="server">
+                                            <Items>
+                                                <dx:BootstrapLayoutItem Caption="Año" ColSpanMd="2">
+                                                    <ContentCollection>
+                                                        <dx:ContentControl runat="server" CssClass="col-md-6 col-sm-6 col-xs-6">
+                                                            <dx:BootstrapComboBox ID="cbAnio" runat="server" ClientInstanceName="cbAnio" TextField="nombre" ValueField="indice">
+                                                                <ClientSideEvents SelectedIndexChanged="Presupuesto.CbAnio_SelectedIndexChanged" />
+                                                            </dx:BootstrapComboBox>
+                                                        </dx:ContentControl>
+                                                    </ContentCollection>
+                                                </dx:BootstrapLayoutItem>
+                                            </Items>
+                                        </dx:BootstrapFormLayout>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="x_content">
+                                <div class="row">
+                                    <div class="table-responsive">
+                                        <dx:BootstrapGridView ID="grvRequerimiento" runat="server" AutoGenerateColumns="False" ClientInstanceName="grvRequerimiento" KeyFieldName="idReqBieSer" OnCustomCallback="grvRequerimiento_CustomCallback" OnDataBinding="grvRequerimiento_DataBinding" Width="100%" EnableCallbackAnimation="True" >
+                                            <CssClasses Table="table table-striped table-bordered dt-responsive nowrap" />
+                                            <SettingsBootstrap Sizing="Small" Striped="True" />
+                                            <Settings ShowFilterRow="True" ShowFilterRowMenu="True" ShowFilterRowMenuLikeItem="True" ShowFooter="True" ShowGroupPanel="true"/>
+                                            <SettingsBehavior AllowClientEventsOnLoad="False" AllowSelectByRowClick="True" AutoExpandAllGroups="true" SortMode="Custom"/>
+                                            <Columns>
+                                                <dx:BootstrapGridViewTextColumn Caption="Código" FieldName="idReqBieSer" VisibleIndex="0" Width="60px">
+                                                    <CssClasses HeaderCell="column-title" />
+                                                    <Settings AutoFilterCondition="Contains" />
+                                                </dx:BootstrapGridViewTextColumn>
+                                                <dx:BootstrapGridViewTextColumn Caption="Descripción" FieldName="descripcion" VisibleIndex="1" Width="30%">
+                                                    <CssClasses HeaderCell="column-title" />
+                                                    <Settings AutoFilterCondition="Contains" />
+                                                </dx:BootstrapGridViewTextColumn>
+                                                <dx:BootstrapGridViewDateColumn Caption="Fecha Emisión" FieldName="fechaEmision" VisibleIndex="2" Width="100" HorizontalAlign="Center">
+                                                    <PropertiesDateEdit DisplayFormatString="dd/MM/yyyy">
+                                                    </PropertiesDateEdit>
+                                                    <CssClasses HeaderCell="column-title" />
+                                                    <Settings AutoFilterCondition="BeginsWith" />
+                                                </dx:BootstrapGridViewDateColumn>
+                                                <dx:BootstrapGridViewTextColumn Caption="Area" FieldName="desArea" VisibleIndex="3" Width="12%">
+                                                    <CssClasses HeaderCell="column-title" />
+                                                    <Settings AutoFilterCondition="Contains" />
+                                                </dx:BootstrapGridViewTextColumn>
+                                                <dx:BootstrapGridViewTextColumn Caption="Subdirección" FieldName="desSubdireccion" VisibleIndex="4" Width="12%">
+                                                    <CssClasses HeaderCell="column-title" />
+                                                    <Settings AutoFilterCondition="Contains" />
+                                                </dx:BootstrapGridViewTextColumn>
+                                                <dx:BootstrapGridViewTextColumn Caption="Dirección" FieldName="desDireccion" VisibleIndex="5" Width="15%">
+                                                    <CssClasses HeaderCell="column-title" />
+                                                    <Settings AutoFilterCondition="Contains" />
+                                                </dx:BootstrapGridViewTextColumn>
+                                                <dx:BootstrapGridViewTextColumn Caption="Periodo" FieldName="nomMes" VisibleIndex="6" GroupIndex="0" SortOrder="Descending" Width="15%">
+                                                    <CssClasses HeaderCell="column-title" />
+                                                    <Settings AutoFilterCondition="Contains" />
+                                                </dx:BootstrapGridViewTextColumn>
+                                            
+                                                <dx:BootstrapGridViewTextColumn Caption="Moneda" FieldName="moneda" VisibleIndex="7" Width="40px">
+                                                    <CssClasses HeaderCell="column-title" />
+                                                    <Settings AutoFilterCondition="BeginsWith" />
+                                                </dx:BootstrapGridViewTextColumn>
+                                                <dx:BootstrapGridViewTextColumn Caption="Total" FieldName="total" VisibleIndex="8" Width="100px">
+                                                    <CssClasses HeaderCell="column-title" />
+                                                    <PropertiesTextEdit DisplayFormatString="n2"></PropertiesTextEdit>
+                                                    <Settings AutoFilterCondition="BeginsWith" />
+                                                </dx:BootstrapGridViewTextColumn>
+                                               <%-- <dx:BootstrapGridViewTextColumn Caption="Año" FieldName="anio" VisibleIndex="8" Width="40px">
+                                                    <CssClasses HeaderCell="column-title" />
+                                                    <Settings AllowAutoFilter="False"  />
+                                                </dx:BootstrapGridViewTextColumn>--%>
+                                            </Columns>
+                                            <GroupSummary>
+                                                <dx:ASPxSummaryItem FieldName="total" SummaryType="Sum" />
+                                            </GroupSummary>
+                                            <%--<TotalSummary>
+                                                <dx:ASPxSummaryItem FieldName="total" DisplayFormat="Total = {0:n2}" SummaryType="Sum" />
+                                            </TotalSummary>--%>
+                                            <SettingsPager NumericButtonCount="6"></SettingsPager>
+                                            <ClientSideEvents SelectionChanged="Presupuesto.GrvRequerimiento_OnGridSelectionChanged" />
+                                            <SettingsSearchPanel ShowApplyButton="True" />
+                                            <SettingsPager PageSize="15" AlwaysShowPager="True" EnableAdaptivity="True" NumericButtonCount="6">
+                                                <PageSizeItemSettings Visible="true" ShowAllItem="true" />
+                                            </SettingsPager>
+                                        </dx:BootstrapGridView>
+                                    </div>
+                                </div>
+                            </div>
+                         
+                             <div class="x_content"><%--Emergentes--%>
+                                    <dx:BootstrapPopupControl ID="popRequerimiento" runat="server" Width="350px" ClientInstanceName="popRequerimiento" 
+                                        CloseAction="CloseButton" CloseAnimationType="Fade" CloseOnEscape="True" Modal="True" PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter" OnCallback="popRequerimiento_WindowCallback">
+                                            <%--<CssClasses Control="form-horizontal form-label-left" />--%>
+                                            <ContentCollection>
+                                                <dx:ContentControl runat="server">
+                                                    <div class="modal-dialog modal-lg">
+                                                        <div class="modal-body">
+                                                            <dx:BootstrapFormLayout ID="ASPxFormLayout1" runat="server" CssClasses-Control="form-horizontal form-label-left input_mask" CssClasses-ItemControl="form-group">
+                                                                <CssClasses Control="form-horizontal form-label-left" ItemControl="form-group" />
+                                                                <Items>
+                                                                    <dx:BootstrapLayoutItem Caption="Dirección" >
+                                                                        <CaptionSettings HorizontalAlign="Left" />
+                                                                
+                                                                        <ContentCollection>
+                                                                            <dx:ContentControl runat="server" CssClass="col-md-6 col-sm-9 col-xs-12">
+                                                                                <dx:BootstrapComboBox ID="cbDireccion" runat="server" ClientInstanceName="cbDireccion" TextField="desDireccion" ValueField="idDireccion" OnCallback="cbDireccion_Callback">
+                                                                                    <ClientSideEvents SelectedIndexChanged="Presupuesto.CbDireccion_SelectedIndexChanged" />
+                                                                                    <ValidationSettings ErrorText="Seleccione la dirección" SetFocusOnError="True">
+                                                                                        <RequiredField IsRequired="True" />
+                                                                                    </ValidationSettings>
+                                                                                </dx:BootstrapComboBox>
+                                                                            </dx:ContentControl>
+                                                                        </ContentCollection>
+                                                                    </dx:BootstrapLayoutItem>
+                                                                    <dx:BootstrapLayoutItem Caption="Subdirección/ Oficina">
+                                                                        <CaptionSettings HorizontalAlign="Left" />
+                                                                
+                                                                        <ContentCollection>
+                                                                            <dx:ContentControl runat="server" CssClass="col-md-6 col-sm-9 col-xs-12">
+                                                                                <dx:BootstrapComboBox ID="cbSubdireccion" runat="server" ClientInstanceName="cbSubdireccion" TextField="desSubdireccion" ValueField="idSubdireccion"  OnCallback="cbSubdireccion_Callback">
+                                                                                    <ClientSideEvents SelectedIndexChanged="Presupuesto.CbSubdireccion_SelectedIndexChanged" EndCallback="Presupuesto.CbSubdireccion_EndCallback" />
+                                                                                    <ValidationSettings ErrorText="Seleccione la subdirección" SetFocusOnError="True">
+                                                                                        <RequiredField IsRequired="True" />
+                                                                                    </ValidationSettings>
+                                                                                </dx:BootstrapComboBox>
+                                                                            </dx:ContentControl>
+                                                                        </ContentCollection>
+                                                                    </dx:BootstrapLayoutItem>
+                                                                    <dx:BootstrapLayoutItem Caption="Area">
+                                                                        <CaptionSettings HorizontalAlign="Left" />
+                                                                
+                                                                        <ContentCollection>
+                                                                            <dx:ContentControl runat="server" CssClass="col-md-6 col-sm-9 col-xs-12">
+                                                                                <dx:BootstrapComboBox ID="cbArea" runat="server" ClientInstanceName="cbArea" TextField="desArea" ValueField="idArea"  OnCallback="cbArea_Callback">
+                                                                                    <ClientSideEvents EndCallback="Presupuesto.CbArea_EndCallback"  />
+                                                                                    <ValidationSettings  ErrorText="Seleccione el área" SetFocusOnError="True">
+                                                                                        <RequiredField IsRequired="True" />
+                                                                                    </ValidationSettings>
+                                                                                </dx:BootstrapComboBox>
+                                                                            </dx:ContentControl>
+                                                                        </ContentCollection>
+                                                                    </dx:BootstrapLayoutItem>
+                                                                    <dx:BootstrapLayoutItem Caption="Moneda">
+                                                                        <CaptionSettings HorizontalAlign="Left" />
+                                                                        <ContentCollection>
+                                                                            <dx:ContentControl runat="server" CssClass="col-md-6 col-sm-9 col-xs-12">
+                                                                                <dx:BootstrapComboBox ID="cbMoneda" runat="server" TextField="descripcion" ValueField="idMoneda" ClientInstanceName="cbMoneda">
+                                                                                    <ValidationSettings ErrorText="Seleccione la moneda" SetFocusOnError="True">
+                                                                                        <RequiredField IsRequired="True" />
+                                                                                    </ValidationSettings>
+                                                                                </dx:BootstrapComboBox>
+                                                                            </dx:ContentControl>
+                                                                        </ContentCollection>
+                                                                    </dx:BootstrapLayoutItem>
+                                                                    <dx:BootstrapLayoutItem Caption="Descripción">
+                                                                        <CaptionSettings HorizontalAlign="Left" />
+                                                                
+                                                                        <ContentCollection>
+                                                                            <dx:ContentControl runat="server" CssClass="col-md-6 col-sm-9 col-xs-12">
+                                                                                <dx:BootstrapTextBox ID="txtDescripcion" runat="server" ClientInstanceName="txtDescripcion" >
+                                                                                    <ValidationSettings ErrorText="Ingrese la descripción" SetFocusOnError="True">
+                                                                                        <RequiredField IsRequired="True" />
+                                                                                    </ValidationSettings>
+                                                                                </dx:BootstrapTextBox>
+                                                                            </dx:ContentControl>
+                                                                        </ContentCollection>
+                                                                    </dx:BootstrapLayoutItem>
+                                                                    <dx:BootstrapLayoutItem Caption="Año" >
+                                                                        <CaptionSettings HorizontalAlign="Left" />
+                                                                
+                                                                        <ContentCollection>
+                                                                            <dx:ContentControl runat="server" CssClass="col-md-6 col-sm-9 col-xs-12">
+                                                                                <dx:BootstrapSpinEdit ID="seAnio" runat="server" ClientInstanceName="seAnio" CssClasses-Control="spinedit" >
+                                                                                    <CssClasses Control="spinedit"></CssClasses>
+
+                                                                                    <ValidationSettings ErrorText="Ingrese el año" SetFocusOnError="True">
+                                                                                        <RequiredField IsRequired="True" />
+                                                                                    </ValidationSettings>
+                                                                                </dx:BootstrapSpinEdit>
+                                                                            </dx:ContentControl>
+                                                                        </ContentCollection>
+                                                                    </dx:BootstrapLayoutItem>
+                                                                    <%--<dx:BootstrapLayoutItem Caption="Fecha Emisión">
+                                                                        <CaptionSettings HorizontalAlign="Left" />
+                                                                
+                                                                        <ContentCollection>
+                                                                            <dx:ContentControl runat="server" CssClass="col-md-6 col-sm-9 col-xs-12">
+                                                                                <dx:BootstrapDateEdit ID="deFechaEmision" runat="server" ClientInstanceName="deFechaEmision">
+                                                                                    <ValidationSettings ErrorText="Ingrese fecha de emisión" SetFocusOnError="True">
+                                                                                        <RequiredField IsRequired="True" />
+                                                                                    </ValidationSettings>
+                                                                                </dx:BootstrapDateEdit>
+                                                                            </dx:ContentControl>
+                                                                        </ContentCollection>
+                                                                    </dx:BootstrapLayoutItem>
+                                                                    <dx:BootstrapLayoutItem Caption="">
+                                                                        <ContentCollection>
+                                                                            <dx:ContentControl runat="server" CssClass="col-md-6 col-sm-9 col-xs-12">
+                                                                            </dx:ContentControl>
+                                                                        </ContentCollection>
+                                                                    </dx:BootstrapLayoutItem>--%>
+                                                                </Items>
+                                                            </dx:BootstrapFormLayout>
+                                                            </div>
+                                                        <div class="modal-footer">
+                                                            <dx:BootstrapButton ID="btnCancelar" runat="server" AutoPostBack="False" ClientInstanceName="btnCancelar" Text="Cancelar">
+                                                                    <CssClasses Control="btn btn-danger" Icon="fa fa-close"></CssClasses>
+                                                                <ClientSideEvents Click="Presupuesto.BotonCancelarRequerimientoGeneral_Click" />
+                                                            </dx:BootstrapButton>
+                                                            <dx:BootstrapButton ID="btnGrabar" runat="server" AutoPostBack="False" ClientInstanceName="btnGrabar" Text="Grabar">
+                                                                    <CssClasses Control="btn btn-primary" Icon="fa fa-save"></CssClasses>
+                                                                    <ClientSideEvents Click="Presupuesto.BotonGuardarRequerimientoGeneral_Click" />
+                                                            </dx:BootstrapButton>
+                                                            </div>
+                                                    </div>
+                                                   </dx:ContentControl>
+                                                </ContentCollection>
+                                                </dx:BootstrapPopupControl>
+                             
+                                    <dx:BootstrapPopupControl ID="popReporteDireccion" runat="server" Width="350px" ClientInstanceName="popReporteDireccion" CloseAction="CloseButton" CloseAnimationType="Fade" CloseOnEscape="True" Modal="True" PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter" OnCallback="popReporteDireccion_WindowCallback">
+                                            <ContentCollection>
+                                            <dx:ContentControl runat="server">
+                                                <%--<div class="modal-dialog modal-md">--%>
+                                                    <div class="modal-body">
+                                                        <dx:BootstrapFormLayout ID="ASPxFormLayout2" runat="server">
+                                                            <Items>
+                                                                <dx:BootstrapLayoutItem Caption="Dirección" ColSpanLg="12" ColSpanMd="12" ColSpanSm="12" ColSpanXs="12">
+                                                                    <ContentCollection>
+                                                                        <dx:ContentControl runat="server">
+                                                                            <dx:BootstrapComboBox ID="cbDir" runat="server" ClientInstanceName="cbDir" TextField="desDireccion" ValueField="idDireccion" Width="280px" OnCallback="cbDireccion_Callback">
+                                                                                <%--<ClientSideEvents SelectedIndexChanged="Presupuesto.CbDir_SelectedIndexChanged" />--%>
+                                                                                <ValidationSettings ErrorText="Seleccione la dirección" SetFocusOnError="True">
+                                                                                    <RequiredField IsRequired="True" />
+                                                                                </ValidationSettings>
+                                                                            </dx:BootstrapComboBox>
+                                                                        </dx:ContentControl>
+                                                                    </ContentCollection>
+                                                                </dx:BootstrapLayoutItem>
+                                                                <dx:BootstrapLayoutItem Caption="Tipo" ColSpanLg="12" ColSpanMd="12" ColSpanSm="12" ColSpanXs="12">
+                                                                    <ContentCollection>
+                                                                        <dx:ContentControl runat="server">
+                                                                            <dx:BootstrapComboBox ID="cbTipo" runat="server" ClientInstanceName="cbTipo" SelectedIndex="0">
+                                                                                <Items>
+                                                                                    <dx:BootstrapListEditItem Selected="True" Text="Todos" Value="TOD" />
+                                                                                    <dx:BootstrapListEditItem Text="Administrativos" Value="ADM" />
+                                                                                    <dx:BootstrapListEditItem Text="Erradicación" Value="ERR" />
+                                                                                </Items>
+                                                                            </dx:BootstrapComboBox>
+                                                                        </dx:ContentControl>
+                                                                    </ContentCollection>
+                                                                </dx:BootstrapLayoutItem>
+                                                                <dx:BootstrapLayoutItem Caption="Año" ColSpanLg="12" ColSpanMd="12" ColSpanSm="12" ColSpanXs="12">
+                                                                    <ContentCollection>
+                                                                        <dx:ContentControl runat="server">
+                                                                            <dx:BootstrapComboBox ID="cbAnioPeriodo" runat="server" ClientInstanceName="cbAnioPeriodo" TextField="anio" ValueField="anio" SelectedIndex="0">
+                                                                                <ValidationSettings ErrorText="Seleccione año" SetFocusOnError="True">
+                                                                                    <RequiredField IsRequired="True" />
+                                                                                </ValidationSettings>
+                                                                            </dx:BootstrapComboBox>
+                                                                        </dx:ContentControl>
+                                                                    </ContentCollection>
+                                                                </dx:BootstrapLayoutItem>
+                                                                </Items>
+                                                        </dx:BootstrapFormLayout>
+                                                    <div class="modal-footer">
+                                                        
+                                                        <dx:BootstrapButton ID="btnSalir" runat="server" AutoPostBack="False" ClientInstanceName="btnSalir" Text="Salir">
+                                                            <CssClasses Control="btn btn-danger" Icon="fa fa-close"></CssClasses>
+                                                            <ClientSideEvents Click="Presupuesto.BotonSalirReporte_Click" />
+                                                        </dx:BootstrapButton>
+                                                        <dx:BootstrapButton ID="btnImp" runat="server" AutoPostBack="False" ClientInstanceName="btnImp" Text="Imprimir">
+                                                                <CssClasses Control="btn btn-primary" Icon="fa fa-print"></CssClasses>
+                                                                <ClientSideEvents Click="Presupuesto.BotonImprimirReporte_Click" />
+                                                        </dx:BootstrapButton>
+                                                    </div>
+                                                        <%--</div>--%>
+                                                </div>
+                                                        </dx:ContentControl>
+                                            </ContentCollection>
+                                        </dx:BootstrapPopupControl>
+                             </div>
+                        </div>
+                    </div>
+                </div><%--Fin class=Row--%>
+            </dx:ContentControl>
+        </ContentCollection>
+    </dx:BootstrapCallbackPanel>
+</asp:Content>
